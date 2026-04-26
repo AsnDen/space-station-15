@@ -1,9 +1,54 @@
-# SpaceStation
+# SpaceStation 15
 
-## Setup
+## Overview
 
-For setup instructions, please see the [Fabric Documentation page](https://docs.fabricmc.net/develop/getting-started/creating-a-project#setting-up) related to the IDE that you are using.
+SpaceStation is a Fabric mod for Minecraft 1.21.1 that adds sci-fi inspired materials, machines, and mechanics based on a space station setting. The mod focuses on custom ores, advanced resources, and futuristic progression systems.
 
-## License
+## Features
 
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+* New ores and materials (e.g. uranium, steel, bananium)
+* Custom blocks for industrial and space-station style builds
+* World generation with custom ores
+* Loot system integration for custom resources
+* Progression-based crafting materials
+
+## Requirements
+
+* Minecraft 1.21.1
+* Fabric Loader
+* Fabric API
+
+## Installation
+
+1. Install Fabric Loader for Minecraft 1.21.1
+2. Install Fabric API
+3. Place the mod `.jar` file into your `mods` folder
+4. Launch the game
+
+---
+
+## Обзор
+
+SpaceStation это Fabric мод для Minecraft 1.21.1, добавляющий sci-fi контент, вдохновлённый космической станцией. Мод включает новые руды, материалы и механики прогрессии.
+
+## Возможности
+
+* Новые руды и материалы (например уран, сталь, бананиум)
+* Кастомные блоки для индустриального и sci-fi строительства
+* Генерация руд в мире
+* Система лута для ресурсов
+
+## Требования
+
+* Minecraft 1.21.1
+* Fabric Loader
+* Fabric API
+
+## Установка
+
+1. Установи Fabric Loader для 1.21.1
+2. Установи Fabric API
+3. Перемести `.jar` мод в папку `mods`
+4. Запусти игру
+
+---
