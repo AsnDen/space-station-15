@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    { "item": "spacestation:cheese_wheel_fresh" },
+    { "item": "spacestation:plastic_knife" }
+  ],
+  "result": {
+    "id": "spacestation:cheese_wedge_fresh",
+    "count": 6
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    { "item": "minecraft:slime_ball" },
+    { "item": "minecraft:wheat" },
+    { "item": "minecraft:red_mushroom" },
+    { "item": "minecraft:brown_mushroom" },
+    { "item": "minecraft:glass_bottle" }
+  ],
+  "result": {
+    "id": "spacestation:enzyme",
+    "count": 1
+  }
+}

@@ -18,19 +18,24 @@ public final class ModItemGroups {
                     .entries((context, entries) -> {
                         entries.add(ModItems.BANANIUM);
                         entries.add(ModItems.BANANIUM_ORE);
-                        entries.add(ModItems.PLASMA_ORE);
-                        entries.add(ModItems.PLASMA);
                         entries.add(ModItems.BUTTER);
                         entries.add(ModItems.BUTTER_SLICE);
                         entries.add(ModItems.CROISSANT);
                         entries.add(ModItems.CROISSANT_RAW);
+                        entries.add(ModItems.CHEESE_WEDGE);
+                        entries.add(ModItems.CHEESE_WHEEL);
+                        entries.add(ModItems.CHEESE_WHEEL_FRESH);
+                        entries.add(ModItems.CHEESE_WEDGE_FRESH);
                         entries.add(ModItems.DOUGH);
                         entries.add(ModItems.DOUGH_SLICE);
                         entries.add(ModItems.DOUGH_FLAT);
+                        entries.add(ModItems.ENZYME);
                         entries.add(ModItems.SAUSAGE_BREAD);
                         entries.add(ModItems.SAUSAGE_BREAD_SLICE);
                         entries.add(ModItems.FLOUR);
                         entries.add(ModItems.TELECRYSTAL);
+                        entries.add(ModItems.TOMATO);
+                        entries.add(ModItems.TOMATO_SEEDS);
                         entries.add(ModBlocks.TELECRYSTAL_BLOCK.asItem());
                         entries.add(ModBlocks.BANANIUM_ORE_BLOCK.asItem());
                         entries.add(ModBlocks.PLASMA_ORE_BLOCK.asItem());
@@ -44,6 +49,14 @@ public final class ModItemGroups {
                         entries.add(ModItems.ROD);
                         entries.add(ModItems.PLASTIC);
                         entries.add(ModItems.PLASTIC_KNIFE);
+                        entries.add(ModItems.PLASMA_ORE);
+                        entries.add(ModItems.PLASMA);
+                        entries.add(ModItems.PIZZA_MEAT);
+                        entries.add(ModItems.PIZZA_MEAT_RAW);
+                        entries.add(ModItems.PIZZA_MEAT_SLICE);
+                        entries.add(ModItems.PIZZA_MUSHROOM);
+                        entries.add(ModItems.PIZZA_MUSHROOM_RAW);
+                        entries.add(ModItems.PIZZA_MUSHROOM_SLICE);
                         entries.add(ModItems.ID_CARD);
                     })
                     .build()

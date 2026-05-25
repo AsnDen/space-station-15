@@ -2,6 +2,7 @@ package org.corvaxcraft.spacestation;
 
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -49,6 +50,14 @@ public final class ModBlocks {
                     .nonOpaque(),
             true
 
+    );
+
+    public static final Block TOMATO_CROP = Registry.register(
+            Registries.BLOCK,
+            Identifier.of(SpaceStation.MOD_ID, "tomato_crop"),
+            new TomatoCropBlock(AbstractBlock.Settings.copy(Blocks.WHEAT)
+                    .nonOpaque()
+                    .ticksRandomly())
     );
 
     public static final Block STEEL_TILE = register(
