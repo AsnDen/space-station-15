@@ -33,6 +33,18 @@ public class ModLootModifiers {
                     List.of(LootTables.SIMPLE_DUNGEON_CHEST), 0.15f
             ));
 
+            addSeedLoot(key, tableBuilder, ModItems.TOWERCAP_SEEDS, Map.of(
+                    List.of(
+                            LootTables.VILLAGE_PLAINS_CHEST,
+                            LootTables.VILLAGE_SAVANNA_HOUSE_CHEST,
+                            LootTables.VILLAGE_TAIGA_HOUSE_CHEST,
+                            LootTables.VILLAGE_SNOWY_HOUSE_CHEST,
+                            LootTables.VILLAGE_DESERT_HOUSE_CHEST
+                    ), 0.3f,
+                    List.of(LootTables.SHIPWRECK_SUPPLY_CHEST), 0.2f,
+                    List.of(LootTables.SIMPLE_DUNGEON_CHEST), 0.15f
+            ));
+
             // Новые семена добавляешь так:
             // addSeedLoot(key, tableBuilder, ModItems.CORN_SEEDS, Map.of(...));
         });

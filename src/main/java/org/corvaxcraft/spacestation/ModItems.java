@@ -247,6 +247,12 @@ public final class ModItems {
             new AliasedBlockItem(ModBlocks.TOMATO_CROP, new Item.Settings())
     );
 
+    public static final Item TOWERCAP_SEEDS = Registry.register(
+            Registries.ITEM,
+            Identifier.of(SpaceStation.MOD_ID, "towercap_seeds"),
+            new AliasedBlockItem(ModBlocks.TOWERCAP_CROP, new Item.Settings())
+    );
+
     public static final Item STEEL_ORE = register("steel_ore");
     public static final Item URANIUM_ORE = register("uranium_ore");
     public static final Item STEEL = register("steel");

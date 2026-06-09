@@ -71,6 +71,14 @@ public final class ModBlocks {
                     .ticksRandomly())
     );
 
+    public static final Block TOWERCAP_CROP = Registry.register(
+            Registries.BLOCK,
+            Identifier.of(SpaceStation.MOD_ID, "towercap_crop"),
+            new TowercapCropBlock(AbstractBlock.Settings.copy(Blocks.WHEAT)
+                    .nonOpaque()
+                    .ticksRandomly())
+    );
+
     public static final Block STEEL_TILE = register(
             "steel_tile",
             Block::new,
