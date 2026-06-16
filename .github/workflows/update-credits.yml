@@ -1,0 +1,81 @@
+name: Update Credits
+on:
+  pull_request:
+    types: [closed]
+
+permissions:
+  contents: write
+  pull-requests: read
+
+jobs:
+  update-credits:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Update credits
+        env:
+          PR_BODY: ${{ github.event.pull_request.body }}
+          USERNAME: "@${{ github.event.pull_request.user.login }}"
+        run: |
+          python << 'EOF'
+          import os
+          import re
+
+          credits_file = "CREDITS.md"
+          username = os.environ["USERNAME"]
+          body = os.environ["PR_BODY"]
+
+          sections = {
+              "Code": "## Programming",
+              "Artwork / Sprites": "## Artwork / Sprites",
+              "Textures": "## Textures",
+              "Sound / Music": "## Sound & Music",
+              "Documentation / Writing": "## Documentation / Writing",
+              "Translation": "## Translation",
+              "Other": "## Other"
+          }
+
+          checked = []
+          for label in sections:
+              pattern = re.compile(
+                  r"-\s*\[[xX]\]\s*" + re.escape(label),
+                  re.MULTILINE
+              )
+              if pattern.search(body):
+                  checked.append(label)
+
+          with open(credits_file, "r", encoding="utf-8") as f:
+              lines = f.readlines()
+
+          for category in checked:
+              section = sections[category]
+              for i, line in enumerate(lines):
+                  if line.strip() == section:
+                      insert_index = i + 1
+                      while (
+                          insert_index < len(lines)
+                          and not lines[insert_index].startswith("## ")
+                      ):
+                          insert_index += 1
+
+                      section_lines = lines[i + 1 : insert_index]
+                      already_exists = any(username in l for l in section_lines)
+
+                      if not already_exists:
+                          lines.insert(insert_index, f"- {username}\n")
+                      break
+
+          with open(credits_file, "w", encoding="utf-8") as f:
+              f.writelines(lines)
+          EOF
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add CREDITS.md
+          git diff --cached --quiet || git commit -m "Update credits [skip ci]"
+          git push
