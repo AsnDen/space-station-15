@@ -1,0 +1,43 @@
+"code":
+  - changed-files:
+    - any-glob-to-any-file:
+      - "src/main/java/**"
+
+"assets":
+  - changed-files:
+    - any-glob-to-any-file:
+      - "src/main/resources/assets/**"
+
+"data":
+  - changed-files:
+    - any-glob-to-any-file:
+      - "src/main/resources/data/**"
+
+"lang":
+  - changed-files:
+    - any-glob-to-any-file:
+      - "src/main/resources/assets/**/lang/**"
+
+"textures":
+  - changed-files:
+    - any-glob-to-any-file:
+      - "src/main/resources/assets/**/textures/**"
+
+"sounds":
+  - changed-files:
+    - any-glob-to-any-file:
+      - "src/main/resources/assets/**/sounds/**"
+
+"build":
+  - changed-files:
+    - any-glob-to-any-file:
+      - "build.gradle"
+      - "gradle.properties"
+      - "settings.gradle"
+      - "gradle/**"
+
+"documentation":
+  - changed-files:
+    - any-glob-to-any-file:
+      - "*.md"
+      - "docs/**"
