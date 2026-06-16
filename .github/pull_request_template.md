@@ -6,6 +6,21 @@
 
 ---
 
+## Contribution Type
+<!-- -->
+<!-- Contribute type. Choose everything that apply wtih [X] (if you made code, choose code, if you created sprites, choose sprites, etc.) -->
+<!-- Тип контрибьюта. Выделить всё применимое с помощью [X] (если контрибутите код, выбрать код, если спрайты, то спрайты и т.д.) -->
+
+* [ ] Code
+* [ ] Artwork / Sprites
+* [ ] Textures
+* [ ] Sound / Music
+* [ ] Documentation / Writing
+* [ ] Translation
+* [ ] Other
+
+---
+
 ## General Checklist
 <!-- Approve following, checking it out with an [X]: -->
 <!-- Подтвердите все пункты, поставив [X]: -->
