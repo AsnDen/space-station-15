@@ -1,5 +1,3 @@
-# Pull Request
-
 ## Description
 <!-- Describe what this pull request adds or changes. -->
 <!-- Опишите, что вы изменили или добавили. -->
