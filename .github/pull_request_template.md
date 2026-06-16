@@ -11,6 +11,8 @@
 <!-- Contribute type. Choose everything that apply wtih [X] (if you made code, choose code, if you created sprites, choose sprites, etc.) -->
 <!-- Тип контрибьюта. Выделить всё применимое с помощью [X] (если контрибутите код, выбрать код, если спрайты, то спрайты и т.д.) -->
 
+<!-- Use lowercase [x] when checking boxes. GitHub renders both, but our automation is case-sensitive and can break sometimes... -->
+<!-- При установке флажков используйте строчные буквы [x]. GitHub отображает оба варианта, но наша автоматизация чувствительна к регистру и иногда может давать сбои... -->
 * [ ] Code
 * [ ] Artwork / Sprites
 * [ ] Textures
