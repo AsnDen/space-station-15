@@ -1,9 +1,10 @@
-package org.corvaxcraft.spacestation;
+package org.corvaxcraft.spacestation.system;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
+import org.corvaxcraft.spacestation.network.ModPackets;
 
 import java.util.HashMap;
 import java.util.Map;

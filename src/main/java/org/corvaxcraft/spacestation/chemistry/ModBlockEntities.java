@@ -5,8 +5,8 @@ import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
-import org.corvaxcraft.spacestation.ModBlocks;
 import org.corvaxcraft.spacestation.SpaceStation;
+import org.corvaxcraft.spacestation.registry.ModBlocks;
 
 public class ModBlockEntities {
 

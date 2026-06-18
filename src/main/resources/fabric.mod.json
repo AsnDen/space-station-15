@@ -17,9 +17,9 @@
 	"entrypoints": {
 		"main": [
 			"org.corvaxcraft.spacestation.SpaceStation"
-		],
+        ],
         "client": [
-          "org.corvaxcraft.client.SpaceStationClient"
+          "org.corvaxcraft.spacestation.client.SpaceStationClient"
         ]
 	},
 	"depends": {

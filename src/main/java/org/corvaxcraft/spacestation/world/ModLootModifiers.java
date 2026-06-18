@@ -1,4 +1,4 @@
-package org.corvaxcraft.spacestation;
+package org.corvaxcraft.spacestation.world;
 
 import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
 import net.minecraft.loot.LootPool;
@@ -11,6 +11,7 @@ import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.item.Item;
 import net.minecraft.loot.LootTable;
+import org.corvaxcraft.spacestation.registry.ModItems;
 
 import java.util.List;
 import java.util.Map;

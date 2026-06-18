@@ -1,12 +1,13 @@
-package org.corvaxcraft.client;
+package org.corvaxcraft.spacestation.client;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
 import net.minecraft.client.render.RenderLayer;
-import org.corvaxcraft.spacestation.ModBlocks;
+import org.corvaxcraft.spacestation.client.chemistry.ChemMasterScreen;
+import org.corvaxcraft.spacestation.client.hud.TimerHud;
 import org.corvaxcraft.spacestation.chemistry.ModScreenHandlers;
-import net.minecraft.screen.ScreenHandlerType;
+import org.corvaxcraft.spacestation.registry.ModBlocks;
 
 public class SpaceStationClient implements ClientModInitializer {
     @Override

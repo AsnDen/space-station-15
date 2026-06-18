@@ -1,15 +1,15 @@
-package org.corvaxcraft.client;
+package org.corvaxcraft.spacestation.client.chemistry;
 
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.text.Text;
-import org.corvaxcraft.spacestation.ModPackets;
 import org.corvaxcraft.spacestation.chemistry.ChemData;
 import org.corvaxcraft.spacestation.chemistry.ChemMasterBlockEntity;
 import org.corvaxcraft.spacestation.chemistry.ChemMasterScreenHandler;
 import org.corvaxcraft.spacestation.chemistry.ModComponents;
+import org.corvaxcraft.spacestation.network.ModPackets;
 
 import java.util.ArrayList;
 import java.util.List;

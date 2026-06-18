@@ -2,18 +2,17 @@ package org.corvaxcraft.spacestation;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
-import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
 import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.loot.LootPool;
-import net.minecraft.loot.LootTables;
-import net.minecraft.loot.condition.RandomChanceLootCondition;
-import net.minecraft.loot.entry.ItemEntry;
-import net.minecraft.loot.function.SetCountLootFunction;
-import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
-import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import org.corvaxcraft.spacestation.chemistry.*;
+import org.corvaxcraft.spacestation.network.ModPackets;
+import org.corvaxcraft.spacestation.registry.ModBlocks;
+import org.corvaxcraft.spacestation.registry.ModItemGroups;
+import org.corvaxcraft.spacestation.registry.ModItems;
+import org.corvaxcraft.spacestation.system.ActionTimer;
+import org.corvaxcraft.spacestation.world.ModLootModifiers;
+import org.corvaxcraft.spacestation.world.ModWorldGeneration;
 
 public class SpaceStation implements ModInitializer {
     public static final String MOD_ID = "spacestation";

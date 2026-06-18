@@ -1,4 +1,4 @@
-package org.corvaxcraft.client;
+package org.corvaxcraft.spacestation.client.chemistry;
 
 import java.util.HashMap;
 import java.util.Map;

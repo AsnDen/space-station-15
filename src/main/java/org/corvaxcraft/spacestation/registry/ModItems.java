@@ -1,4 +1,4 @@
-package org.corvaxcraft.spacestation;
+package org.corvaxcraft.spacestation.registry;
 
 import net.minecraft.component.type.FoodComponent;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -14,6 +14,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.UseAction;
 import net.minecraft.world.World;
+import org.corvaxcraft.spacestation.SpaceStation;
 import org.corvaxcraft.spacestation.chemistry.ChemContainer;
 import org.corvaxcraft.spacestation.chemistry.ChemData;
 import org.corvaxcraft.spacestation.chemistry.ModComponents;

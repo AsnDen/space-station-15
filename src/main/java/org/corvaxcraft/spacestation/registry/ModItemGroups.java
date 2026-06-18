@@ -1,4 +1,4 @@
-package org.corvaxcraft.spacestation;
+package org.corvaxcraft.spacestation.registry;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
@@ -7,6 +7,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+import org.corvaxcraft.spacestation.SpaceStation;
 
 public final class ModItemGroups {
     public static final ItemGroup CONTENT = Registry.register(

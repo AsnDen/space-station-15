@@ -1,11 +1,11 @@
-package org.corvaxcraft.client;
+package org.corvaxcraft.spacestation.client.hud;
 
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.render.RenderTickCounter;
-import org.corvaxcraft.spacestation.ModPackets;
+import org.corvaxcraft.spacestation.network.ModPackets;
 
 public class TimerHud {
 

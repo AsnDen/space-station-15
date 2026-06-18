@@ -1,4 +1,4 @@
-package org.corvaxcraft.spacestation;
+package org.corvaxcraft.spacestation.registry;
 
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
@@ -9,6 +9,10 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
+import org.corvaxcraft.spacestation.SpaceStation;
+import org.corvaxcraft.spacestation.block.AssemblyBlock;
+import org.corvaxcraft.spacestation.block.TomatoCropBlock;
+import org.corvaxcraft.spacestation.block.TowercapCropBlock;
 import org.corvaxcraft.spacestation.chemistry.ChemMasterBlock;
 
 import java.util.function.Function;
