@@ -49,6 +49,7 @@ public final class ModItemGroups {
                         entries.add(ModItems.TOMATO);
                         entries.add(ModItems.TOMATO_SEEDS);
                         entries.add(ModBlocks.TELECRYSTAL_BLOCK.asItem());
+                        entries.add(ModBlocks.TELECRYSTAL_CRYSTAL_BLOCK.asItem());
                         entries.add(ModBlocks.BANANIUM_ORE_BLOCK.asItem());
                         entries.add(ModBlocks.PLASMA_ORE_BLOCK.asItem());
                         entries.add(ModBlocks.WALL_GIRDER.asItem());

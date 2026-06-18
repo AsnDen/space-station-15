@@ -2,6 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     { "item": "minecraft:amethyst_shard" },
+    { "item": "minecraft:netherite_scrap" },
     { "item": "minecraft:redstone" }
   ],
   "result": {

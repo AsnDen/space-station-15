@@ -23,6 +23,10 @@ public final class ModWorldGeneration {
             RegistryKey.of(RegistryKeys.PLACED_FEATURE,
                     Identifier.of(SpaceStation.MOD_ID, "uranium_ore_block"));
 
+    public static final RegistryKey<PlacedFeature> TELECRYSTAL_CRYSTAL_BLOCK_PLACED_KEY =
+            RegistryKey.of(RegistryKeys.PLACED_FEATURE,
+                    Identifier.of(SpaceStation.MOD_ID, "telecrystal_crystal_block"));
+
     private ModWorldGeneration() {}
 
     public static void init() {
@@ -42,6 +46,12 @@ public final class ModWorldGeneration {
                 BiomeSelectors.foundInOverworld(),
                 GenerationStep.Feature.UNDERGROUND_ORES,
                 BANANIUM_ORE_BLOCK_PLACED_KEY
+        );
+
+        BiomeModifications.addFeature(
+                BiomeSelectors.foundInOverworld(),
+                GenerationStep.Feature.UNDERGROUND_ORES,
+                TELECRYSTAL_CRYSTAL_BLOCK_PLACED_KEY
         );
     }
 }

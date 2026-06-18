@@ -27,6 +27,14 @@ public final class ModBlocks {
             true
     );
 
+    public static final Block TELECRYSTAL_CRYSTAL_BLOCK = register(
+            "telecrystal_crystal_block",
+            Block::new,
+            AbstractBlock.Settings.copy(Blocks.AMETHYST_BLOCK)
+                    .requiresTool(),
+            true
+    );
+
     public static final Block PLASMA_ORE_BLOCK = register(
             "plasma_ore_block",
             Block::new,
