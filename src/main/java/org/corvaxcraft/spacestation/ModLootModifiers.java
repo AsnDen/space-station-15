@@ -45,7 +45,7 @@ public class ModLootModifiers {
                     List.of(LootTables.SIMPLE_DUNGEON_CHEST), 0.15f
             ));
 
-            // Новые семена добавляешь так:
+            // Что-бы добавить новые семена:
             // addSeedLoot(key, tableBuilder, ModItems.CORN_SEEDS, Map.of(...));
         });
     }
