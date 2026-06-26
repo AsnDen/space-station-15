@@ -84,6 +84,7 @@ public final class ModItemGroups {
                         entries.add(ModItems.PIZZA_MUSHROOM_RAW);
                         entries.add(ModItems.PIZZA_MUSHROOM_SLICE);
                         entries.add(ModItems.WRENCH);
+                        entries.add(ModItems.WELDER);
                         entries.add(ModItems.ID_CARD);
                     })
                     .build()
