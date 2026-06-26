@@ -41,7 +41,7 @@ public class ChemContainer extends Item {
             String chem = entry.getKey();
             double amount = entry.getValue();
 
-            if (amount < DRINK_AMOUNT) continue; // недостаточно — пропускаем
+            if (amount < DRINK_AMOUNT) continue;
 
             updated = updated.remove(chem, DRINK_AMOUNT);
             applyChemEffect(player, chem, DRINK_AMOUNT);
