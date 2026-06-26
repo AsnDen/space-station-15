@@ -41,7 +41,7 @@ public class ChemContainer extends Item {
             String chem = entry.getKey();
             double amount = entry.getValue();
 
-            if (amount < DRINK_AMOUNT) continue; // недостаточно — пропускаем
+            if (amount < DRINK_AMOUNT) continue;
 
             updated = updated.remove(chem, DRINK_AMOUNT);
             applyChemEffect(player, chem, DRINK_AMOUNT);
@@ -52,14 +52,13 @@ public class ChemContainer extends Item {
             return TypedActionResult.fail(stack);
         }
 
-        // Запускаем реакции после питья
         updated = ChemReactor.react(updated);
 
         stack.set(ModComponents.CHEM_DATA, updated);
         return TypedActionResult.success(stack);
     }
 
-    // Эффекты от химикатов — добавляй сюда новые
+    // Эффекты от химикатов
     private void applyChemEffect(PlayerEntity player, String chem, double amount) {
         switch (chem) {
             case "carbon" -> {} // ничего
