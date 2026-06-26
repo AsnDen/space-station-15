@@ -9,41 +9,131 @@ jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
-      - name: PR opened
-        if: github.event_name == 'pull_request' && github.event.action == 'opened'
+      - name: Send Discord notification
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          ACTION: ${{ github.event.action }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          PR_AUTHOR: ${{ github.event.pull_request.user.login }}
+          PR_AUTHOR_AVATAR: ${{ github.event.pull_request.user.avatar_url }}
+          PR_BODY: ${{ github.event.pull_request.body }}
+          PR_MERGED: ${{ github.event.pull_request.merged }}
+          PR_BRANCH: ${{ github.event.pull_request.head.ref }}
+          PR_BASE: ${{ github.event.pull_request.base.ref }}
+          PR_COMMITS: ${{ github.event.pull_request.commits }}
+          PR_FILES: ${{ github.event.pull_request.changed_files }}
+          PR_ADDITIONS: ${{ github.event.pull_request.additions }}
+          PR_DELETIONS: ${{ github.event.pull_request.deletions }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
+          ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
+          ISSUE_AUTHOR_AVATAR: ${{ github.event.issue.user.avatar_url }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          REPO_NAME: ${{ github.repository }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: |
-          curl -H "Content-Type: application/json" \
-          -d '{
-            "embeds": [{
-              "title": "📬 Пул Реквест",
-              "description": "**[${{ github.event.pull_request.title }}](${{ github.event.pull_request.html_url }})**\nby `${{ github.event.pull_request.user.login }}`",
-              "color": 3447003
-            }]
-          }' \
-          ${{ secrets.DISCORD_WEBHOOK_URL }}
+          python << 'EOF'
+          import os, re, json, urllib.request
 
-      - name: PR merged
-        if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true
-        run: |
-          curl -H "Content-Type: application/json" \
-          -d '{
-            "embeds": [{
-              "title": "✅ Мердж",
-              "description": "**[${{ github.event.pull_request.title }}](${{ github.event.pull_request.html_url }})**\nby `${{ github.event.pull_request.user.login }}`",
-              "color": 5763719
-            }]
-          }' \
-          ${{ secrets.DISCORD_WEBHOOK_URL }}
+          def clean_body(text, max_len=900):
+              if not text:
+                  return "_Описание отсутствует_"
+              text = re.sub(r'<!--.*?-->', '', text, flags=re.DOTALL)
+              text = re.sub(r'^\s*\*\s*\[ \].*$', '', text, flags=re.MULTILINE)
+              text = re.sub(r'^\s*\*\s*\[[xX]\]\s*(.+)$', r'✅ \1', text, flags=re.MULTILINE)
+              text = re.sub(r'\n{3,}', '\n\n', text).strip()
+              if len(text) > max_len:
+                  text = text[:max_len] + "..."
+              return text or "_Описание отсутствует_"
 
-      - name: Issue opened
-        if: github.event_name == 'issues' && github.event.action == 'opened'
-        run: |
-          curl -H "Content-Type: application/json" \
-          -d '{
-            "embeds": [{
-              "title": "🐛 Новый Репорт",
-              "description": "**[${{ github.event.issue.title }}](${{ github.event.issue.html_url }})**\nby `${{ github.event.issue.user.login }}`",
-              "color": 15548997
-            }]
-          }' \
-          ${{ secrets.DISCORD_WEBHOOK_URL }}
+          event = os.environ["EVENT_NAME"]
+          action = os.environ["ACTION"]
+          webhook = os.environ["DISCORD_WEBHOOK_URL"]
+          repo = os.environ["REPO_NAME"]
+
+          if event == "pull_request":
+              body = clean_body(os.environ.get("PR_BODY", ""))
+              author = os.environ["PR_AUTHOR"]
+              avatar = os.environ["PR_AUTHOR_AVATAR"]
+              title = os.environ["PR_TITLE"]
+              url = os.environ["PR_URL"]
+              branch = os.environ["PR_BRANCH"]
+              base = os.environ["PR_BASE"]
+              commits = os.environ.get("PR_COMMITS", "?")
+              files = os.environ.get("PR_FILES", "?")
+              additions = os.environ.get("PR_ADDITIONS", "0")
+              deletions = os.environ.get("PR_DELETIONS", "0")
+              merged = os.environ.get("PR_MERGED", "false")
+
+              if action == "opened":
+                  color = 3447003 
+                  headline = "📬 Новый пул реквест"
+              elif action == "reopened":
+                  color = 16776960  
+                  headline = "🔄 Пул реквест переоткрыт"
+              elif action == "closed" and merged == "true":
+                  color = 5763719 
+                  headline = "✅ Пул реквест смерджен"
+              else:
+                  color = 10038562 
+                  headline = "❌ Пул реквест закрыт"
+
+              payload = {
+                  "embeds": [{
+                      "author": {
+                          "name": author,
+                          "icon_url": avatar,
+                          "url": f"https://github.com/{author}"
+                      },
+                      "title": f"{headline}: {title}",
+                      "url": url,
+                      "description": body,
+                      "color": color,
+                      "fields": [
+                          {"name": "📁 Репозиторий", "value": f"[{repo}](https://github.com/{repo})", "inline": True},
+                          {"name": "🌿 Ветка", "value": f"`{branch}` → `{base}`", "inline": True},
+                          {"name": "📊 Изменения", "value": f"`{commits}` коммитов, `{files}` файлов\n+{additions} / -{deletions}", "inline": False},
+                      ],
+                      "footer": {"text": "Space Station 15"}
+                  }]
+              }
+
+          elif event == "issues":
+              body = clean_body(os.environ.get("ISSUE_BODY", ""))
+              author = os.environ["ISSUE_AUTHOR"]
+              avatar = os.environ["ISSUE_AUTHOR_AVATAR"]
+              title = os.environ["ISSUE_TITLE"]
+              url = os.environ["ISSUE_URL"]
+
+              if action == "opened":
+                  color = 15548997 
+                  headline = "🐛 Новый репорт"
+              else:
+                  color = 9807270
+                  headline = "🔒 Репорт закрыт"
+
+              payload = {
+                  "embeds": [{
+                      "author": {
+                          "name": author,
+                          "icon_url": avatar,
+                          "url": f"https://github.com/{author}"
+                      },
+                      "title": f"{headline}: {title}",
+                      "url": url,
+                      "description": body,
+                      "color": color,
+                      "fields": [
+                          {"name": "📁 Репозиторий", "value": f"[{repo}](https://github.com/{repo})", "inline": True},
+                      ],
+                      "footer": {"text": "Space Station 15"}
+                  }]
+              }
+          else:
+              exit(0)
+
+          data = json.dumps(payload).encode("utf-8")
+          req = urllib.request.Request(webhook, data=data, headers={"Content-Type": "application/json"})
+          urllib.request.urlopen(req)
+          EOF
