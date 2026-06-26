@@ -64,6 +64,7 @@ public final class ModItems {
         }
     }
 
+
     public static final Item BANANIUM = Registry.register(
             Registries.ITEM,
             Identifier.of(SpaceStation.MOD_ID, "bananium"),
@@ -451,6 +452,15 @@ public final class ModItems {
     public static final Item PLUSHIE_LIZARD = register("plushie_lizard");
 
     public static final Item ID_CARD = register("id_card");
+
+    public static final Item WELDER = Registry.register(
+            Registries.ITEM,
+            Identifier.of(SpaceStation.MOD_ID, "welder"),
+            new Item(new Item.Settings()
+                    .maxCount(1)
+                    .maxDamage(100)
+            )
+    );
 
     public static final Item BEAKER = Registry.register(
             Registries.ITEM,
