@@ -28,7 +28,13 @@ jobs:
           ACTION: ${{ github.event.action }}
           REPO: ${{ github.repository }}
         run: |
+          if [ -z "${{ secrets.DISCORD_WEBHOOK_URL }}" ]; then
+              echo "Error: DISCORD_WEBHOOK_URL secret is not configured"
+              exit 1
+          fi
+  
           if [ "$EVENT_NAME" = "pull_request" ]; then
+            # ... rest of your script
             if [ "$ACTION" = "opened" ]; then
               TITLE="📬 Новый пул реквест"
               COLOR=3447003
