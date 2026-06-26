@@ -14,32 +14,32 @@ jobs:
   notify:
     runs-on: ubuntu-latest
 
-    env:
-      DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
-      PR_TITLE: ${{ github.event.pull_request.title }}
-      PR_URL: ${{ github.event.pull_request.html_url }}
-      PR_AUTHOR: ${{ github.event.pull_request.user.login }}
-      PR_BRANCH: ${{ github.event.pull_request.head.ref }}
-      PR_BASE: ${{ github.event.pull_request.base.ref }}
-      PR_COMMITS: ${{ github.event.pull_request.commits }}
-      PR_FILES: ${{ github.event.pull_request.changed_files }}
-      PR_ADDITIONS: ${{ github.event.pull_request.additions }}
-      PR_DELETIONS: ${{ github.event.pull_request.deletions }}
-      PR_MERGED: ${{ github.event.pull_request.merged }}
-
-      ISSUE_TITLE: ${{ github.event.issue.title }}
-      ISSUE_URL: ${{ github.event.issue.html_url }}
-      ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
-
-      EVENT_NAME: ${{ github.event_name }}
-      ACTION: ${{ github.event.action }}
-      REPO: ${{ github.repository }}
-
     steps:
       - name: Send Discord notification
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          PR_AUTHOR: ${{ github.event.pull_request.user.login }}
+          PR_BRANCH: ${{ github.event.pull_request.head.ref }}
+          PR_BASE: ${{ github.event.pull_request.base.ref }}
+          PR_COMMITS: ${{ github.event.pull_request.commits }}
+          PR_FILES: ${{ github.event.pull_request.changed_files }}
+          PR_ADDITIONS: ${{ github.event.pull_request.additions }}
+          PR_DELETIONS: ${{ github.event.pull_request.deletions }}
+          PR_MERGED: ${{ github.event.pull_request.merged }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
+          ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
+          EVENT_NAME: ${{ github.event_name }}
+          ACTION: ${{ github.event.action }}
+          REPO: ${{ github.repository }}
+
         run: |
+          set -e
+
           if [ -z "$DISCORD_WEBHOOK_URL" ]; then
-            echo "DISCORD_WEBHOOK_URL secret is missing"
+            echo "Webhook missing"
             exit 1
           fi
 
@@ -116,7 +116,6 @@ jobs:
               }')
           fi
 
-          curl \
-            -H "Content-Type: application/json" \
-            -d "$PAYLOAD" \
-            "$DISCORD_WEBHOOK_URL"
+          curl -H "Content-Type: application/json" \
+               -d "$PAYLOAD" \
+               "$DISCORD_WEBHOOK_URL"
