@@ -52,14 +52,13 @@ public class ChemContainer extends Item {
             return TypedActionResult.fail(stack);
         }
 
-        // Запускаем реакции после питья
         updated = ChemReactor.react(updated);
 
         stack.set(ModComponents.CHEM_DATA, updated);
         return TypedActionResult.success(stack);
     }
 
-    // Эффекты от химикатов — добавляй сюда новые
+    // Эффекты от химикатов
     private void applyChemEffect(PlayerEntity player, String chem, double amount) {
         switch (chem) {
             case "carbon" -> {} // ничего
