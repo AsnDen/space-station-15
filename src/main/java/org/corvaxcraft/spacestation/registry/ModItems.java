@@ -43,7 +43,7 @@ public final class ModItems {
         public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
             ItemStack result = super.finishUsing(stack, world, user);
 
-            // Креатив — без депа бутылок
+            // Креатив без депа бутылок
             if (user instanceof PlayerEntity player && player.getAbilities().creativeMode) {
                 return result;
             }
@@ -344,6 +344,8 @@ public final class ModItems {
             Identifier.of(SpaceStation.MOD_ID, "towercap_seeds"),
             new AliasedBlockItem(ModBlocks.TOWERCAP_CROP, new Item.Settings())
     );
+
+    public static final Item TRASH_PLASTIC = register("trash_plastic");
 
     public static final Item STEEL_ORE = register("steel_ore");
     public static final Item URANIUM = register("uranium");

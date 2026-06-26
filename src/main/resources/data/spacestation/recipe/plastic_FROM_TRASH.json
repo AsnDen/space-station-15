@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "spacestation:trash_plastic"
+  },
+  "result": {
+    "id": "spacestation:plastic"
+  },
+  "experience": 0.05,
+  "cookingtime": 100
+}
