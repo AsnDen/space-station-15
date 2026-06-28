@@ -80,7 +80,7 @@ public final class ModItemGroups {
                         entries.add(ModItems.PLUSHIE_BEE);
                         entries.add(ModItems.PLUSHIE_IAN);
                         entries.add(ModItems.PLUSHIE_LIZARD);
-                        entries.add(ModItems.PLUSHIE_XENOMORPH);
+                        entries.add(ModItems.PLUSHIE_XENO);
                         entries.add(ModItems.PINEAPPLE);
                         entries.add(ModItems.PIZZA_PINEAPPLE);
                         entries.add(ModItems.PIZZA);

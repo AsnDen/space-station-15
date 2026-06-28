@@ -520,7 +520,7 @@ public final class ModItems {
     public static final Item PLUSHIE_BEE = register("plushie_bee");
     public static final Item PLUSHIE_IAN = register("plushie_ian");
     public static final Item PLUSHIE_LIZARD = register("plushie_lizard");
-    public static final Item PLUSHIE_XENOMORPH = register("plushie_xenomorph");
+    public static final Item PLUSHIE_XENO = register("plushie_xeno");
 
     public static final Item ID_CARD = register("id_card");
 
