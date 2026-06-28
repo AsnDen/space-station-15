@@ -10,6 +10,7 @@ import org.technocracy.spacestation.network.ModPackets;
 import org.technocracy.spacestation.registry.ModBlocks;
 import org.technocracy.spacestation.registry.ModItemGroups;
 import org.technocracy.spacestation.registry.ModItems;
+import org.technocracy.spacestation.registry.ModSounds;
 import org.technocracy.spacestation.system.ActionTimer;
 import org.technocracy.spacestation.world.ModLootModifiers;
 import org.technocracy.spacestation.world.ModWorldGeneration;
@@ -25,6 +26,7 @@ public class SpaceStation implements ModInitializer {
         });
 
         ModComponents.register();
+        ModSounds.register();
         ModItems.register();
         ModBlocks.register();
         ModBlockEntities.register();
