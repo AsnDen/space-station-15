@@ -181,6 +181,24 @@ public final class ModItems {
             )
     );
 
+    public static final Item CROWBAR_RED = Registry.register(
+            Registries.ITEM,
+            Identifier.of(SpaceStation.MOD_ID, "crowbar_red"),
+            new Item(new Item.Settings()
+                    .maxCount(1)
+                    .maxDamage(100)
+            )
+    );
+
+    public static final Item CROWBAR_BRASS = Registry.register(
+            Registries.ITEM,
+            Identifier.of(SpaceStation.MOD_ID, "crowbar_brass"),
+            new Item(new Item.Settings()
+                    .maxCount(1)
+                    .maxDamage(100)
+            )
+    );
+
     public static final Item SCREWDRIVER = Registry.register(
             Registries.ITEM,
             Identifier.of(SpaceStation.MOD_ID, "screwdriver"),
@@ -219,6 +237,19 @@ public final class ModItems {
                             .saturationModifier(0.6f)
                             .build()
             ))
+    );
+
+    public static final Item SPAGHETTI = Registry.register(
+            Registries.ITEM,
+            Identifier.of(SpaceStation.MOD_ID, "spaghetti"),
+            new Item(new Item.Settings()
+                    .food(
+                            new FoodComponent.Builder()
+                                    .nutrition(2)
+                                    .saturationModifier(1.5f)
+                                    .build()
+                    )
+            )
     );
 
     public static final Item CROISSANT_RAW = Registry.register(
@@ -379,6 +410,32 @@ public final class ModItems {
             )
     );
 
+    public static final Item PIZZA_PINEAPPLE = Registry.register(
+            Registries.ITEM,
+            Identifier.of(SpaceStation.MOD_ID, "pizza_pineapple"),
+            new Item(new Item.Settings()
+                    .food(
+                            new FoodComponent.Builder()
+                                    .nutrition(2)
+                                    .saturationModifier(1.5f)
+                                    .build()
+                    )
+            )
+    );
+
+    public static final Item PINEAPPLE = Registry.register(
+            Registries.ITEM,
+            Identifier.of(SpaceStation.MOD_ID, "pineapple"),
+            new Item(new Item.Settings()
+                    .food(
+                            new FoodComponent.Builder()
+                                    .nutrition(2)
+                                    .saturationModifier(1.5f)
+                                    .build()
+                    )
+            )
+    );
+
     public static final Item PIZZA_MEAT_SLICE = Registry.register(
             Registries.ITEM,
             Identifier.of(SpaceStation.MOD_ID, "pizza_meat_slice"),
@@ -450,6 +507,7 @@ public final class ModItems {
     public static final Item PLUSHIE_BEE = register("plushie_bee");
     public static final Item PLUSHIE_IAN = register("plushie_ian");
     public static final Item PLUSHIE_LIZARD = register("plushie_lizard");
+    public static final Item PLUSHIE_XENO = register("plushie_xeno");
 
     public static final Item ID_CARD = register("id_card");
 

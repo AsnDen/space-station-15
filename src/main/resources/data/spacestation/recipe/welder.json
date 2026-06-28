@@ -7,7 +7,7 @@
   ],
   "key": {
     "I": { "item": "minecraft:iron_ingot" },
-    "L": { "item": "minecraft:lava_bucket"}
+    "L":   { "item": "minecraft:lava_bucket"}
   },
   "result": {
     "id": "spacestation:welder",

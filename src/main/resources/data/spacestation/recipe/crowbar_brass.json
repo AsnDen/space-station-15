@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    { "item": "spacestation:crowbar" },
+    { "item": "minecraft:orange_dye" }
+  ],
+  "result": {
+    "id": "spacestation:crowbar_brass",
+    "count": 1
+  }
+}
