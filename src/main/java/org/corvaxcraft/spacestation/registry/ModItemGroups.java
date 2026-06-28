@@ -13,7 +13,7 @@ public final class ModItemGroups {
     public static final ItemGroup CONTENT = Registry.register(
             Registries.ITEM_GROUP,
             Identifier.of(SpaceStation.MOD_ID, "content"),
-            FabricItemGroup.builder()543543
+            FabricItemGroup.builder()
                     .icon(() -> new ItemStack(ModItems.STEEL))
                     .displayName(Text.translatable("itemGroup.spacestation.content"))
                     .entries((context, entries) -> {
