@@ -490,19 +490,6 @@ public final class ModItems {
             )
     );
 
-    public static final Item PIZZA = Registry.register(
-            Registries.ITEM,
-            Identifier.of(SpaceStation.MOD_ID, "pizza"),
-            new Item(new Item.Settings()
-                    .food(
-                            new FoodComponent.Builder()
-                                    .nutrition(2)
-                                    .saturationModifier(1.5f)
-                                    .build()
-                    )
-            )
-    );
-
     public static final Item PIZZA_MUSHROOM = Registry.register(
             Registries.ITEM,
             Identifier.of(SpaceStation.MOD_ID, "pizza_mushroom"),

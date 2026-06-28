@@ -83,7 +83,6 @@ public final class ModItemGroups {
                         entries.add(ModItems.PLUSHIE_XENO);
                         entries.add(ModItems.PINEAPPLE);
                         entries.add(ModItems.PIZZA_PINEAPPLE);
-                        entries.add(ModItems.PIZZA);
                         entries.add(ModItems.PIZZA_MEAT);
                         entries.add(ModItems.PIZZA_MEAT_RAW);
                         entries.add(ModItems.PIZZA_MEAT_SLICE);
