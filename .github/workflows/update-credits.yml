@@ -1,6 +1,6 @@
 name: Update Credits
 on:
-  pull_request:
+  pull_request_target:
     types: [closed]
 permissions:
   contents: write
