@@ -13,6 +13,7 @@ Vielen Dank an alle, die zu diesem Projekt beigetragen haben ❤️
 ## Programming
 
 - @Swino4ka
+- @AsnDen
 ## Artwork / Sprites
 
 ## Textures
