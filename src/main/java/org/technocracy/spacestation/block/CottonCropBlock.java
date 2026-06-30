@@ -2,6 +2,7 @@ package org.technocracy.spacestation.block;
 
 import net.minecraft.block.CropBlock;
 import net.minecraft.item.ItemConvertible;
+import org.technocracy.spacestation.registry.ModCrops;
 import org.technocracy.spacestation.registry.items.FoodItems;
 
 public class CottonCropBlock extends CropBlock {
@@ -11,6 +12,6 @@ public class CottonCropBlock extends CropBlock {
 
     @Override
     protected ItemConvertible getSeedsItem() {
-        return FoodItems.COTTON_SEEDS;
+        return ModCrops.COTTON_SEEDS;
     }
 }

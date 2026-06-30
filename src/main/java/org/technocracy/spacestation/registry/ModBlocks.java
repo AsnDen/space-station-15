@@ -77,30 +77,6 @@ public final class ModBlocks {
             true
     );
 
-    public static final Block COTTON_CROP = Registry.register(
-            Registries.BLOCK,
-            Identifier.of(SpaceStation.MOD_ID, "cotton_crop"),
-            new CottonCropBlock(AbstractBlock.Settings.copy(Blocks.WHEAT)
-                    .nonOpaque()
-                    .ticksRandomly())
-    );
-
-    public static final Block TOMATO_CROP = Registry.register(
-            Registries.BLOCK,
-            Identifier.of(SpaceStation.MOD_ID, "tomato_crop"),
-            new TomatoCropBlock(AbstractBlock.Settings.copy(Blocks.WHEAT)
-                    .nonOpaque()
-                    .ticksRandomly())
-    );
-
-    public static final Block TOWERCAP_CROP = Registry.register(
-            Registries.BLOCK,
-            Identifier.of(SpaceStation.MOD_ID, "towercap_crop"),
-            new TowercapCropBlock(AbstractBlock.Settings.copy(Blocks.WHEAT)
-                    .nonOpaque()
-                    .ticksRandomly())
-    );
-
     public static final Block STEEL_TILE = register(
             "steel_tile",
             Block::new,
