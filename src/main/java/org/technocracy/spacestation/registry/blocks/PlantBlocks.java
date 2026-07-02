@@ -11,6 +11,15 @@ import org.technocracy.spacestation.block.SimpleCropBlock;
 import org.technocracy.spacestation.registry.items.PlantItems;
 
 public class PlantBlocks {
+    public static final Block ALOE_CROP = Registry.register(
+            Registries.BLOCK,
+            Identifier.of(SpaceStation.MOD_ID, "aloe_crop"),
+            new SimpleCropBlock(
+                    AbstractBlock.Settings.copy(Blocks.WHEAT).nonOpaque().ticksRandomly(),
+                    () -> PlantItems.ALOE_SEEDS
+            )
+    );
+
     public static final Block COTTON_CROP = Registry.register(
             Registries.BLOCK,
             Identifier.of(SpaceStation.MOD_ID, "cotton_crop"),

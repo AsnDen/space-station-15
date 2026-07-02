@@ -51,6 +51,9 @@ public final class ModItemGroups {
                         entries.add(MiscItems.FLOUR);
                         entries.add(MiscItems.TELECRYSTAL);
                         // ModCrops
+                        entries.add(PlantItems.ALOE);
+                        entries.add(PlantItems.ALOE_CREAM);
+                        entries.add(PlantItems.ALOE_SEEDS);
                         entries.add(PlantItems.COTTON);
                         entries.add(PlantItems.COTTON_RAW);
                         entries.add(PlantItems.COTTON_SEEDS);

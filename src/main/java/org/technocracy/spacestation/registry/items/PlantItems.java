@@ -11,6 +11,13 @@ import org.technocracy.spacestation.registry.blocks.PlantBlocks;
 
 public final class PlantItems {
 
+    public static final Item ALOE        = register("aloe");
+    public static final Item ALOE_CREAM        = register("aloe_cream");
+
+    public static final Item ALOE_SEEDS = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "aloe_seeds"),
+            new AliasedBlockItem(PlantBlocks.ALOE_CROP, new Item.Settings())
+    );
     public static final Item COTTON        = register("cotton");
     public static final Item COTTON_RAW    = register("cotton_raw");
 
