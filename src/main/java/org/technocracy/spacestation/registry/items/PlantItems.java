@@ -47,6 +47,13 @@ public final class PlantItems {
             new AliasedBlockItem(PlantBlocks.BLOONION_CROP, new Item.Settings())
     );
 
+    public static final Item BLUE_TOMATO        = register("blue_tomato");
+
+    public static final Item BLUE_TOMATO_SEEDS = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "blue_tomato_seeds"),
+            new AliasedBlockItem(PlantBlocks.BLUE_TOMATO_CROP, new Item.Settings())
+    );
+
     public static final Item COTTON        = register("cotton");
     public static final Item COTTON_RAW    = register("cotton_raw");
 
