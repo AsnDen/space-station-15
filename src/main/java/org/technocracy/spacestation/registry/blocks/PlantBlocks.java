@@ -65,6 +65,15 @@ public class PlantBlocks {
             )
     );
 
+    public static final Block BUNGO_CROP = Registry.register(
+            Registries.BLOCK,
+            Identifier.of(SpaceStation.MOD_ID, "bungo_crop"),
+            new SimpleCropBlock(
+                    AbstractBlock.Settings.copy(Blocks.WHEAT).nonOpaque().ticksRandomly(),
+                    () -> PlantItems.BUNGO_SEEDS
+            )
+    );
+
     public static final Block COTTON_CROP = Registry.register(
             Registries.BLOCK,
             Identifier.of(SpaceStation.MOD_ID, "cotton_crop"),
