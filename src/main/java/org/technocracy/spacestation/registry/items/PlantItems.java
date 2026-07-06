@@ -33,6 +33,13 @@ public final class PlantItems {
             new AliasedBlockItem(PlantBlocks.AMBROSIA_VULGARIS_CROP, new Item.Settings())
     );
 
+    public static final Item BLOOD_TOMATO        = register("blood_tomato");
+
+    public static final Item BLOOD_TOMATO_SEEDS = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "blood_tomato_seeds"),
+            new AliasedBlockItem(PlantBlocks.BLOOD_TOMATO_CROP, new Item.Settings())
+    );
+
     public static final Item COTTON        = register("cotton");
     public static final Item COTTON_RAW    = register("cotton_raw");
 
