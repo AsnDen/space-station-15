@@ -35,6 +35,7 @@ public final class ModItemGroups {
                         entries.add(ToolItems.CROWBAR_RED);
                         entries.add(ToolItems.CROWBAR_BRASS);
                         entries.add(ToolItems.SCREWDRIVER);
+                        entries.add(ToolItems.OMNITOOL);
                         entries.add(ChemItems.CANISTER);
                         entries.add(FoodItems.CROISSANT);
                         entries.add(FoodItems.CROISSANT_RAW);

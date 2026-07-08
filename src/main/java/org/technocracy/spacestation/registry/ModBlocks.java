@@ -126,9 +126,9 @@ public final class ModBlocks {
     public static void register() {
         // Рецепты для крафта ингейм
         // Без инструментов будет только сборка, без разбора
-        AssemblyBlock.registerUpgrade(WALL_GIRDER, MiscItems.STEEL, STEEL_WALL, 2, 0.4f, 1.2f, ModItems.CROWBAR);
-        AssemblyBlock.registerUpgrade(WALL_GIRDER_REINFORCED, MiscItems.PLASTEEL, STEEL_WALL_REINFORCED, 2, 0.4f, 1.2f, ModItems.CROWBAR);
-        AssemblyBlock.registerUpgrade(WALL_GIRDER, MiscItems.ROD, WALL_GIRDER_REINFORCED, 4, 0.4f, 1.2f, ToolItems.SCREWDRIVER);
+        AssemblyBlock.registerUpgrade(WALL_GIRDER, MiscItems.STEEL, STEEL_WALL, 2, 0.4f, 1.2f, ModItems.CROWBAR, ToolItems.OMNITOOL);
+        AssemblyBlock.registerUpgrade(WALL_GIRDER_REINFORCED, MiscItems.PLASTEEL, STEEL_WALL_REINFORCED, 2, 0.4f, 1.2f, ModItems.CROWBAR, ToolItems.OMNITOOL);
+        AssemblyBlock.registerUpgrade(WALL_GIRDER, MiscItems.ROD, WALL_GIRDER_REINFORCED, 4, 0.4f, 1.2f, ToolItems.SCREWDRIVER, ToolItems.OMNITOOL);
 
         // Несколько инструментов для разбора:
         // AssemblyBlock.registerUpgrade(WALL_GIRDER, ModItems.STEEL, STEEL_WALL, 2, ModItems.CROWBAR, ModItems.CROWBAR2);
