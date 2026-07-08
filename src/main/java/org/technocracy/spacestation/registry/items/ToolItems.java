@@ -38,6 +38,11 @@ public final class ToolItems {
             new Item(new Item.Settings().maxCount(1).maxDamage(100))
     );
 
+    public static final Item OMNITOOL = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "omnitool"),
+            new Item(new Item.Settings().maxCount(1))
+    );
+
     public static final Item PLASTIC_KNIFE = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "plastic_knife"),
             new Item(new Item.Settings()
