@@ -68,6 +68,14 @@ public final class PlantItems {
             new AliasedBlockItem(PlantBlocks.CABBAGE_CROP, new Item.Settings())
     );
 
+    public static final Item CHILI        = register("chili");
+
+    public static final Item CHILI_SEEDS = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "chili_seeds"),
+            new AliasedBlockItem(PlantBlocks.CHILI_CROP, new Item.Settings())
+    );
+
+
     public static final Item COTTON        = register("cotton");
     public static final Item COTTON_RAW    = register("cotton_raw");
 

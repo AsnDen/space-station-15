@@ -83,6 +83,15 @@ public class PlantBlocks {
             )
     );
 
+    public static final Block CHILI_CROP = Registry.register(
+            Registries.BLOCK,
+            Identifier.of(SpaceStation.MOD_ID, "chili_crop"),
+            new SimpleCropBlock(
+                    AbstractBlock.Settings.copy(Blocks.WHEAT).nonOpaque().ticksRandomly(),
+                    () -> PlantItems.CHILI_SEEDS
+            )
+    );
+
     public static final Block COTTON_CROP = Registry.register(
             Registries.BLOCK,
             Identifier.of(SpaceStation.MOD_ID, "cotton_crop"),
