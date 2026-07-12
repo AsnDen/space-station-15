@@ -66,6 +66,8 @@ public final class ModItemGroups {
                         entries.add(PlantItems.BLUE_TOMATO_SEEDS);
                         entries.add(PlantItems.BUNGO);
                         entries.add(PlantItems.BUNGO_SEEDS);
+                        entries.add(PlantItems.CABBAGE);
+                        entries.add(PlantItems.CABBAGE_SEEDS);
                         entries.add(PlantItems.COTTON);
                         entries.add(PlantItems.COTTON_RAW);
                         entries.add(PlantItems.COTTON_SEEDS);

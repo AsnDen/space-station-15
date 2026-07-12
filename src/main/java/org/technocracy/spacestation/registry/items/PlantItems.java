@@ -61,6 +61,13 @@ public final class PlantItems {
             new AliasedBlockItem(PlantBlocks.BUNGO_CROP, new Item.Settings())
     );
 
+    public static final Item CABBAGE        = register("cabbage");
+
+    public static final Item CABBAGE_SEEDS = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "cabbage_seeds"),
+            new AliasedBlockItem(PlantBlocks.CABBAGE_CROP, new Item.Settings())
+    );
+
     public static final Item COTTON        = register("cotton");
     public static final Item COTTON_RAW    = register("cotton_raw");
 
