@@ -29,6 +29,7 @@ public class SpaceStationClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(PlantBlocks.CABBAGE_CROP, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(PlantBlocks.CHILI_CROP, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(PlantBlocks.CHILLI_CROP, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(PlantBlocks.CORN_CROP, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(PlantBlocks.COTTON_CROP, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(PlantBlocks.TOMATO_CROP, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(PlantBlocks.TOWERCAP_CROP, RenderLayer.getCutout());
