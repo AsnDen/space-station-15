@@ -97,6 +97,13 @@ public final class PlantItems {
             new AliasedBlockItem(PlantBlocks.COTTON_CROP, new Item.Settings())
     );
 
+    public static final Item DEATH_NETTLE        = register("death_nettle");
+
+    public static final Item DEATH_NETTLE_SEEDS = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "death_nettle_seeds"),
+            new AliasedBlockItem(PlantBlocks.DEATH_NETTLE_CROP, new Item.Settings())
+    );
+
     public static final Item TOMATO = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "tomato"),
             new Item(new Item.Settings().food(new FoodComponent.Builder()
