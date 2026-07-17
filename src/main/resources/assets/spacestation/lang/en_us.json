@@ -89,6 +89,10 @@
   "item.spacestation.omnitool": "Omnitool",
   "item.spacestation.wrench": "Wrench",
   "item.spacestation.welder": "Welder",
+  "item.spacestation.nukeops_helmet": "Nukeops Helmet",
+  "item.spacestation.nukeops_chestplate": "Nukeops Chestplate",
+  "item.spacestation.nukeops_leggings": "Nukeops Leggings",
+  "item.spacestation.nukeops_boots": "Nukeops Boots",
   "itemGroup.spacestation.content": "Space Station 15",
   "subtitles.spacestation.plushie.squeak": "Plushie squeaks"
 }
