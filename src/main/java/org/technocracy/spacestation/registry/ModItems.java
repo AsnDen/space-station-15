@@ -20,6 +20,7 @@ public final class ModItems {
         ChemItems.register();
         MiscItems.register();
         PlantItems.register();
+        ArmorItems.register();
     }
 
     private ModItems() {}

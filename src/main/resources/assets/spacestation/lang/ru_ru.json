@@ -62,6 +62,7 @@
   "item.spacestation.uranium_ore": "Урановая Руда",
   "item.spacestation.steel": "Сталь",
   "item.spacestation.rod": "Стержень",
+  "item.spacestation.knife_kitchen": "Кухонный Нож",
   "item.spacestation.plastic": "Пластик",
   "item.spacestation.plastic_knife": "Пластиковый Ножик",
   "item.spacestation.plasteel": "Пласталь",
@@ -88,6 +89,10 @@
   "item.spacestation.omnitool": "Омнитул",
   "item.spacestation.wrench": "Гаечный Ключ",
   "item.spacestation.welder": "Сварка",
+  "item.spacestation.nukeops_helmet": "Шлем Ядеров",
+  "item.spacestation.nukeops_chestplate": "Нагрудник Ядеров",
+  "item.spacestation.nukeops_leggings": "Штанишки Ядеров",
+  "item.spacestation.nukeops_boots": "Ботиночки Ядеров",
   "itemGroup.spacestation.content": "Космическая Станция 15",
   "subtitles.spacestation.plushie.squeak": "Плюшка Пищит"
 }
