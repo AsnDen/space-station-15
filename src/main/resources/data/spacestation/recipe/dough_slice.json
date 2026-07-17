@@ -1,8 +1,8 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    { "item": "spacestation:plastic_knife" },
-    { "item": "spacestation:dough_flat" }
+    { "item": "spacestation:dough_flat" },
+    { "tag": "spacestation:knives" }
   ],
   "result": {
     "id": "spacestation:dough_slice",

@@ -36,6 +36,8 @@ public final class ModItemGroups {
                         entries.add(ToolItems.CROWBAR_BRASS);
                         entries.add(ToolItems.SCREWDRIVER);
                         entries.add(ToolItems.OMNITOOL);
+                        entries.add(ToolItems.KNIFE_KITCHEN);
+
                         entries.add(ChemItems.CANISTER);
                         entries.add(FoodItems.CROISSANT);
                         entries.add(FoodItems.CROISSANT_RAW);
@@ -75,7 +77,6 @@ public final class ModItemGroups {
                         entries.add(MiscItems.URANIUM_ORE);
                         entries.add(MiscItems.STEEL_ORE);
                         entries.add(MiscItems.STEEL);
-                        entries.add(FoodItems.SPAGHETTI);
                         entries.add(MiscItems.PLASTEEL);
                         entries.add(MiscItems.ROD);
                         entries.add(MiscItems.PLASTIC);
@@ -86,7 +87,13 @@ public final class ModItemGroups {
                         entries.add(PlushieItems.PLUSHIE_IAN);
                         entries.add(PlushieItems.PLUSHIE_LIZARD);
                         entries.add(PlushieItems.PLUSHIE_XENO);
+                        entries.add(FoodItems.SPAGHETTI);
                         entries.add(FoodItems.PIZZA_PINEAPPLE);
+                        entries.add(FoodItems.PIZZA_PINEAPPLE_RAW);
+                        entries.add(FoodItems.PIZZA_PINEAPPLE_SLICE);
+                        entries.add(FoodItems.PIZZA_MARGHERITA);
+                        entries.add(FoodItems.PIZZA_MARGHERITA_RAW);
+                        entries.add(FoodItems.PIZZA_MARGHERITA_SLICE);
                         entries.add(FoodItems.PIZZA_MEAT);
                         entries.add(FoodItems.PIZZA_MEAT_RAW);
                         entries.add(FoodItems.PIZZA_MEAT_SLICE);

@@ -138,8 +138,38 @@ public final class FoodItems {
                     .nutrition(2).saturationModifier(1.5f).build()))
     );
 
+    public static final Item PIZZA_PINEAPPLE_RAW = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "pizza_pineapple_raw"),
+            new Item(new Item.Settings().food(new FoodComponent.Builder()
+                    .nutrition(2).saturationModifier(1.5f).build()))
+    );
+
     public static final Item PIZZA_PINEAPPLE = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "pizza_pineapple"),
+            new Item(new Item.Settings().food(new FoodComponent.Builder()
+                    .nutrition(10).saturationModifier(4f).build()))
+    );
+
+    public static final Item PIZZA_PINEAPPLE_SLICE = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "pizza_pineapple_slice"),
+            new Item(new Item.Settings().food(new FoodComponent.Builder()
+                    .nutrition(2).saturationModifier(1.5f).build()))
+    );
+
+    public static final Item PIZZA_MARGHERITA_RAW = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "pizza_margherita_raw"),
+            new Item(new Item.Settings().food(new FoodComponent.Builder()
+                    .nutrition(2).saturationModifier(1.5f).build()))
+    );
+
+    public static final Item PIZZA_MARGHERITA = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "pizza_margherita"),
+            new Item(new Item.Settings().food(new FoodComponent.Builder()
+                    .nutrition(10).saturationModifier(4f).build()))
+    );
+
+    public static final Item PIZZA_MARGHERITA_SLICE = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "pizza_margherita_slice"),
             new Item(new Item.Settings().food(new FoodComponent.Builder()
                     .nutrition(2).saturationModifier(1.5f).build()))
     );

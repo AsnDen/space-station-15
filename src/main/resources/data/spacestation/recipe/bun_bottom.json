@@ -6,7 +6,7 @@
   ],
   "key": {
     "B": { "item": "spacestation:bun" },
-    "K": { "item": "spacestation:plastic_knife" }
+    "K": { "tag": "spacestation:knives" }
   },
   "result": {
     "id": "spacestation:bun_bottom",
