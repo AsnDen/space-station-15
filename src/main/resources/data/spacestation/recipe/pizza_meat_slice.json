@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     { "item": "spacestation:pizza_meat" },
-    { "item": "spacestation:plastic_knife" }
+    { "tag": "spacestation:knives" }
   ],
   "result": {
     "id": "spacestation:pizza_meat_slice",
