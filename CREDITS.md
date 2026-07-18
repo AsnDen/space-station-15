@@ -19,10 +19,12 @@ Vielen Dank an alle, die zu diesem Projekt beigetragen haben ❤️
 
 - @Dead-Wasp
 - @Swino4ka
+- @PenChiK227
 ## Textures
 
 - @Dead-Wasp
 - @Swino4ka
+- @PenChiK227
 ## Sound & Music
 
 - @Swino4ka
