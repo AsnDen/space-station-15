@@ -137,6 +137,13 @@ public final class PlantItems {
             new AliasedBlockItem(PlantBlocks.LAUGHIN_PEA_CROP, new Item.Settings())
     );
 
+    public static final Item MEATWHEAT        = register("meatwheat");
+
+    public static final Item MEATWHEAT_SEEDS = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "meatwheat_seeds"),
+            new AliasedBlockItem(PlantBlocks.MEATWHEAT_CROP, new Item.Settings())
+    );
+
     public static final Item TOMATO = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "tomato"),
             new Item(new Item.Settings().food(new FoodComponent.Builder()
