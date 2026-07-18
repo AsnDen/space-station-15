@@ -86,6 +86,8 @@ public final class ModItemGroups {
                         entries.add(PlantItems.GARLIC_SEEDS);
                         entries.add(PlantItems.KOIBEAN);
                         entries.add(PlantItems.KOIBEAN_SEEDS);
+                        entries.add(PlantItems.LAUGHIN_PEA);
+                        entries.add(PlantItems.LAUGHIN_PEA_SEEDS);
                         entries.add(PlantItems.PINEAPPLE);
                         entries.add(PlantItems.TOMATO);
                         entries.add(PlantItems.TOMATO_SEEDS);

@@ -164,6 +164,15 @@ public class PlantBlocks {
             )
     );
 
+    public static final Block LAUGHIN_PEA_CROP = Registry.register(
+            Registries.BLOCK,
+            Identifier.of(SpaceStation.MOD_ID, "laughin_pea_crop"),
+            new SimpleCropBlock(
+                    AbstractBlock.Settings.copy(Blocks.WHEAT).nonOpaque().ticksRandomly(),
+                    () -> PlantItems.LAUGHIN_PEA_SEEDS
+            )
+    );
+
     public static final Block TOMATO_CROP = Registry.register(
             Registries.BLOCK,
             Identifier.of(SpaceStation.MOD_ID, "tomato_crop"),

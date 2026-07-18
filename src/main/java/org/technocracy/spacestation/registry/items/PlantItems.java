@@ -130,6 +130,13 @@ public final class PlantItems {
             new AliasedBlockItem(PlantBlocks.KOIBEAN_CROP, new Item.Settings())
     );
 
+    public static final Item LAUGHIN_PEA        = register("laughin_pea");
+
+    public static final Item LAUGHIN_PEA_SEEDS = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "laughin_pea_seeds"),
+            new AliasedBlockItem(PlantBlocks.LAUGHIN_PEA_CROP, new Item.Settings())
+    );
+
     public static final Item TOMATO = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "tomato"),
             new Item(new Item.Settings().food(new FoodComponent.Builder()
