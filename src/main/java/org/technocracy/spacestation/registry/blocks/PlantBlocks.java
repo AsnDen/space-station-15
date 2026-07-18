@@ -146,6 +146,15 @@ public class PlantBlocks {
             )
     );
 
+    public static final Block GARLIC_CROP = Registry.register(
+            Registries.BLOCK,
+            Identifier.of(SpaceStation.MOD_ID, "garlic_crop"),
+            new SimpleCropBlock(
+                    AbstractBlock.Settings.copy(Blocks.WHEAT).nonOpaque().ticksRandomly(),
+                    () -> PlantItems.GARLIC_SEEDS
+            )
+    );
+
     public static final Block TOMATO_CROP = Registry.register(
             Registries.BLOCK,
             Identifier.of(SpaceStation.MOD_ID, "tomato_crop"),
