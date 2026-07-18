@@ -111,6 +111,11 @@ public final class PlantItems {
             new AliasedBlockItem(PlantBlocks.EGGPLANT_CROP, new Item.Settings())
     );
 
+    public static final Item EGGY_SEEDS = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "eggy_seeds"),
+            new AliasedBlockItem(PlantBlocks.EGGY_CROP, new Item.Settings())
+    );
+
     public static final Item TOMATO = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "tomato"),
             new Item(new Item.Settings().food(new FoodComponent.Builder()
