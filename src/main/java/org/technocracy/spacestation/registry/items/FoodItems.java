@@ -83,6 +83,12 @@ public final class FoodItems {
                     .nutrition(6).saturationModifier(1.3f).build()))
     );
 
+    public static final Item SAUSAGE_BREAD_RAW = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "sausage_bread_raw"),
+            new Item(new Item.Settings().food(new FoodComponent.Builder()
+                    .nutrition(6).saturationModifier(1.3f).build()))
+    );
+
     public static final Item SAUSAGE_BREAD_SLICE = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "sausage_bread_slice"),
             new Item(new Item.Settings().food(new FoodComponent.Builder()
