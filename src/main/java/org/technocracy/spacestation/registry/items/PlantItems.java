@@ -115,11 +115,19 @@ public final class PlantItems {
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "eggy_seeds"),
             new AliasedBlockItem(PlantBlocks.EGGY_CROP, new Item.Settings())
     );
+
     public static final Item GARLIC        = register("garlic");
 
     public static final Item GARLIC_SEEDS = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "garlic_seeds"),
             new AliasedBlockItem(PlantBlocks.GARLIC_CROP, new Item.Settings())
+    );
+
+    public static final Item KOIBEAN        = register("koibean");
+
+    public static final Item KOIBEAN_SEEDS = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "koibean_seeds"),
+            new AliasedBlockItem(PlantBlocks.KOIBEAN_CROP, new Item.Settings())
     );
 
     public static final Item TOMATO = Registry.register(
