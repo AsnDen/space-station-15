@@ -90,6 +90,8 @@ public final class ModItemGroups {
                         entries.add(PlantItems.LAUGHIN_PEA_SEEDS);
                         entries.add(PlantItems.MEATWHEAT);
                         entries.add(PlantItems.MEATWHEAT_SEEDS);
+                        entries.add(PlantItems.NETTLE);
+                        entries.add(PlantItems.NETTLE_SEEDS);
                         entries.add(PlantItems.PINEAPPLE);
                         entries.add(PlantItems.TOMATO);
                         entries.add(PlantItems.TOMATO_SEEDS);
