@@ -151,6 +151,13 @@ public final class PlantItems {
             new AliasedBlockItem(PlantBlocks.NETTLE_CROP, new Item.Settings())
     );
 
+    public static final Item OAT        = register("oat");
+
+    public static final Item OAT_SEEDS = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "oat_seeds"),
+            new AliasedBlockItem(PlantBlocks.OAT_CROP, new Item.Settings())
+    );
+
     public static final Item TOMATO = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "tomato"),
             new Item(new Item.Settings().food(new FoodComponent.Builder()
