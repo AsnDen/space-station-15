@@ -54,6 +54,7 @@ public final class DrinkItems {
             return result;
         }
     }
+    // ТУТ СТАРТУЮТ НАПИТКИ (эмодзи стрелочка вниз ⬇️⬇️⬇️)
 
     public static final Item ENZYME = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "enzyme"),

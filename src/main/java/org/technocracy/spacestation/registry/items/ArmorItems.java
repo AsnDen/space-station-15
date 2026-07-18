@@ -33,7 +33,5 @@ public class ArmorItems {
     }
 
     public static void register() {
-        // вызови ArmorItems.register() из твоего главного инициализатора модов,
-        // как ты делаешь с FoodItems.register() и т.п.
     }
 }
