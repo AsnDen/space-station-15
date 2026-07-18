@@ -128,6 +128,15 @@ public class PlantBlocks {
             )
     );
 
+    public static final Block EGGPLANT_CROP = Registry.register(
+            Registries.BLOCK,
+            Identifier.of(SpaceStation.MOD_ID, "eggplant_crop"),
+            new SimpleCropBlock(
+                    AbstractBlock.Settings.copy(Blocks.WHEAT).nonOpaque().ticksRandomly(),
+                    () -> PlantItems.EGGPLANT_SEEDS
+            )
+    );
+
     public static final Block TOMATO_CROP = Registry.register(
             Registries.BLOCK,
             Identifier.of(SpaceStation.MOD_ID, "tomato_crop"),
