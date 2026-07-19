@@ -20,11 +20,13 @@ Vielen Dank an alle, die zu diesem Projekt beigetragen haben ❤️
 - @Dead-Wasp
 - @Swino4ka
 - @PenChiK227
+- @didenkoaroslav515-cpu
 ## Textures
 
 - @Dead-Wasp
 - @Swino4ka
 - @PenChiK227
+- @didenkoaroslav515-cpu
 ## Sound & Music
 
 - @Swino4ka
