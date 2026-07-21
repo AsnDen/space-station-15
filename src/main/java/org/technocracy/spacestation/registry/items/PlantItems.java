@@ -190,6 +190,13 @@ public final class PlantItems {
             new AliasedBlockItem(PlantBlocks.PINEAPPLE_CROP, new Item.Settings())
     );
 
+    public static final Item PIROTTON        = register("pirotton");
+
+    public static final Item PIROTTON_SEEDS = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "pirotton_seeds"),
+            new AliasedBlockItem(PlantBlocks.PIROTTON_CROP, new Item.Settings())
+    );
+
     public static final Item TOMATO = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "tomato"),
             new Item(new Item.Settings().food(new FoodComponent.Builder()
