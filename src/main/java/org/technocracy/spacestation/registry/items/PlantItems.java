@@ -172,6 +172,13 @@ public final class PlantItems {
             new AliasedBlockItem(PlantBlocks.ONION_RED_CROP, new Item.Settings())
     );
 
+    public static final Item PEA        = register("pea");
+
+    public static final Item PEA_SEEDS = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "pea_seeds"),
+            new AliasedBlockItem(PlantBlocks.PEA_CROP, new Item.Settings())
+    );
+
     public static final Item TOMATO = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "tomato"),
             new Item(new Item.Settings().food(new FoodComponent.Builder()
