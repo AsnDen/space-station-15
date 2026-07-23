@@ -76,13 +76,14 @@ public final class ModItemGroups {
                         entries.add(ToolItems.CROWBAR_BRASS);
                         entries.add(ToolItems.CROWBAR_RED);
                         entries.add(ToolItems.KNIFE_KITCHEN);
+                        entries.add(ToolItems.LIGHTER);
                         entries.add(ToolItems.OMNITOOL);
                         entries.add(ToolItems.PLASTIC_KNIFE);
                         entries.add(ToolItems.SCREWDRIVER);
                         entries.add(ToolItems.WELDER);
                         entries.add(ToolItems.WRENCH);
 
-                        // ========= PLANtS ===========
+                        // ========= PLANTS ===========
                         entries.add(PlantItems.COTTON);
                         entries.add(PlantItems.COTTON_RAW);
                         entries.add(PlantItems.COTTON_SEEDS);
