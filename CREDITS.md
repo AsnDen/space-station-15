@@ -15,6 +15,7 @@ Vielen Dank an alle, die zu diesem Projekt beigetragen haben ❤️
 - @Swino4ka
 - @AsnDen
 - @Sospurnak
+- @JrInventor05
 ## Artwork / Sprites
 
 - @Dead-Wasp
@@ -36,6 +37,7 @@ Vielen Dank an alle, die zu diesem Projekt beigetragen haben ❤️
 ## Translation
 
 - @Swino4ka
+- @JrInventor05
 ## Other
 - @Swino4ka
 - @AsnDen
