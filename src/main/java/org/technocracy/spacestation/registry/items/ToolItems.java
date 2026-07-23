@@ -52,6 +52,16 @@ public final class ToolItems {
                     .maxDamage(128))
     );
 
+    public static final Item LIGHTER = Registry.register(
+            Registries.ITEM,
+            Identifier.of(SpaceStation.MOD_ID, "lighter"),
+            new Item(new Item.Settings()
+                    .maxCount(1)
+                    .maxDamage(10)
+                    .fireproof()
+            )
+    );
+
     public static final Item PLASTIC_KNIFE = Registry.register(
             Registries.ITEM,
             Identifier.of(SpaceStation.MOD_ID, "plastic_knife"),
