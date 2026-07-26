@@ -37,7 +37,6 @@ public final class DrinkItems {
         @Override
         public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
             ItemStack result = super.finishUsing(stack, world, user);
-            // Креатив без депа бутылок
             if (user instanceof PlayerEntity player && player.getAbilities().creativeMode) {
                 return result;
             }

@@ -10,7 +10,6 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
-
 import java.util.List;
 import java.util.Map;
 
@@ -33,7 +32,7 @@ public class ChemContainer extends Item {
 
         if (world.isClient()) return TypedActionResult.success(stack);
 
-        // Пьём каждый химикат по 5 юнитов
+        // ============ ПИТЬЁ ============
         ChemData updated = data;
         for (Map.Entry<String, Double> entry : data.chemicals().entrySet()) {
             String chem = entry.getKey();
@@ -46,7 +45,6 @@ public class ChemContainer extends Item {
         }
 
         if (updated == data) {
-            // Ни один химикат не был выпит (всех меньше 5 юнитов)
             return TypedActionResult.fail(stack);
         }
 
@@ -56,7 +54,7 @@ public class ChemContainer extends Item {
         return TypedActionResult.success(stack);
     }
 
-    // Эффекты от химикатов
+    // ============ ЭФФЕКТЫ ============
     private void applyChemEffect(PlayerEntity player, String chem, double amount) {
         switch (chem) {
             case "carbon" -> {} // ничего
@@ -84,7 +82,7 @@ public class ChemContainer extends Item {
         }
     }
 
-    // Тултип с содержимым
+    // ============ ТУЛТИП В ИНВЕНТАРЕ ПРИ НАВЕДЕНИИ ============
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context,
                               List<Text> tooltip, TooltipType type) {
