@@ -8,7 +8,6 @@ import net.fabricmc.fabric.api.resource.SimpleSynchronousResourceReloadListener;
 import net.minecraft.resource.ResourceManager;
 import net.minecraft.resource.ResourceType;
 import net.minecraft.util.Identifier;
-
 import java.io.InputStreamReader;
 import java.util.*;
 
@@ -16,7 +15,7 @@ public class ChemRegistry {
 
     private static final Gson GSON = new Gson();
 
-    // Рецепт дробления: айтем -> результаты
+    // Рецепт дробления
     public record GrindingRecipe(Identifier ingredient, Map<String, Double> results) {}
 
     // Рецепт реакции
@@ -65,12 +64,7 @@ public class ChemRegistry {
         ).forEach((id, resource) -> {
             try (InputStreamReader reader = new InputStreamReader(resource.getInputStream())) {
                 JsonObject json = GSON.fromJson(reader, JsonObject.class);
-                // Old format:
-                // {
-                //   "reagents": {...},
-                //   "results": {...},
-                //   "min_volume": 0.0
-                // }
+
                 if (json.has("reagents") && json.has("results")) {
                     Map<String, Double> reagents = parseDoubleMap(json.getAsJsonObject("reagents"));
                     Map<String, Double> results = parseDoubleMap(json.getAsJsonObject("results"));
@@ -79,12 +73,6 @@ public class ChemRegistry {
                     return;
                 }
 
-                // Bulk table format:
-                // {
-                //   "Алоксадон": { "Алое": 0.2, "Криоксадон": 0.4, ... },
-                //   "Амбузол":   { "Аммиак": 0.25, ... }
-                // }
-                // Each top-level key is produced reagent with output 1.0 by default.
                 for (Map.Entry<String, JsonElement> entry : json.entrySet()) {
                     if (!entry.getValue().isJsonObject()) continue;
 

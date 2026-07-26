@@ -24,7 +24,6 @@ import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
@@ -84,7 +83,6 @@ public class ChemMasterBlockEntity extends BlockEntity implements Inventory, Ext
 
         if (grindSlot.isOf(Items.POTION)) {
             // В 1.21.1 water bottle это тоже potion-item; для простоты считаем любой potion водой.
-            // При желании можно сузить до проверки компонента зелья.
             masterChemicals.merge("water", 0.5, (a, b) -> Math.round((a + b) * 100.0) / 100.0);
             masterChemicals.merge("hydrogen", 1.0, (a, b) -> Math.round((a + b) * 100.0) / 100.0);
             masterChemicals.merge("oxygen", 0.5, (a, b) -> Math.round((a + b) * 100.0) / 100.0);

@@ -124,17 +124,23 @@ public final class ModBlocks {
     private ModBlocks() {}
 
     public static void register() {
-        // Рецепты для крафта ингейм
-        // Без инструментов будет только сборка, без разбора
+
+        // ============ КАК ДОБАВЛЯТЬ КАСТОМНУЮ СБОРКУ/РАЗБОРКУ ============
+
+        // Несколько инструментов для разбора:
+        // AssemblyBlock.registerUpgrade(<НАЗВАНИЕ_БЛОКА_С_КОТОРЫМ_ВЗАИМОДЕЙСТВУЕМ>, ModItems.<НАЗВАНИЕ_ИНГРИДИЕНТА>, <НАЗВАНИЕ_БЛОКА_КОТОРЫЙ_ПОЛУЧИМ>, <ВРЕМЯ_РАЗБОРА>, ModItems.<ПЕРВЫЙ_ПРЕДМЕТ_ДЛЯ_РАЗБОРА>, ModItems.<ВТОРОЙ, ТРЕТИЙ, ..._ПРЕДМЕТ_ДЛЯ_РАЗБОРА>);
+
+        // Без разбора вообще:
+        // AssemblyBlock.registerUpgrade(НАЗВАНИЕ_БЛОКА_С_КОТОРЫМ_ВЗАИМОДЕЙСТВУЕМ, ModItems.<НАЗВАНИЕ_ИНГРИДИЕНТА>, <НАЗВАНИЕ_БЛОКА_КОТОРЫЙ_ПОЛУЧИМ>, <ВРЕМЯ_РАЗБОРА>);
+
+        // ============ КОНЕЦ ============
+
+        // ============ НИЖЕ РЕЦЕПТЫ ИНГЕЙМ КРАФТА ============
         AssemblyBlock.registerUpgrade(WALL_GIRDER, MiscItems.STEEL, STEEL_WALL, 2, 0.4f, 1.2f, ModItems.CROWBAR, ToolItems.OMNITOOL);
         AssemblyBlock.registerUpgrade(WALL_GIRDER_REINFORCED, MiscItems.PLASTEEL, STEEL_WALL_REINFORCED, 2, 0.4f, 1.2f, ModItems.CROWBAR, ToolItems.OMNITOOL);
         AssemblyBlock.registerUpgrade(WALL_GIRDER, MiscItems.ROD, WALL_GIRDER_REINFORCED, 4, 0.4f, 1.2f, ToolItems.SCREWDRIVER, ToolItems.OMNITOOL);
 
-        // Несколько инструментов для разбора:
-        // AssemblyBlock.registerUpgrade(WALL_GIRDER, ModItems.STEEL, STEEL_WALL, 2, ModItems.CROWBAR, ModItems.CROWBAR2);
 
-        // Без разбора вообще:
-        // AssemblyBlock.registerUpgrade(WALL_GIRDER, ModItems.TELECRYSTAL, TELECRYSTAL_BLOCK, 9);
 
         AssemblyBlock.registerUpgrade(WALL_GIRDER, MiscItems.TELECRYSTAL, TELECRYSTAL_BLOCK, 9,  0.4f, 1.2f);
         // Смотреть Комментарий в МодИтемс.жава
