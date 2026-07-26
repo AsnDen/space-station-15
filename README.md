@@ -1,56 +1,35 @@
-# SpaceStation 15 (EN-US)
+# SpaceStation 15
 
-## Overview
+SpaceStation 15 is a Fabric mod for Minecraft 1.21.1 inspired by space-station gameplay. It adds station-themed blocks, materials, tools, food, crops, plushies, ore generation, assembly/disassembly interactions, and an early chemistry system with a Chem Master machine.
 
-SpaceStation is a Fabric mod for Minecraft 1.21.1 that adds sci-fi inspired materials, machines, and mechanics based on a space station setting. The mod focuses on custom ores, advanced resources, and futuristic progression systems.
+## Documentation
 
-## Features
-
-* New ores and materials (e.g. uranium, steel, bananium)
-* Custom blocks for industrial and space-station style builds
-* World generation with custom ores
-* Loot system integration for custom resources
-* Progression-based crafting materials
+- [English Documentation](docs/en/index.md)
+- [Русская документация](docs/ru/index.md)
 
 ## Requirements
 
-* Minecraft 1.21.1
-* Fabric Loader
-* Fabric API
+- Java 21
+- Minecraft 1.21.1
+- Fabric Loader 0.18.6 or newer
+- Fabric API
 
-## Installation
+## Development
 
-1. Install Fabric Loader for Minecraft 1.21.1
-2. Install Fabric API
-3. Place the mod `.jar` file into your `mods` folder
-4. Launch the game
+Use the Gradle wrapper:
 
----
+```bash
+./gradlew build
+./gradlew runClient
+```
 
-# SpaceStation 15 (RU-RU)
+On Windows PowerShell:
 
-## Обзор
+```powershell
+.\gradlew.bat build
+.\gradlew.bat runClient
+```
 
-SpaceStation это Fabric мод для Minecraft 1.21.1, добавляющий sci-fi контент, вдохновлённый космической станцией. Мод включает новые руды, материалы и механики прогрессии.
+## License
 
-## Возможности
-
-* Новые руды и материалы (например уран, сталь, бананиум)
-* Кастомные блоки для индустриального и sci-fi строительства
-* Генерация руд в мире
-* Система лута для ресурсов
-
-## Требования
-
-* Minecraft 1.21.1
-* Fabric Loader
-* Fabric API
-
-## Установка
-
-1. Установи Fabric Loader для 1.21.1
-2. Установи Fabric API
-3. Перемести `.jar` мод в папку `mods`
-4. Запусти игру
-
----
+The project is licensed under CC BY-NC-SA 4.0. See [LICENSE](LICENSE).
