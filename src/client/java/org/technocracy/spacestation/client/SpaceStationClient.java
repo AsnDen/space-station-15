@@ -31,6 +31,7 @@ public class SpaceStationClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(PlantBlocks.TOWERCAP_CROP, RenderLayer.getCutout());
         TimerHud.register();
         registerToggleableItem(ToolItems.WELDER);
+        registerToggleableItem(ToolItems.LIGHTER);
     }
 
     public static void registerToggleableItem(Item item) {
