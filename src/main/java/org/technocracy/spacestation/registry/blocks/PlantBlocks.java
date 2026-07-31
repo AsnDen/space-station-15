@@ -236,12 +236,12 @@ public class PlantBlocks {
             )
     );
 
-    public static final Block PIROTTON_CROP = Registry.register(
+    public static final Block PYROTTON_CROP = Registry.register(
             Registries.BLOCK,
-            Identifier.of(SpaceStation.MOD_ID, "pirotton_crop"),
+            Identifier.of(SpaceStation.MOD_ID, "pyrotton_crop"),
             new SimpleCropBlock(
                     AbstractBlock.Settings.copy(Blocks.WHEAT).nonOpaque().ticksRandomly(),
-                    () -> PlantItems.PIROTTON_SEEDS
+                    () -> PlantItems.PYROTTON_SEEDS
             )
     );
 

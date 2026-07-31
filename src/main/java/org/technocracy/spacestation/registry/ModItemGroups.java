@@ -135,8 +135,8 @@ public final class ModItemGroups {
                         entries.add(PlantItems.PEA_SEEDS);
                         entries.add(PlantItems.PINEAPPLE);
                         entries.add(PlantItems.PINEAPPLE_SEEDS);
-                        entries.add(PlantItems.PIROTTON);
-                        entries.add(PlantItems.PIROTTON_SEEDS);
+                        entries.add(PlantItems.PYROTTON);
+                        entries.add(PlantItems.PYROTTON_SEEDS);
                         entries.add(PlantItems.RICE);
                         entries.add(PlantItems.RICE_SEEDS);
                         entries.add(PlantItems.SOYBEANS);

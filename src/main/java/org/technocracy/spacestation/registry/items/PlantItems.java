@@ -198,11 +198,11 @@ public final class PlantItems {
             new AliasedBlockItem(PlantBlocks.PINEAPPLE_CROP, new Item.Settings())
     );
 
-    public static final Item PIROTTON        = register("pirotton");
+    public static final Item PYROTTON        = register("pyrotton");
 
-    public static final Item PIROTTON_SEEDS = Registry.register(
-            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "pirotton_seeds"),
-            new AliasedBlockItem(PlantBlocks.PIROTTON_CROP, new Item.Settings())
+    public static final Item PYROTTON_SEEDS = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "pyrotton_seeds"),
+            new AliasedBlockItem(PlantBlocks.PYROTTON_CROP, new Item.Settings())
     );
 
     public static final Item RICE        = register("rice");
