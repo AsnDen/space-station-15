@@ -245,13 +245,21 @@ public class PlantBlocks {
             )
     );
 
-
     public static final Block RICE_CROP = Registry.register(
             Registries.BLOCK,
             Identifier.of(SpaceStation.MOD_ID, "rice_crop"),
             new SimpleCropBlock(
                     AbstractBlock.Settings.copy(Blocks.WHEAT).nonOpaque().ticksRandomly(),
                     () -> PlantItems.RICE_SEEDS
+            )
+    );
+
+    public static final Block SOYBEANS_CROP = Registry.register(
+            Registries.BLOCK,
+            Identifier.of(SpaceStation.MOD_ID, "soybeans_crop"),
+            new SimpleCropBlock(
+                    AbstractBlock.Settings.copy(Blocks.WHEAT).nonOpaque().ticksRandomly(),
+                    () -> PlantItems.SOYBEANS_SEEDS
             )
     );
 

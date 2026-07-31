@@ -106,6 +106,8 @@ public final class ModItemGroups {
                         entries.add(PlantItems.PIROTTON_SEEDS);
                         entries.add(PlantItems.RICE);
                         entries.add(PlantItems.RICE_SEEDS);
+                        entries.add(PlantItems.SOYBEANS);
+                        entries.add(PlantItems.SOYBEANS_SEEDS);
                         entries.add(PlantItems.TOMATO);
                         entries.add(PlantItems.TOMATO_SEEDS);
                         // entries.add(ModCrops.TOWERCAP_SEEDS); // (asnden): not implemented yet
