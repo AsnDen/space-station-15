@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class ChemReactor {
 
-    private static final int MAX_CHAIN_DEPTH = 20; // защита от бесконечных цепочек
+    private static final int MAX_CHAIN_DEPTH = 20;
 
     public static ChemData react(ChemData data) {
         if (data.chemicals().isEmpty()) return data;
@@ -15,7 +15,7 @@ public class ChemReactor {
 
         while (depth < MAX_CHAIN_DEPTH) {
             ChemData next = tryReact(current);
-            if (next == current) break; // реакций больше нет
+            if (next == current) break;
             current = next;
             depth++;
         }
@@ -61,7 +61,7 @@ public class ChemReactor {
             return new ChemData(updated, data.capacity());
         }
 
-        return data; // ни одна реакция не сработала
+        return data;
     }
 
     // Считаем сколько раз можно провести реакцию исходя из доступных реагентов
@@ -71,9 +71,9 @@ public class ChemReactor {
         for (Map.Entry<String, Double> reagent : recipe.reagents().entrySet()) {
             double available = data.chemicals().getOrDefault(reagent.getKey(), 0.0);
             double needed = reagent.getValue();
-            if (needed <= 0.0) continue; // катализатор/метка: не ограничивает количество реакций
+            if (needed <= 0.0) continue; 
 
-            if (available < 0.01) return 0.0; // реагента нет совсем
+            if (available < 0.01) return 0.0;
 
             double possible = available / needed;
             minTimes = Math.min(minTimes, possible);

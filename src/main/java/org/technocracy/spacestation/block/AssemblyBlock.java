@@ -53,7 +53,6 @@ public class AssemblyBlock extends Block {
                                              BlockHitResult hit) {
         Item heldItem = stack.getItem();
 
-        // Проверяем есть ли вообще что делать с этим предметом
         Map<Item, Upgrade> upgrades = ASSEMBLY_REGISTRY.get(this);
         boolean canAssemble = upgrades != null && upgrades.containsKey(heldItem);
 

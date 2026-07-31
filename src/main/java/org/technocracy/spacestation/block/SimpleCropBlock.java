@@ -2,7 +2,6 @@ package org.technocracy.spacestation.block;
 
 import net.minecraft.block.CropBlock;
 import net.minecraft.item.ItemConvertible;
-import org.technocracy.spacestation.registry.items.PlantItems;
 
 import java.util.function.Supplier;
 

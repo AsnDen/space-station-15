@@ -37,7 +37,6 @@ public final class DrinkItems {
         @Override
         public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
             ItemStack result = super.finishUsing(stack, world, user);
-            // Креатив без депа бутылок
             if (user instanceof PlayerEntity player && player.getAbilities().creativeMode) {
                 return result;
             }
@@ -54,6 +53,7 @@ public final class DrinkItems {
             return result;
         }
     }
+    // ТУТ СТАРТУЮТ НАПИТКИ (эмодзи стрелочка вниз ⬇️⬇️⬇️)
 
     public static final Item ENZYME = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "enzyme"),

@@ -20,6 +20,6 @@ public class ModScreenHandlers {
             );
 
     public static void register() {
-        // Пусто. Нужно только чтобы класс загрузился.
+
     }
 }

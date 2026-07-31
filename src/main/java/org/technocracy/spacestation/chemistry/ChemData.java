@@ -5,7 +5,6 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.network.RegistryByteBuf;
 import net.minecraft.network.codec.PacketCodec;
 import net.minecraft.network.codec.PacketCodecs;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -34,17 +33,15 @@ public record ChemData(Map<String, Double> chemicals, double capacity) {
                     ChemData::new
             );
 
-    // Сколько всего химикатов в хранилище
     public double totalVolume() {
         return chemicals.values().stream().mapToDouble(Double::doubleValue).sum();
     }
 
-    // Сколько свободного места
     public double freeSpace() {
         return Math.max(0, capacity - totalVolume());
     }
 
-    // Добавить химикат, возвращает сколько реально добавилось
+    // ============ ДОБАВЛЕНИЕ ХИМИКАТОВ ============
     public ChemData add(String chem, double amount) {
         double canAdd = Math.min(amount, freeSpace());
         if (canAdd <= 0.01) return this;
@@ -58,7 +55,7 @@ public record ChemData(Map<String, Double> chemicals, double capacity) {
         return ChemReactor.react(result); // реакция сразу при добавлении
     }
 
-    // Убрать химикат
+    // ============ УДАЛЕНИЕ ХИМИКАТОВ ============
     public ChemData remove(String chem, double amount) {
         if (!chemicals.containsKey(chem)) return this;
 
@@ -74,7 +71,7 @@ public record ChemData(Map<String, Double> chemicals, double capacity) {
         return new ChemData(updated, capacity);
     }
 
-    // Есть ли химикат в нужном количестве
+    // ============ ПРОВЕРКА ============
     public boolean has(String chem, double amount) {
         return chemicals.getOrDefault(chem, 0.0) >= amount - 0.001;
     }

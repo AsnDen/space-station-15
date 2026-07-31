@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  S",
+    " S ",
+    "P  "
+  ],
+  "key": {
+    "S": { "item": "spacestation:steel" },
+    "P": { "item": "spacestation:plastic"}
+  },
+  "result": {
+    "id": "spacestation:knife_kitchen",
+    "count": 1
+  }
+}

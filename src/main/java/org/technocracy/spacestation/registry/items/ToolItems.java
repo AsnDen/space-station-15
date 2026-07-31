@@ -5,6 +5,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import org.technocracy.spacestation.SpaceStation;
+import org.technocracy.spacestation.item.KnifeItem;
 
 public final class ToolItems {
 
@@ -38,11 +39,34 @@ public final class ToolItems {
             new Item(new Item.Settings().maxCount(1).maxDamage(100))
     );
 
-    public static final Item PLASTIC_KNIFE = Registry.register(
-            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "plastic_knife"),
+    public static final Item OMNITOOL = Registry.register(
+            Registries.ITEM,
+            Identifier.of(SpaceStation.MOD_ID, "omnitool"),
+            new Item(new Item.Settings().maxCount(1))
+    );
+
+    public static final Item KNIFE_KITCHEN = Registry.register(
+            Registries.ITEM,
+            Identifier.of(SpaceStation.MOD_ID, "knife_kitchen"),
+            new KnifeItem(new Item.Settings()
+                    .maxDamage(128))
+    );
+
+    public static final Item LIGHTER = Registry.register(
+            Registries.ITEM,
+            Identifier.of(SpaceStation.MOD_ID, "lighter"),
             new Item(new Item.Settings()
-                    .recipeRemainder(MiscItems.PLASTIC)
-                    .maxCount(16))
+                    .maxCount(1)
+                    .maxDamage(10)
+                    .fireproof()
+            )
+    );
+
+    public static final Item PLASTIC_KNIFE = Registry.register(
+            Registries.ITEM,
+            Identifier.of(SpaceStation.MOD_ID, "plastic_knife"),
+            new KnifeItem(new Item.Settings()
+                    .maxDamage(8))
     );
 
     private ToolItems() {}

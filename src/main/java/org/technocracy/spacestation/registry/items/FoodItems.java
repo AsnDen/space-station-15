@@ -3,13 +3,11 @@ package org.technocracy.spacestation.registry.items;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.component.type.FoodComponent;
-import net.minecraft.item.AliasedBlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import org.technocracy.spacestation.SpaceStation;
-import org.technocracy.spacestation.registry.ModBlocks;
 
 public final class FoodItems {
 
@@ -83,6 +81,12 @@ public final class FoodItems {
                     .nutrition(6).saturationModifier(1.3f).build()))
     );
 
+    public static final Item SAUSAGE_BREAD_RAW = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "sausage_bread_raw"),
+            new Item(new Item.Settings().food(new FoodComponent.Builder()
+                    .nutrition(6).saturationModifier(1.3f).build()))
+    );
+
     public static final Item SAUSAGE_BREAD_SLICE = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "sausage_bread_slice"),
             new Item(new Item.Settings().food(new FoodComponent.Builder()
@@ -138,8 +142,38 @@ public final class FoodItems {
                     .nutrition(2).saturationModifier(1.5f).build()))
     );
 
+    public static final Item PIZZA_PINEAPPLE_RAW = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "pizza_pineapple_raw"),
+            new Item(new Item.Settings().food(new FoodComponent.Builder()
+                    .nutrition(2).saturationModifier(1.5f).build()))
+    );
+
     public static final Item PIZZA_PINEAPPLE = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "pizza_pineapple"),
+            new Item(new Item.Settings().food(new FoodComponent.Builder()
+                    .nutrition(10).saturationModifier(4f).build()))
+    );
+
+    public static final Item PIZZA_PINEAPPLE_SLICE = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "pizza_pineapple_slice"),
+            new Item(new Item.Settings().food(new FoodComponent.Builder()
+                    .nutrition(2).saturationModifier(1.5f).build()))
+    );
+
+    public static final Item PIZZA_MARGHERITA_RAW = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "pizza_margherita_raw"),
+            new Item(new Item.Settings().food(new FoodComponent.Builder()
+                    .nutrition(2).saturationModifier(1.5f).build()))
+    );
+
+    public static final Item PIZZA_MARGHERITA = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "pizza_margherita"),
+            new Item(new Item.Settings().food(new FoodComponent.Builder()
+                    .nutrition(10).saturationModifier(4f).build()))
+    );
+
+    public static final Item PIZZA_MARGHERITA_SLICE = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "pizza_margherita_slice"),
             new Item(new Item.Settings().food(new FoodComponent.Builder()
                     .nutrition(2).saturationModifier(1.5f).build()))
     );

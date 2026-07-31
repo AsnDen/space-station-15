@@ -22,7 +22,6 @@ public class ChemMasterScreenHandler extends ScreenHandler {
         this.entity = be instanceof ChemMasterBlockEntity cm ? cm : null;
 
         if (this.entity != null) {
-            // Grinding input (left) and flask/canister (right), side by side
             this.addSlot(new Slot(this.entity, 0, 24, 39));
 
             this.addSlot(new Slot(this.entity, 1, 64, 39) {

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    { "item": "spacestation:pizza_margherita" },
+    { "tag": "spacestation:knives" }
+  ],
+  "result": {
+    "id": "spacestation:pizza_margherita_slice",
+    "count": 8
+  }
+}

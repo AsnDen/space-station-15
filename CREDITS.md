@@ -15,12 +15,19 @@ Vielen Dank an alle, die zu diesem Projekt beigetragen haben ❤️
 - @Swino4ka
 - @AsnDen
 - @Sospurnak
+- @JrInventor05
 ## Artwork / Sprites
 
 - @Dead-Wasp
+- @Swino4ka
+- @PenChiK227
+- @didenkoaroslav515-cpu
 ## Textures
 
 - @Dead-Wasp
+- @Swino4ka
+- @PenChiK227
+- @didenkoaroslav515-cpu
 ## Sound & Music
 
 - @Swino4ka
@@ -30,6 +37,7 @@ Vielen Dank an alle, die zu diesem Projekt beigetragen haben ❤️
 ## Translation
 
 - @Swino4ka
+- @JrInventor05
 ## Other
 - @Swino4ka
 - @AsnDen
