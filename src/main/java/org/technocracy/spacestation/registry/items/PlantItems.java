@@ -155,7 +155,7 @@ public final class PlantItems {
             new AliasedBlockItem(PlantBlocks.GARLIC_CROP, new Item.Settings())
     );
 
-    public static final Item KOIBEA = Registry.register(
+    public static final Item KOIBEAN = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "koibean"),
             new Item(new Item.Settings().food(new FoodComponent.Builder()
                     .nutrition(2).saturationModifier(1.8f).build()))
