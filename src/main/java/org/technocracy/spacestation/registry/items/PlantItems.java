@@ -33,7 +33,11 @@ public final class PlantItems {
             new AliasedBlockItem(PlantBlocks.AMBROSIA_VULGARIS_CROP, new Item.Settings())
     );
 
-    public static final Item BLOOD_TOMATO        = register("blood_tomato");
+    public static final Item BLOOD_TOMATO = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "blood_tomato"),
+            new Item(new Item.Settings().food(new FoodComponent.Builder()
+                    .nutrition(6).saturationModifier(9.6f).build()))
+    );
 
     public static final Item BLOOD_TOMATO_SEEDS = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "blood_tomato_seeds"),
@@ -47,7 +51,11 @@ public final class PlantItems {
             new AliasedBlockItem(PlantBlocks.BLOONION_CROP, new Item.Settings())
     );
 
-    public static final Item BLUE_TOMATO        = register("blue_tomato");
+    public static final Item BLUE_TOMATO = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "blue_tomato"),
+            new Item(new Item.Settings().food(new FoodComponent.Builder()
+                    .nutrition(4).saturationModifier(0.6f).build()))
+    );
 
     public static final Item BLUE_TOMATO_SEEDS = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "blue_tomato_seeds"),
