@@ -69,7 +69,6 @@ public final class ModItemGroups {
                         entries.add(FoodItems.SAUSAGE_BREAD);
                         entries.add(FoodItems.SAUSAGE_BREAD_RAW);
                         entries.add(FoodItems.SAUSAGE_BREAD_SLICE);
-                        entries.add(MiscItems.FLOUR);
                         entries.add(FoodItems.SPAGHETTI);
 
                         // ======== TOOLS ========
