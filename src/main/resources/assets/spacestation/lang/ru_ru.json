@@ -1,4 +1,7 @@
 {
+  "itemGroup.spacestation.content": "Космическая Станция 15",
+  "tag.item.spacestation.knives": "Ножи",
+  "tag.item.spacestation.nukeops_repair": "Починка Брони Нюкеров",
   "block.spacestation.bananium_ore_block": "Блок Бананиумой Руды",
   "block.spacestation.plasma_ore_block": "Блок Плазменной Руды",
   "block.spacestation.steel_tile": "Стальная Плитка",
@@ -147,8 +150,5 @@
   "item.spacestation.uranium_ore": "Урановая Руда",
   "item.spacestation.welder": "Сварка",
   "item.spacestation.wrench": "Гаечный Ключ",
-  "itemGroup.spacestation.content": "Космическая Станция 15",
-  "subtitles.spacestation.plushie.squeak": "Плюшка Пищит",
-  "tag.item.spacestation.knives": "Ножи",
-  "tag.item.spacestation.nukeops_repair": "Починка Брони Нюкеров"
+  "subtitles.spacestation.plushie.squeak": "Плюшка Пищит"
 }

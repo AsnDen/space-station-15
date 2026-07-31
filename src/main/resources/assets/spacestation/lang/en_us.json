@@ -1,4 +1,7 @@
 {
+  "itemGroup.spacestation.content": "Space Station 15",
+  "tag.item.spacestation.knives": "Knives",
+  "tag.item.spacestation.nukeops_repair": "Nukeops Repair",
   "block.spacestation.bananium_ore_block": "Bananium Ore Block",
   "block.spacestation.plasma_ore_block": "Plasma Ore Block",
   "block.spacestation.steel_tile": "Steel Tile",
@@ -122,9 +125,9 @@
   "item.spacestation.plastic": "Plastic",
   "item.spacestation.plastic_knife": "Plastic Knife",
   "item.spacestation.plushie_bee": "Bee Plushie",
-  "item.spacestation.plushie_ian": "Ian Plushie",
+  "item.spacestation.plushie_ian": "Dog Plushie",
   "item.spacestation.plushie_lizard": "Lizard Plushie",
-  "item.spacestation.plushie_xeno": "Xenomorph Plushie",
+  "item.spacestation.plushie_xeno": "Xeno Plushie",
   "item.spacestation.pyrotton": "Pyrotton",
   "item.spacestation.pyrotton_seeds": "Pyrotton Seeds",
   "item.spacestation.rice": "Rice",
@@ -147,8 +150,5 @@
   "item.spacestation.uranium_ore": "Uranium Ore",
   "item.spacestation.welder": "Welder",
   "item.spacestation.wrench": "Wrench",
-  "itemGroup.spacestation.content": "Space Station 15",
-  "subtitles.spacestation.plushie.squeak": "Plushie squeaks",
-  "tag.item.spacestation.knives": "Knives",
-  "tag.item.spacestation.nukeops_repair": "Nukeops Repair"
+  "subtitles.spacestation.plushie.squeak": "Plushie squeaks"
 }
