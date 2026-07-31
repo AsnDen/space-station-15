@@ -54,7 +54,7 @@ public final class PlantItems {
     public static final Item BLUE_TOMATO = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "blue_tomato"),
             new Item(new Item.Settings().food(new FoodComponent.Builder()
-                    .nutrition(4).saturationModifier(0.6f).build()))
+                    .nutrition(4).saturationModifier(3.6f).build()))
     );
 
     public static final Item BLUE_TOMATO_SEEDS = Registry.register(
@@ -62,7 +62,11 @@ public final class PlantItems {
             new AliasedBlockItem(PlantBlocks.BLUE_TOMATO_CROP, new Item.Settings())
     );
 
-    public static final Item BUNGO        = register("bungo");
+    public static final Item BUNGO = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "bungo"),
+            new Item(new Item.Settings().food(new FoodComponent.Builder()
+                    .nutrition(4).saturationModifier(3.6f).build()))
+    );
 
     public static final Item BUNGO_SEEDS = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "bungo_seeds"),
@@ -76,21 +80,33 @@ public final class PlantItems {
             new AliasedBlockItem(PlantBlocks.CABBAGE_CROP, new Item.Settings())
     );
 
-    public static final Item CHILI        = register("chili");
+    public static final Item CHILI = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "chili"),
+            new Item(new Item.Settings().food(new FoodComponent.Builder()
+                    .nutrition(2).saturationModifier(1.8f).build()))
+    );
 
     public static final Item CHILI_SEEDS = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "chili_seeds"),
             new AliasedBlockItem(PlantBlocks.CHILI_CROP, new Item.Settings())
     );
 
-    public static final Item CHILLI        = register("chilli");
+    public static final Item CHILLI = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "chilli"),
+            new Item(new Item.Settings().food(new FoodComponent.Builder()
+                    .nutrition(2).saturationModifier(1.8f).build()))
+    );
 
     public static final Item CHILLI_SEEDS = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "chilli_seeds"),
             new AliasedBlockItem(PlantBlocks.CHILLI_CROP, new Item.Settings())
     );
 
-    public static final Item CORN        = register("corn");
+    public static final Item CORN = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "corn"),
+            new Item(new Item.Settings().food(new FoodComponent.Builder()
+                    .nutrition(3).saturationModifier(3.6f).build()))
+    );
 
     public static final Item CORN_SEEDS = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "corn_seeds"),
@@ -112,7 +128,11 @@ public final class PlantItems {
             new AliasedBlockItem(PlantBlocks.DEATH_NETTLE_CROP, new Item.Settings())
     );
 
-    public static final Item EGGPLANT        = register("eggplant");
+    public static final Item EGGPLANT = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "eggplant"),
+            new Item(new Item.Settings().food(new FoodComponent.Builder()
+                    .nutrition(4).saturationModifier(3.6f).build()))
+    );
 
     public static final Item EGGPLANT_SEEDS = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "eggplant_seeds"),
@@ -124,28 +144,44 @@ public final class PlantItems {
             new AliasedBlockItem(PlantBlocks.EGGY_CROP, new Item.Settings())
     );
 
-    public static final Item GARLIC        = register("garlic");
+    public static final Item GARLIC = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "garlic"),
+            new Item(new Item.Settings().food(new FoodComponent.Builder()
+                    .nutrition(2).saturationModifier(1.8f).build()))
+    );
 
     public static final Item GARLIC_SEEDS = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "garlic_seeds"),
             new AliasedBlockItem(PlantBlocks.GARLIC_CROP, new Item.Settings())
     );
 
-    public static final Item KOIBEAN        = register("koibean");
+    public static final Item KOIBEA = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "koibean"),
+            new Item(new Item.Settings().food(new FoodComponent.Builder()
+                    .nutrition(2).saturationModifier(1.8f).build()))
+    );
 
     public static final Item KOIBEAN_SEEDS = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "koibean_seeds"),
             new AliasedBlockItem(PlantBlocks.KOIBEAN_CROP, new Item.Settings())
     );
 
-    public static final Item LAUGHIN_PEA        = register("laughin_pea");
+    public static final Item LAUGHIN_PEA = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "laughin_pea"),
+            new Item(new Item.Settings().food(new FoodComponent.Builder()
+                    .nutrition(2).saturationModifier(1.8f).build()))
+    );
 
     public static final Item LAUGHIN_PEA_SEEDS = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "laughin_pea_seeds"),
             new AliasedBlockItem(PlantBlocks.LAUGHIN_PEA_CROP, new Item.Settings())
     );
 
-    public static final Item MEATWHEAT        = register("meatwheat");
+    public static final Item MEATWHEAT = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "meatwheat"),
+            new Item(new Item.Settings().food(new FoodComponent.Builder()
+                    .nutrition(6).saturationModifier(9.6f).build()))
+    );
 
     public static final Item MEATWHEAT_SEEDS = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "meatwheat_seeds"),
@@ -166,21 +202,33 @@ public final class PlantItems {
             new AliasedBlockItem(PlantBlocks.OAT_CROP, new Item.Settings())
     );
 
-    public static final Item ONION        = register("onion");
+    public static final Item ONION = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "onion"),
+            new Item(new Item.Settings().food(new FoodComponent.Builder()
+                    .nutrition(2).saturationModifier(1.8f).build()))
+    );
 
     public static final Item ONION_SEEDS = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "onion_seeds"),
             new AliasedBlockItem(PlantBlocks.ONION_CROP, new Item.Settings())
     );
 
-    public static final Item ONION_RED        = register("onion_red");
+    public static final Item ONION_RED = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "onion_red"),
+            new Item(new Item.Settings().food(new FoodComponent.Builder()
+                    .nutrition(2).saturationModifier(1.8f).build()))
+    );
 
     public static final Item ONION_RED_SEEDS = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "onion_red_seeds"),
             new AliasedBlockItem(PlantBlocks.ONION_RED_CROP, new Item.Settings())
     );
 
-    public static final Item PEA        = register("pea");
+    public static final Item PEA = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "pea"),
+            new Item(new Item.Settings().food(new FoodComponent.Builder()
+                    .nutrition(2).saturationModifier(1.8f).build()))
+    );
 
     public static final Item PEA_SEEDS = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "pea_seeds"),
@@ -190,7 +238,7 @@ public final class PlantItems {
     public static final Item PINEAPPLE = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "pineapple"),
             new Item(new Item.Settings().food(new FoodComponent.Builder()
-                    .nutrition(2).saturationModifier(1.5f).build()))
+                    .nutrition(4).saturationModifier(3.6f).build()))
     );
 
     public static final Item PINEAPPLE_SEEDS = Registry.register(
@@ -205,14 +253,22 @@ public final class PlantItems {
             new AliasedBlockItem(PlantBlocks.PYROTTON_CROP, new Item.Settings())
     );
 
-    public static final Item RICE        = register("rice");
+    public static final Item RICE = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "rice"),
+            new Item(new Item.Settings().food(new FoodComponent.Builder()
+                    .nutrition(3).saturationModifier(3.6f).build()))
+    );
 
     public static final Item RICE_SEEDS = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "rice_seeds"),
             new AliasedBlockItem(PlantBlocks.RICE_CROP, new Item.Settings())
     );
 
-    public static final Item SOYBEANS        = register("soybeans");
+    public static final Item SOYBEANS = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "soybeans"),
+            new Item(new Item.Settings().food(new FoodComponent.Builder()
+                    .nutrition(1).saturationModifier(0.6f).build()))
+    );
 
     public static final Item SOYBEANS_SEEDS = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "soybeans_seeds"),
