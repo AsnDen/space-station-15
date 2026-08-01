@@ -22,6 +22,7 @@ public final class ModItemGroups {
                         // ======== BLOCKS ========
                         entries.add(ModBlocks.BANANIUM_ORE_BLOCK.asItem());
                         entries.add(ModBlocks.CHEM_MASTER_BLOCK.asItem());
+                        entries.add(ModBlocks.GRASS_SEEDS.asItem());
                         entries.add(ModBlocks.PLASMA_ORE_BLOCK.asItem());
                         entries.add(ModBlocks.STEEL_TILE.asItem());
                         entries.add(ModBlocks.STEEL_WALL.asItem());
@@ -172,6 +173,7 @@ public final class ModItemGroups {
                         entries.add(MiscItems.TRASH_PLASTIC);
                         entries.add(MiscItems.URANIUM);
                         entries.add(MiscItems.URANIUM_ORE);
+
                     })
                     .build()
     );

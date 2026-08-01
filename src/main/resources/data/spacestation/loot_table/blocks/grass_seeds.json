@@ -1,0 +1,209 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "spacestation:grass_seeds",
+          "conditions": [
+            {
+              "condition": "minecraft:match_tool",
+              "predicate": {
+                "predicates": {
+                  "minecraft:enchantments": [
+                    {
+                      "enchantment": "minecraft:silk_touch",
+                      "levels": { "min": 1 }
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "spacestation:aloe_seeds",
+          "conditions": [
+            {
+              "condition": "minecraft:random_chance",
+              "chance": 0.025
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "spacestation:ambrosia_seeds",
+          "conditions": [
+            {
+              "condition": "minecraft:random_chance",
+              "chance": 0.025
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "spacestation:bungo_seeds",
+          "conditions": [
+            {
+              "condition": "minecraft:random_chance",
+              "chance": 0.025
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "spacestation:cabbage_seeds",
+          "conditions": [
+            {
+              "condition": "minecraft:random_chance",
+              "chance": 0.025
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "spacestation:chili_seeds",
+          "conditions": [
+            {
+              "condition": "minecraft:random_chance",
+              "chance": 0.025
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "spacestation:corn_seeds",
+          "conditions": [
+            {
+              "condition": "minecraft:random_chance",
+              "chance": 0.025
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "spacestation:eggplant_seeds",
+          "conditions": [
+            {
+              "condition": "minecraft:random_chance",
+              "chance": 0.025
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "spacestation:garlic_seeds",
+          "conditions": [
+            {
+              "condition": "minecraft:random_chance",
+              "chance": 0.025
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "spacestation:koibean_seeds",
+          "conditions": [
+            {
+              "condition": "minecraft:random_chance",
+              "chance": 0.025
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "spacestation:nettle_seeds",
+          "conditions": [
+            {
+              "condition": "minecraft:random_chance",
+              "chance": 0.025
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "spacestation:oat_seeds",
+          "conditions": [
+            {
+              "condition": "minecraft:random_chance",
+              "chance": 0.025
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "spacestation:onion_seeds",
+          "conditions": [
+            {
+              "condition": "minecraft:random_chance",
+              "chance": 0.025
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "spacestation:onion_red_seeds",
+          "conditions": [
+            {
+              "condition": "minecraft:random_chance",
+              "chance": 0.025
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "spacestation:pea_seeds",
+          "conditions": [
+            {
+              "condition": "minecraft:random_chance",
+              "chance": 0.025
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "spacestation:pineapple_seeds",
+          "conditions": [
+            {
+              "condition": "minecraft:random_chance",
+              "chance": 0.025
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "spacestation:rice_seeds",
+          "conditions": [
+            {
+              "condition": "minecraft:random_chance",
+              "chance": 0.025
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "spacestation:soybeans_seeds",
+          "conditions": [
+            {
+              "condition": "minecraft:random_chance",
+              "chance": 0.025
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "spacestation:tomato_seeds",
+          "conditions": [
+            {
+              "condition": "minecraft:random_chance",
+              "chance": 0.025
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
