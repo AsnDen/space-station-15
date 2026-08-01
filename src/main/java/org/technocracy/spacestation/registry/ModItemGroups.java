@@ -87,8 +87,8 @@ public final class ModItemGroups {
                         entries.add(PlantItems.ALOE);
                         entries.add(PlantItems.ALOE_CREAM);
                         entries.add(PlantItems.ALOE_SEEDS);
-                        entries.add(PlantItems.AMBROSIA_DEUS);
-                        entries.add(PlantItems.AMBROSIA_DEUS_SEEDS);
+                        entries.add(PlantItems.AMBROSIA);
+                        entries.add(PlantItems.AMBROSIA_SEEDS);
                         entries.add(PlantItems.AMBROSIA_VULGARIS);
                         entries.add(PlantItems.AMBROSIA_VULGARIS_SEEDS);
                         entries.add(PlantItems.BLOOD_TOMATO);

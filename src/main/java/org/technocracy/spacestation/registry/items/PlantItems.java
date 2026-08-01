@@ -19,11 +19,11 @@ public final class PlantItems {
             new AliasedBlockItem(PlantBlocks.ALOE_CROP, new Item.Settings())
     );
 
-    public static final Item AMBROSIA_DEUS        = register("ambrosia_deus");
+    public static final Item AMBROSIA        = register("ambrosia");
 
-    public static final Item AMBROSIA_DEUS_SEEDS = Registry.register(
-            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "ambrosia_deus_seeds"),
-            new AliasedBlockItem(PlantBlocks.AMBROSIA_DEUS_CROP, new Item.Settings())
+    public static final Item AMBROSIA_SEEDS = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "ambrosia_seeds"),
+            new AliasedBlockItem(PlantBlocks.AMBROSIA_CROP, new Item.Settings())
     );
 
     public static final Item AMBROSIA_VULGARIS        = register("ambrosia_vulgaris");
