@@ -9,13 +9,13 @@
           "conditions": [
             {
               "condition": "minecraft:block_state_property",
-              "block": "spacestation:death_nettle_crop",
+              "block": "spacestation:deathbloom_crop",
               "properties": {
                 "age": "7"
               }
             }
           ],
-          "name": "spacestation:death_nettle",
+          "name": "spacestation:deathbloom",
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -49,13 +49,13 @@
               "conditions": [
                 {
                   "condition": "minecraft:block_state_property",
-                  "block": "spacestation:death_nettle_crop",
+                  "block": "spacestation:deathbloom_crop",
                   "properties": {
                     "age": "7"
                   }
                 }
               ],
-              "name": "spacestation:death_nettle_seeds",
+              "name": "spacestation:deathbloom_seeds",
               "functions": [
                 {
                   "function": "minecraft:set_count",
@@ -78,7 +78,7 @@
             },
             {
               "type": "minecraft:item",
-              "name": "spacestation:death_nettle_seeds"
+              "name": "spacestation:deathbloom_seeds"
             }
           ]
         }

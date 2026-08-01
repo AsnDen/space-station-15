@@ -119,12 +119,12 @@ public class PlantBlocks {
             )
     );
 
-    public static final Block DEATH_NETTLE_CROP = Registry.register(
+    public static final Block DEATHBLOOM_CROP = Registry.register(
             Registries.BLOCK,
-            Identifier.of(SpaceStation.MOD_ID, "death_nettle_crop"),
+            Identifier.of(SpaceStation.MOD_ID, "deathbloom_crop"),
             new SimpleCropBlock(
                     AbstractBlock.Settings.copy(Blocks.WHEAT).nonOpaque().ticksRandomly(),
-                    () -> PlantItems.DEATH_NETTLE_SEEDS
+                    () -> PlantItems.DEATHBLOOM_SEEDS
             )
     );
 

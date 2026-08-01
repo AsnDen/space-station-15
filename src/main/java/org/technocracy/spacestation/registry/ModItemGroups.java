@@ -110,8 +110,8 @@ public final class ModItemGroups {
                         entries.add(PlantItems.COTTON);
                         entries.add(PlantItems.COTTON_RAW);
                         entries.add(PlantItems.COTTON_SEEDS);
-                        entries.add(PlantItems.DEATH_NETTLE);
-                        entries.add(PlantItems.DEATH_NETTLE_SEEDS);
+                        entries.add(PlantItems.DEATHBLOOM);
+                        entries.add(PlantItems.DEATHBLOOM_SEEDS);
                         entries.add(PlantItems.EGGPLANT);
                         entries.add(PlantItems.EGGPLANT_SEEDS);
                         entries.add(PlantItems.EGGY_SEEDS);

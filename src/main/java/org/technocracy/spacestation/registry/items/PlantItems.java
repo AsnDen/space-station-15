@@ -121,11 +121,11 @@ public final class PlantItems {
             new AliasedBlockItem(PlantBlocks.COTTON_CROP, new Item.Settings())
     );
 
-    public static final Item DEATH_NETTLE        = register("death_nettle");
+    public static final Item DEATHBLOOM        = register("deathbloom");
 
-    public static final Item DEATH_NETTLE_SEEDS = Registry.register(
-            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "death_nettle_seeds"),
-            new AliasedBlockItem(PlantBlocks.DEATH_NETTLE_CROP, new Item.Settings())
+    public static final Item DEATHBLOOM_SEEDS = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "deathbloom_seeds"),
+            new AliasedBlockItem(PlantBlocks.DEATHBLOOM_CROP, new Item.Settings())
     );
 
     public static final Item EGGPLANT = Registry.register(
