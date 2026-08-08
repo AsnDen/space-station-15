@@ -29,12 +29,12 @@ public class PlantBlocks {
             )
     );
 
-    public static final Block ambrosia_olympic_CROP = Registry.register(
+    public static final Block AMBROSIA_OLYMPIC_CROP = Registry.register(
             Registries.BLOCK,
             Identifier.of(SpaceStation.MOD_ID, "ambrosia_olympic_crop"),
             new SimpleCropBlock(
                     AbstractBlock.Settings.copy(Blocks.WHEAT).nonOpaque().ticksRandomly(),
-                    () -> PlantItems.ambrosia_olympic_SEEDS
+                    () -> PlantItems.AMBROSIA_OLYMPIC_SEEDS
             )
     );
 

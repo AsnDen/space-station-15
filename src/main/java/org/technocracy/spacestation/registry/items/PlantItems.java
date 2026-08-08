@@ -26,11 +26,11 @@ public final class PlantItems {
             new AliasedBlockItem(PlantBlocks.AMBROSIA_CROP, new Item.Settings())
     );
 
-    public static final Item ambrosia_olympic       = register("ambrosia_olympic");
+    public static final Item AMBROSIA_OLYMPIC       = register("ambrosia_olympic");
 
-    public static final Item ambrosia_olympic_SEEDS = Registry.register(
+    public static final Item AMBROSIA_OLYMPIC_SEEDS = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "ambrosia_olympic_seeds"),
-            new AliasedBlockItem(PlantBlocks.ambrosia_olympic_CROP, new Item.Settings())
+            new AliasedBlockItem(PlantBlocks.AMBROSIA_OLYMPIC_CROP, new Item.Settings())
     );
 
     public static final Item BLOOD_TOMATO = Registry.register(

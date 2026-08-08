@@ -90,8 +90,8 @@ public final class ModItemGroups {
                         entries.add(PlantItems.ALOE_SEEDS);
                         entries.add(PlantItems.AMBROSIA);
                         entries.add(PlantItems.AMBROSIA_SEEDS);
-                        entries.add(PlantItems.ambrosia_olympic);
-                        entries.add(PlantItems.ambrosia_olympic_SEEDS);
+                        entries.add(PlantItems.AMBROSIA_OLYMPIC);
+                        entries.add(PlantItems.AMBROSIA_OLYMPIC_SEEDS);
                         entries.add(PlantItems.BLOOD_TOMATO);
                         entries.add(PlantItems.BLOOD_TOMATO_SEEDS);
                         entries.add(PlantItems.BLOONION);
@@ -144,7 +144,7 @@ public final class ModItemGroups {
                         entries.add(PlantItems.SOYBEANS_SEEDS);
                         entries.add(PlantItems.TOMATO);
                         entries.add(PlantItems.TOMATO_SEEDS);
-                        // entries.add(ModCrops.TOWERCAP_SEEDS); // (asnden): not implemented yet
+                        entries.add(PlantItems.TOWERCAP_SEEDS); // (asnden): not implemented yet
 
                         // ======== PLUSHIES ========
                         entries.add(PlushieItems.PLUSHIE_BEE);
