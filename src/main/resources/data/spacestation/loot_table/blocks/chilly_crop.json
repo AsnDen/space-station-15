@@ -9,13 +9,13 @@
           "conditions": [
             {
               "condition": "minecraft:block_state_property",
-              "block": "spacestation:chilli_crop",
+              "block": "spacestation:chilly_crop",
               "properties": {
                 "age": "7"
               }
             }
           ],
-          "name": "spacestation:chilli",
+          "name": "spacestation:chilly",
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -49,13 +49,13 @@
               "conditions": [
                 {
                   "condition": "minecraft:block_state_property",
-                  "block": "spacestation:chilli_crop",
+                  "block": "spacestation:chilly_crop",
                   "properties": {
                     "age": "7"
                   }
                 }
               ],
-              "name": "spacestation:chilli_seeds",
+              "name": "spacestation:chilly_seeds",
               "functions": [
                 {
                   "function": "minecraft:set_count",
@@ -78,7 +78,7 @@
             },
             {
               "type": "minecraft:item",
-              "name": "spacestation:chilli_seeds"
+              "name": "spacestation:chilly_seeds"
             }
           ]
         }
