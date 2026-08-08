@@ -27,9 +27,9 @@ public final class ModWorldGeneration {
             RegistryKey.of(RegistryKeys.PLACED_FEATURE,
                     Identifier.of(SpaceStation.MOD_ID, "telecrystal_crystal_block"));
 
-    public static final RegistryKey<PlacedFeature> GRASS_SEEDS_PLACED_KEY =
+    public static final RegistryKey<PlacedFeature> SUSPICIOUS_GRASS_PLACED_KEY =
             RegistryKey.of(RegistryKeys.PLACED_FEATURE,
-                    Identifier.of(SpaceStation.MOD_ID, "grass_seeds"));
+                    Identifier.of(SpaceStation.MOD_ID, "suspicious_grass"));
 
     private ModWorldGeneration() {}
 
@@ -61,7 +61,7 @@ public final class ModWorldGeneration {
         BiomeModifications.addFeature(
                 BiomeSelectors.foundInOverworld(),
                 GenerationStep.Feature.VEGETAL_DECORATION,
-                GRASS_SEEDS_PLACED_KEY
+                SUSPICIOUS_GRASS_PLACED_KEY
         );
     }
 }

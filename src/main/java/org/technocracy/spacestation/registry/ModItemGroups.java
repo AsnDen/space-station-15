@@ -22,7 +22,7 @@ public final class ModItemGroups {
                         // ======== BLOCKS ========
                         entries.add(ModBlocks.BANANIUM_ORE_BLOCK.asItem());
                         entries.add(ModBlocks.CHEM_MASTER_BLOCK.asItem());
-                        entries.add(ModBlocks.GRASS_SEEDS.asItem());
+                        entries.add(ModBlocks.SUSPICIOUS_GRASS.asItem());
                         entries.add(ModBlocks.PLASMA_ORE_BLOCK.asItem());
                         entries.add(ModBlocks.STEEL_TILE.asItem());
                         entries.add(ModBlocks.STEEL_WALL.asItem());

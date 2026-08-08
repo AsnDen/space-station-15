@@ -54,8 +54,8 @@ public final class ModBlocks {
             true
     );
 
-    public static final Block GRASS_SEEDS = register(
-            "grass_seeds",
+    public static final Block SUSPICIOUS_GRASS = register(
+            "suspicious_grass",
             ShortPlantBlock::new,
             AbstractBlock.Settings.copy(Blocks.SHORT_GRASS),
             true
