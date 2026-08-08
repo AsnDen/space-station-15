@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "spacestation:item/plant/ambrosia_olimpic/produce"
+    "layer0": "spacestation:item/plant/ambrosia_olympic/produce"
   }
 }

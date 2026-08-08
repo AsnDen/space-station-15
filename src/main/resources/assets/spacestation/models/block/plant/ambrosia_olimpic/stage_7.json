@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/crop",
   "textures": {
-    "crop": "spacestation:block/plant/ambrosia_olimpic/stage_7"
+    "crop": "spacestation:block/plant/ambrosia_olympic/stage_7"
   }
 }

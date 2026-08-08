@@ -9,13 +9,13 @@
           "conditions": [
             {
               "condition": "minecraft:block_state_property",
-              "block": "spacestation:ambrosia_olimpic_crop",
+              "block": "spacestation:ambrosia_olympic_crop",
               "properties": {
                 "age": "7"
               }
             }
           ],
-          "name": "spacestation:ambrosia_olimpic",
+          "name": "spacestation:ambrosia_olympic",
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -49,13 +49,13 @@
               "conditions": [
                 {
                   "condition": "minecraft:block_state_property",
-                  "block": "spacestation:ambrosia_olimpic_crop",
+                  "block": "spacestation:ambrosia_olympic_crop",
                   "properties": {
                     "age": "7"
                   }
                 }
               ],
-              "name": "spacestation:ambrosia_olimpic_seeds",
+              "name": "spacestation:ambrosia_olympic_seeds",
               "functions": [
                 {
                   "function": "minecraft:set_count",
@@ -78,7 +78,7 @@
             },
             {
               "type": "minecraft:item",
-              "name": "spacestation:ambrosia_olimpic_seeds"
+              "name": "spacestation:ambrosia_olympic_seeds"
             }
           ]
         }
