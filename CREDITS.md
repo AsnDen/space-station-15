@@ -28,6 +28,7 @@ Vielen Dank an alle, die zu diesem Projekt beigetragen haben ❤️
 - @Swino4ka
 - @PenChiK227
 - @didenkoaroslav515-cpu
+- @AsnDen
 ## Sound & Music
 
 - @Swino4ka
@@ -38,6 +39,7 @@ Vielen Dank an alle, die zu diesem Projekt beigetragen haben ❤️
 
 - @Swino4ka
 - @JrInventor05
+- @AsnDen
 ## Other
 - @Swino4ka
 - @AsnDen
