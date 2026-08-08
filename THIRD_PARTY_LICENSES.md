@@ -45,8 +45,8 @@ Borrowed assets are placeholders and may be replaced over time.
 - src/main/resources/assets/spacestation/textures/block/plant/ambrosia
 
 `CC-BY-SA-3.0` Taken from https://github.com/tgstation/tgstation/commit/40d89d11ea4a5cb81d61dc1018b46f4e7d32c62a, inhands by mubururu_ (github)
-- src/main/resources/assets/spacestation/textures/item/plant/ambrosia_olimpic
-- src/main/resources/assets/spacestation/textures/block/plant/ambrosia_olimpic
+- src/main/resources/assets/spacestation/textures/item/plant/ambrosia_olympic
+- src/main/resources/assets/spacestation/textures/block/plant/ambrosia_olympic
 
 `CC-BY-SA-3.0` Taken from https://github.com/vgstation-coders/vgstation13 at 1dbcf389b0ec6b2c51b002df5fef8dd1519f8068, inhands by mubururu_ (github), Growth stages, harvest, dead, and produce sprites created by Chaoticaa (GitHub), inhands modified by Prole0 (GitHub)
 - src/main/resources/assets/spacestation/textures/item/plant/blood_tomato

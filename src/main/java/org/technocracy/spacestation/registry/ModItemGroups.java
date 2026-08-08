@@ -90,8 +90,8 @@ public final class ModItemGroups {
                         entries.add(PlantItems.ALOE_SEEDS);
                         entries.add(PlantItems.AMBROSIA);
                         entries.add(PlantItems.AMBROSIA_SEEDS);
-                        entries.add(PlantItems.AMBROSIA_OLIMPIC);
-                        entries.add(PlantItems.AMBROSIA_OLIMPIC_SEEDS);
+                        entries.add(PlantItems.ambrosia_olympic);
+                        entries.add(PlantItems.ambrosia_olympic_SEEDS);
                         entries.add(PlantItems.BLOOD_TOMATO);
                         entries.add(PlantItems.BLOOD_TOMATO_SEEDS);
                         entries.add(PlantItems.BLOONION);
@@ -154,6 +154,7 @@ public final class ModItemGroups {
 
                         // ======== MISC ========
                         entries.add(MiscItems.BANANIUM_ORE);
+                        entries.add(MiscItems.BLOODY_RED_BALLISTIC_PLATE);
                         entries.add(MiscItems.BUTTER);
                         entries.add(MiscItems.BUTTER_SLICE);
                         entries.add(MiscItems.CLOTH);

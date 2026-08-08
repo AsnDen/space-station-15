@@ -1,28 +1,28 @@
 {
   "variants": {
     "age=0": {
-      "model": "spacestation:block/plant/ambrosia_olimpic/stage_0"
+      "model": "spacestation:block/plant/ambrosia_olympic/stage_0"
     },
     "age=1": {
-      "model": "spacestation:block/plant/ambrosia_olimpic/stage_1"
+      "model": "spacestation:block/plant/ambrosia_olympic/stage_1"
     },
     "age=2": {
-      "model": "spacestation:block/plant/ambrosia_olimpic/stage_2"
+      "model": "spacestation:block/plant/ambrosia_olympic/stage_2"
     },
     "age=3": {
-      "model": "spacestation:block/plant/ambrosia_olimpic/stage_3"
+      "model": "spacestation:block/plant/ambrosia_olympic/stage_3"
     },
     "age=4": {
-      "model": "spacestation:block/plant/ambrosia_olimpic/stage_4"
+      "model": "spacestation:block/plant/ambrosia_olympic/stage_4"
     },
     "age=5": {
-      "model": "spacestation:block/plant/ambrosia_olimpic/stage_5"
+      "model": "spacestation:block/plant/ambrosia_olympic/stage_5"
     },
     "age=6": {
-      "model": "spacestation:block/plant/ambrosia_olimpic/stage_6"
+      "model": "spacestation:block/plant/ambrosia_olympic/stage_6"
     },
     "age=7": {
-      "model": "spacestation:block/plant/ambrosia_olimpic/stage_7"
+      "model": "spacestation:block/plant/ambrosia_olympic/stage_7"
     }
   }
 }

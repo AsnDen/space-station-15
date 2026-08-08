@@ -7,7 +7,6 @@ public final class ModItems {
 
     // ============ Шорткаты для часто используемых айтемов из других систем ============
     public static final Item CROWBAR  = ToolItems.CROWBAR;
-    public static final Item STEEL  = MiscItems.STEEL;
 
 
     public static void register() {
