@@ -1,28 +1,28 @@
 {
   "variants": {
     "age=0": {
-      "model": "spacestation:block/plant/cotton/stage0"
+      "model": "spacestation:block/plant/cotton/stage_0"
     },
     "age=1": {
-      "model": "spacestation:block/plant/cotton/stage1"
+      "model": "spacestation:block/plant/cotton/stage_1"
     },
     "age=2": {
-      "model": "spacestation:block/plant/cotton/stage2"
+      "model": "spacestation:block/plant/cotton/stage_2"
     },
     "age=3": {
-      "model": "spacestation:block/plant/cotton/stage3"
+      "model": "spacestation:block/plant/cotton/stage_3"
     },
     "age=4": {
-      "model": "spacestation:block/plant/cotton/stage4"
+      "model": "spacestation:block/plant/cotton/stage_4"
     },
     "age=5": {
-      "model": "spacestation:block/plant/cotton/stage5"
+      "model": "spacestation:block/plant/cotton/stage_5"
     },
     "age=6": {
-      "model": "spacestation:block/plant/cotton/stage6"
+      "model": "spacestation:block/plant/cotton/stage_6"
     },
     "age=7": {
-      "model": "spacestation:block/plant/cotton/stage7"
+      "model": "spacestation:block/plant/cotton/stage_7"
     }
   }
 }

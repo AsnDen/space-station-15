@@ -22,6 +22,7 @@ public final class ModItemGroups {
                         // ======== BLOCKS ========
                         entries.add(ModBlocks.BANANIUM_ORE_BLOCK.asItem());
                         entries.add(ModBlocks.CHEM_MASTER_BLOCK.asItem());
+                        entries.add(ModBlocks.SUSPICIOUS_GRASS.asItem());
                         entries.add(ModBlocks.PLASMA_ORE_BLOCK.asItem());
                         entries.add(ModBlocks.STEEL_TILE.asItem());
                         entries.add(ModBlocks.STEEL_WALL.asItem());
@@ -84,10 +85,63 @@ public final class ModItemGroups {
                         entries.add(ToolItems.WRENCH);
 
                         // ========= PLANTS ===========
+                        entries.add(PlantItems.ALOE);
+                        entries.add(PlantItems.ALOE_CREAM);
+                        entries.add(PlantItems.ALOE_SEEDS);
+                        entries.add(PlantItems.AMBROSIA);
+                        entries.add(PlantItems.AMBROSIA_SEEDS);
+                        entries.add(PlantItems.AMBROSIA_OLIMPIC);
+                        entries.add(PlantItems.AMBROSIA_OLIMPIC_SEEDS);
+                        entries.add(PlantItems.BLOOD_TOMATO);
+                        entries.add(PlantItems.BLOOD_TOMATO_SEEDS);
+                        entries.add(PlantItems.BLOONION);
+                        entries.add(PlantItems.BLOONION_SEEDS);
+                        entries.add(PlantItems.BLUE_TOMATO);
+                        entries.add(PlantItems.BLUE_TOMATO_SEEDS);
+                        entries.add(PlantItems.BUNGO);
+                        entries.add(PlantItems.BUNGO_SEEDS);
+                        entries.add(PlantItems.CABBAGE);
+                        entries.add(PlantItems.CABBAGE_SEEDS);
+                        entries.add(PlantItems.CHILI);
+                        entries.add(PlantItems.CHILI_SEEDS);
+                        entries.add(PlantItems.CHILLY);
+                        entries.add(PlantItems.CHILLY_SEEDS);
+                        entries.add(PlantItems.CORN);
+                        entries.add(PlantItems.CORN_SEEDS);
                         entries.add(PlantItems.COTTON);
                         entries.add(PlantItems.COTTON_RAW);
                         entries.add(PlantItems.COTTON_SEEDS);
+                        entries.add(PlantItems.DEATHBLOOM);
+                        entries.add(PlantItems.DEATHBLOOM_SEEDS);
+                        entries.add(PlantItems.EGGPLANT);
+                        entries.add(PlantItems.EGGPLANT_SEEDS);
+                        entries.add(PlantItems.EGGY_SEEDS);
+                        entries.add(PlantItems.GARLIC);
+                        entries.add(PlantItems.GARLIC_SEEDS);
+                        entries.add(PlantItems.KOIBEAN);
+                        entries.add(PlantItems.KOIBEAN_SEEDS);
+                        entries.add(PlantItems.LAUGHIN_PEA);
+                        entries.add(PlantItems.LAUGHIN_PEA_SEEDS);
+                        entries.add(PlantItems.MEATWHEAT);
+                        entries.add(PlantItems.MEATWHEAT_SEEDS);
+                        entries.add(PlantItems.NETTLE);
+                        entries.add(PlantItems.NETTLE_SEEDS);
+                        entries.add(PlantItems.OAT);
+                        entries.add(PlantItems.OAT_SEEDS);
+                        entries.add(PlantItems.ONION);
+                        entries.add(PlantItems.ONION_SEEDS);
+                        entries.add(PlantItems.ONION_RED);
+                        entries.add(PlantItems.ONION_RED_SEEDS);
+                        entries.add(PlantItems.PEA);
+                        entries.add(PlantItems.PEA_SEEDS);
                         entries.add(PlantItems.PINEAPPLE);
+                        entries.add(PlantItems.PINEAPPLE_SEEDS);
+                        entries.add(PlantItems.PYROTTON);
+                        entries.add(PlantItems.PYROTTON_SEEDS);
+                        entries.add(PlantItems.RICE);
+                        entries.add(PlantItems.RICE_SEEDS);
+                        entries.add(PlantItems.SOYBEANS);
+                        entries.add(PlantItems.SOYBEANS_SEEDS);
                         entries.add(PlantItems.TOMATO);
                         entries.add(PlantItems.TOMATO_SEEDS);
                         // entries.add(ModCrops.TOWERCAP_SEEDS); // (asnden): not implemented yet
@@ -119,6 +173,7 @@ public final class ModItemGroups {
                         entries.add(MiscItems.TRASH_PLASTIC);
                         entries.add(MiscItems.URANIUM);
                         entries.add(MiscItems.URANIUM_ORE);
+
                     })
                     .build()
     );

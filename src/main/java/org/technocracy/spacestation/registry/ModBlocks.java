@@ -3,6 +3,7 @@ package org.technocracy.spacestation.registry;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.ShortPlantBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -50,6 +51,13 @@ public final class ModBlocks {
             AbstractBlock.Settings.create()
                     .strength(1.5f)
                     .requiresTool(),
+            true
+    );
+
+    public static final Block SUSPICIOUS_GRASS = register(
+            "suspicious_grass",
+            ShortPlantBlock::new,
+            AbstractBlock.Settings.copy(Blocks.SHORT_GRASS),
             true
     );
 
