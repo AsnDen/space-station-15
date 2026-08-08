@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/crop",
   "textures": {
-    "crop": "spacestation:block/plant/chilli/stage_5"
+    "crop": "spacestation:block/plant/chilly/stage_7"
   }
 }

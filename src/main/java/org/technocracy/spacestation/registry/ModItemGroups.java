@@ -104,8 +104,8 @@ public final class ModItemGroups {
                         entries.add(PlantItems.CABBAGE_SEEDS);
                         entries.add(PlantItems.CHILI);
                         entries.add(PlantItems.CHILI_SEEDS);
-                        entries.add(PlantItems.CHILLI);
-                        entries.add(PlantItems.CHILLI_SEEDS);
+                        entries.add(PlantItems.CHILLY);
+                        entries.add(PlantItems.CHILLY_SEEDS);
                         entries.add(PlantItems.CORN);
                         entries.add(PlantItems.CORN_SEEDS);
                         entries.add(PlantItems.COTTON);

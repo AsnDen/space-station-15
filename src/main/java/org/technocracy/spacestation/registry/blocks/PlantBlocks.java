@@ -92,12 +92,12 @@ public class PlantBlocks {
             )
     );
 
-    public static final Block CHILLI_CROP = Registry.register(
+    public static final Block CHILLY_CROP = Registry.register(
             Registries.BLOCK,
-            Identifier.of(SpaceStation.MOD_ID, "chilli_crop"),
+            Identifier.of(SpaceStation.MOD_ID, "chilly_crop"),
             new SimpleCropBlock(
                     AbstractBlock.Settings.copy(Blocks.WHEAT).nonOpaque().ticksRandomly(),
-                    () -> PlantItems.CHILLI_SEEDS
+                    () -> PlantItems.CHILLY_SEEDS
             )
     );
 

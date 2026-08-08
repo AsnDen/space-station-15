@@ -91,15 +91,15 @@ public final class PlantItems {
             new AliasedBlockItem(PlantBlocks.CHILI_CROP, new Item.Settings())
     );
 
-    public static final Item CHILLI = Registry.register(
-            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "chilli"),
+    public static final Item CHILLY = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "chilly"),
             new Item(new Item.Settings().food(new FoodComponent.Builder()
                     .nutrition(2).saturationModifier(1.8f).build()))
     );
 
-    public static final Item CHILLI_SEEDS = Registry.register(
-            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "chilli_seeds"),
-            new AliasedBlockItem(PlantBlocks.CHILLI_CROP, new Item.Settings())
+    public static final Item CHILLY_SEEDS = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "chilly_seeds"),
+            new AliasedBlockItem(PlantBlocks.CHILLY_CROP, new Item.Settings())
     );
 
     public static final Item CORN = Registry.register(
