@@ -16,6 +16,7 @@ public class SpaceStationClient implements ClientModInitializer {
 
         ModScreenHandlers.register(); // добавь это первым!
         HandledScreens.register(ModScreenHandlers.CHEM_MASTER, ChemMasterScreen::new);
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.SUSPICIOUS_GRASS, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.WALL_GIRDER, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.WALL_GIRDER_REINFORCED, RenderLayer.getCutout());
         // Crops
