@@ -1,8 +1,10 @@
-Some temporary textures and assets are derived from Space Station 14 or Goob Station.
+# Some temporary textures and assets are derived from Space Station 14 or Goob Station.
 
-These assets remain under their original licenses and copyright terms as specified by the Space Station 14 / Goob Station project and its asset metadata.
+# These assets remain under their original licenses and copyright terms as specified by the Space Station 14 / Goob Station project and its asset metadata.
 
-Borrowed assets are placeholders and may be replaced over time.
+# Borrowed assets are placeholders and may be replaced over time.
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 `CC-BY-SA-3.0` Taken from https://github.com/ParadiseSS13/Paradise/ and modified by FoxxoTrystan (and our spriters)
 - src/main/resources/assets/spacestation/textures/block/wall/girder/
