@@ -33,10 +33,7 @@ Licenses of borrowed assets are down below
 - src/main/resources/assets/spacestation/textures/item/ores/bananium/bananium_ore.png
 - src/main/resources/assets/spacestation/textures/item/ores/plasma/plasma_ore.png
 - src/main/resources/assets/spacestation/textures/item/ores/uranium/uranium_ore.png
-- src/main/resources/assets/spacestation/textures/item/material/steel_raw.png
 - src/main/resources/assets/spacestation/textures/item/ores/bananium/bananium.png
-- src/main/resources/assets/spacestation/textures/item/ores/plasma/plasma.png
-- src/main/resources/assets/spacestation/textures/item/ores/uranium/uranium.png
 
 `CC-BY-SA-3.0` Taken from https://github.com/tgstation/tgstation/commit/40d89d11ea4a5cb81d61dc1018b46f4e7d32c62a, inhands by mubururu_ (github), Growth stages, harvest, dead, and produce sprites created by Chaoticaa (GitHub), inhands modified by Prole0 (GitHub)
 - src/main/resources/assets/spacestation/textures/item/plant/aloe
