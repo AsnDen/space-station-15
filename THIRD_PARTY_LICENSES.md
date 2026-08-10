@@ -4,7 +4,7 @@
 
 # Borrowed assets are placeholders and may be replaced over time.
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 `CC-BY-SA-3.0` Taken from https://github.com/ParadiseSS13/Paradise/ and modified by FoxxoTrystan (and our spriters)
 - src/main/resources/assets/spacestation/textures/block/wall/girder/
