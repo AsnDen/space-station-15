@@ -25,6 +25,7 @@ public final class MiscItems {
     public static final Item URANIUM       = register("uranium");
     public static final Item URANIUM_ORE   = register("uranium_ore");
     public static final Item STEEL         = register("steel");
+    public static final Item SOLID_FUEL    = register("solid_fuel");
     public static final Item PLASTEEL      = register("plasteel");
     public static final Item ROD           = register("rod");
     public static final Item PLASTIC       = register("plastic");

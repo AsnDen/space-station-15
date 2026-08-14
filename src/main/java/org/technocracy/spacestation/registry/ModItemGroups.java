@@ -168,6 +168,7 @@ public final class ModItemGroups {
                         entries.add(MiscItems.PLASTEEL);
                         entries.add(MiscItems.PLASTIC);
                         entries.add(MiscItems.ROD);
+                        entries.add(MiscItems.SOLID_FUEL);
                         entries.add(MiscItems.STEEL);
                         entries.add(MiscItems.STEEL_ORE);
                         entries.add(MiscItems.TELECRYSTAL);

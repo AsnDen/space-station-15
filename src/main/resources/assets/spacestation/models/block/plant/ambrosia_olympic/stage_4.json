@@ -1,6 +1,6 @@
 {
-  "parent": "minecraft:block/crop",
+  "parent": "minecraft:block/cross",
   "textures": {
-    "crop": "spacestation:block/plant/ambrosia_olympic/stage_4"
+    "cross": "spacestation:block/plant/ambrosia_olympic/stage_4"
   }
 }
