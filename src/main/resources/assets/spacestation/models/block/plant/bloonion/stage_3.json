@@ -1,6 +1,6 @@
 {
-  "parent": "minecraft:block/crop",
+  "parent": "minecraft:block/cross",
   "textures": {
-    "crop": "spacestation:block/plant/bloonion/stage_3"
+    "cross": "spacestation:block/plant/bloonion/stage_3"
   }
 }
