@@ -41,6 +41,8 @@ dependencies {
 	// devTools
 	// https://www.curseforge.com/minecraft/mc-mods/jei/files/8678370
 	modRuntimeOnly "curse.maven:jei-238222:8678370"
+	// https://www.curseforge.com/minecraft/mc-mods/configured/files/7276575
+	modRuntimeOnly "curse.maven:configured-457570:7276575"
 }
 
 processResources {
