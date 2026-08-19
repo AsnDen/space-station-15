@@ -134,7 +134,7 @@ public final class FoodItems {
                     .nutrition(1).saturationModifier(0.2f).build()))
     );
 
-    // Пицца
+    // Pizza
     public static final Item PIZZA_MEAT_RAW = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "pizza_meat_raw"),
             new Item(new Item.Settings().food(new FoodComponent.Builder()
