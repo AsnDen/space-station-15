@@ -56,6 +56,8 @@ public final class ModItemGroups {
                         entries.add(FoodItems.CROISSANT_RAW);
                         entries.add(FoodItems.CUTLET_COOKED);
                         entries.add(FoodItems.CUTLET_RAW);
+                        entries.add(FoodItems.MEATBALL);
+                        entries.add(FoodItems.MEATBALL_COOKED);
                         entries.add(FoodItems.PIZZA_MARGHERITA);
                         entries.add(FoodItems.PIZZA_MARGHERITA_RAW);
                         entries.add(FoodItems.PIZZA_MARGHERITA_SLICE);

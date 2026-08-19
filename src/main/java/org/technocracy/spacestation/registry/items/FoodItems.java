@@ -86,6 +86,20 @@ public final class FoodItems {
                     .nutrition(2).saturationModifier(0.3f).build()))
     );
 
+    public static final Item MEATBALL = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "meatball"),
+            new Item(new Item.Settings().food(new FoodComponent.Builder()
+                    .nutrition(3).saturationModifier(0.1f)
+                    .statusEffect(new StatusEffectInstance(StatusEffects.POISON, 220, 0), 0.2f)
+                    .build()))
+    );
+
+    public static final Item MEATBALL_COOKED = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "meatball_cooked"),
+            new Item(new Item.Settings().food(new FoodComponent.Builder()
+                    .nutrition(4).saturationModifier(0.8f).build()))
+    );
+
     public static final Item SAUSAGE_BREAD = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "sausage_bread"),
             new Item(new Item.Settings().food(new FoodComponent.Builder()
