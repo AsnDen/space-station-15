@@ -226,13 +226,13 @@ public final class FoodItems {
     public static final Item SALAD_HERB = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "salad_herb"),
             new Item(new Item.Settings().food(new FoodComponent.Builder()
-                    .nutrition(5).saturationModifier(1.5f).build()).maxCount(1))
+                    .nutrition(5).saturationModifier(1.5f).usingConvertsTo(BOWL_BIG).build()).maxCount(1))
     );
 
     public static final Item SALAD_VALID = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "salad_valid"),
             new Item(new Item.Settings().food(new FoodComponent.Builder()
-                    .nutrition(7).saturationModifier(2.5f).build()).maxCount(1))
+                    .nutrition(5).saturationModifier(1.5f).usingConvertsTo(BOWL_BIG).build()).maxCount(1))
     );
 
 
