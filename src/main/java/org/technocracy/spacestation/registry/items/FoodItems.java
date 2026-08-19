@@ -19,6 +19,11 @@ public final class FoodItems {
                     .build()))
     );
 
+    public static final Item BOWL_BIG =     Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "bowl_big"),
+            new Item(new Item.Settings()));
+
+
     public static final Item BUN = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "bun"),
             new Item(new Item.Settings().food(new FoodComponent.Builder()

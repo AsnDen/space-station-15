@@ -42,6 +42,7 @@ public final class ModItemGroups {
 
                         // ======== FOOD ========
                         entries.add(FoodItems.BANANIUM);
+                        entries.add(FoodItems.BOWL_BIG);
                         entries.add(FoodItems.BUN);
                         entries.add(FoodItems.BUN_BOTTOM);
                         entries.add(FoodItems.BUN_TOP);
