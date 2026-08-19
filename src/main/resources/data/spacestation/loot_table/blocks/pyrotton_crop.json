@@ -9,13 +9,13 @@
           "conditions": [
             {
               "condition": "minecraft:block_state_property",
-              "block": "spacestation:pirotton_crop",
+              "block": "spacestation:pyrotton_crop",
               "properties": {
                 "age": "7"
               }
             }
           ],
-          "name": "spacestation:pirotton",
+          "name": "spacestation:pyrotton",
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -49,13 +49,13 @@
               "conditions": [
                 {
                   "condition": "minecraft:block_state_property",
-                  "block": "spacestation:pirotton_crop",
+                  "block": "spacestation:pyrotton_crop",
                   "properties": {
                     "age": "7"
                   }
                 }
               ],
-              "name": "spacestation:pirotton_seeds",
+              "name": "spacestation:pyrotton_seeds",
               "functions": [
                 {
                   "function": "minecraft:set_count",
@@ -78,7 +78,7 @@
             },
             {
               "type": "minecraft:item",
-              "name": "spacestation:pirotton_seeds"
+              "name": "spacestation:pyrotton_seeds"
             }
           ]
         }
