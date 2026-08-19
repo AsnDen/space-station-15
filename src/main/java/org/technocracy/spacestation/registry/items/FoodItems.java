@@ -89,7 +89,7 @@ public final class FoodItems {
     public static final Item MEATBALL = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "meatball"),
             new Item(new Item.Settings().food(new FoodComponent.Builder()
-                    .nutrition(3).saturationModifier(0.1f)
+                    .nutrition(2).saturationModifier(0.1f)
                     .statusEffect(new StatusEffectInstance(StatusEffects.POISON, 220, 0), 0.2f)
                     .build()))
     );
