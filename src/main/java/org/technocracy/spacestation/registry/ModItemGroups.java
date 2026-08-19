@@ -68,6 +68,7 @@ public final class ModItemGroups {
                         entries.add(FoodItems.PIZZA_PINEAPPLE);
                         entries.add(FoodItems.PIZZA_PINEAPPLE_RAW);
                         entries.add(FoodItems.PIZZA_PINEAPPLE_SLICE);
+                        entries.add(FoodItems.SALAD_HERB);
                         entries.add(FoodItems.SAUSAGE_BREAD);
                         entries.add(FoodItems.SAUSAGE_BREAD_RAW);
                         entries.add(FoodItems.SAUSAGE_BREAD_SLICE);

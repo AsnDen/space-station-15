@@ -207,6 +207,15 @@ public final class FoodItems {
                     .nutrition(2).saturationModifier(1.5f).build()))
     );
 
+    // Salads
+
+    public static final Item SALAD_HERB = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "salad_herb"),
+            new Item(new Item.Settings().food(new FoodComponent.Builder()
+                    .nutrition(5).saturationModifier(1.5f).build()).maxCount(1))
+    );
+
+
     private FoodItems() {}
 
     public static void register() {}
