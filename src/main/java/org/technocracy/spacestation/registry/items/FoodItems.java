@@ -63,6 +63,12 @@ public final class FoodItems {
                     .nutrition(8).saturationModifier(0.8f).build()))
     );
 
+    public static final Item BURGER_FIVE_ALARM = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "burger_five_alarm"),
+            new Item(new Item.Settings().food(new FoodComponent.Builder()
+                    .nutrition(8).saturationModifier(0.8f).build()))
+    );
+
     public static final Item CUTLET_RAW = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "cutlet_raw"),
             new Item(new Item.Settings().food(new FoodComponent.Builder()
