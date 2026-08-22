@@ -171,6 +171,8 @@ public final class ModItemGroups {
                         entries.add(MiscItems.DOUGH);
                         entries.add(MiscItems.DOUGH_FLAT);
                         entries.add(MiscItems.DOUGH_SLICE);
+                        entries.add(MiscItems.CORNMEAL);
+                        entries.add(MiscItems.DOUGH_CORNMEAL);
                         entries.add(MiscItems.FLOUR);
                         entries.add(MiscItems.ID_CARD);
                         entries.add(MiscItems.PLASMA);
