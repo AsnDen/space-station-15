@@ -16,7 +16,6 @@ Licenses of borrowed assets are down below
 
 `CC-BY-SA-3.0` Taken from Baystation12 at https://github.com/Baystation12/Baystation12/blob/464342c5dc8c417b7e79d56c69aa30445bdf3b75/icons/obj/food/food.dmi
 - src/main/resources/assets/spacestation/textures/item/food/bread
-- src/main/resources/assets/spacestation/textures/item/food/burger
 - src/main/resources/assets/spacestation/textures/item/food/ingredient/bun_top.png
 - src/main/resources/assets/spacestation/textures/item/food/ingredient/bun_bottom.png
 - src/main/resources/assets/spacestation/textures/item/food/spaghetti
@@ -177,6 +176,9 @@ Licenses of borrowed assets are down below
 `CC-BY-SA-3.0` Taken from tgstation and modified by Swept, potato1234x and deltanedas at https://github.com/tgstation/tgstation/commit/40d75cc340c63582fb66ce15bf75a36115f6bdaa, snail by IproduceWidgets (github) and Kezu (discord), anomalymeat/cooked by august-sun, dragoncutlet, dragoncutlet_veins, dragoncutlet-cooked and dragon-cooked by JuneSzalkowska (discord), raw and cooked patty taken from tgstation at https://github.com/tgstation/tgstation/commit/b83c7deee4c91df4de130db242facce20308aa8a. A lot of inhands by Orsoniks.
 - src/main/resources/assets/spacestation/textures/item/food/meat/*
 - EXCEPT: cutlet_meat.png and cutlet_raw.png
+
+`CC-BY-SA-3.0` Taken from tgstation and modified by Swept and potato1234x at https://github.com/tgstation/tgstation/commit/40d75cc340c63582fb66ce15bf75a36115f6bdaa, ian.png created by EmoGarbage, mothroach.png created by TurboTracker, screwed by TheShuEd. Inhands by Tiniest Shark (Github)
+- src/main/resources/assets/spacestation/textures/item/food/burger/*
 
 `CC-BY-SA-3.0` 
 - 
