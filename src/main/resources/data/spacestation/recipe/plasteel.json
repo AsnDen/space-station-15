@@ -4,7 +4,8 @@
     { "item": "minecraft:coal" },
     { "item": "spacestation:steel" },
     { "item": "spacestation:steel" },
-    { "item": "spacestation:plasma" }
+    { "item": "spacestation:plasma" },
+    { "item": "spacestation:plastic" }
   ],
   "result": {
     "id": "spacestation:plasteel",
