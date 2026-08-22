@@ -80,6 +80,7 @@ public final class ModItemGroups {
                         entries.add(ToolItems.LIGHTER);
                         entries.add(ToolItems.OMNITOOL);
                         entries.add(ToolItems.PLASTIC_KNIFE);
+                        entries.add(ToolItems.ROLLING_PIN);
                         entries.add(ToolItems.SCREWDRIVER);
                         entries.add(ToolItems.WELDER);
                         entries.add(ToolItems.WRENCH);
