@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    { "item": "spacestation:bowl_big" },
+    { "item": "spacestation:bungo" },
+    { "item": "spacestation:chili" },
+    { "item": "spacestation:chili" },
+    { "item": "minecraft:water_bucket" }
+  ],
+  "result": {
+    "id": "spacestation:soup_bungo",
+    "count": 1
+  }
+}
