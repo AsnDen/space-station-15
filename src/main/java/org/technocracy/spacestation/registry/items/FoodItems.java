@@ -4,6 +4,7 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.component.type.FoodComponent;
 import net.minecraft.item.Item;
+import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -235,7 +236,15 @@ public final class FoodItems {
                     .nutrition(5).saturationModifier(1.5f).usingConvertsTo(BOWL_BIG).build()).maxCount(1))
     );
 
+    // Soups
 
+    public static final Item SOUP_NETTLE = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "soup_nettle"),
+            new Item(new Item.Settings().food(new FoodComponent.Builder()
+                    .nutrition(6).saturationModifier(2.5f).usingConvertsTo(BOWL_BIG).build())
+                    .maxCount(1)
+                    .recipeRemainder(Items.BUCKET))
+    );
 
     private FoodItems() {}
 
