@@ -49,16 +49,18 @@ public final class FoodItems {
                     .build()))
     );
 
-    public static final Item BURGER = Registry.register(
-            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "burger"),
-            new Item(new Item.Settings().food(new FoodComponent.Builder()
-                    .nutrition(8).saturationModifier(0.8f).build()))
-    );
+    // Burgers
 
     public static final Item BURGER_CHEESE = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "burger_cheese"),
             new Item(new Item.Settings().food(new FoodComponent.Builder()
                     .nutrition(9).saturationModifier(0.9f).build()))
+    );
+
+    public static final Item BURGER_PLAIN = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "burger_plain"),
+            new Item(new Item.Settings().food(new FoodComponent.Builder()
+                    .nutrition(8).saturationModifier(0.8f).build()))
     );
 
     public static final Item CUTLET_RAW = Registry.register(

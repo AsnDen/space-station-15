@@ -46,8 +46,8 @@ public final class ModItemGroups {
                         entries.add(FoodItems.BUN);
                         entries.add(FoodItems.BUN_BOTTOM);
                         entries.add(FoodItems.BUN_TOP);
-                        entries.add(FoodItems.BURGER);
                         entries.add(FoodItems.BURGER_CHEESE);
+                        entries.add(FoodItems.BURGER_PLAIN);
                         entries.add(FoodItems.CHEESE_WEDGE);
                         entries.add(FoodItems.CHEESE_WEDGE_FRESH);
                         entries.add(FoodItems.CHEESE_WHEEL);
