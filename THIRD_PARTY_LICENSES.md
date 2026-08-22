@@ -50,6 +50,9 @@ Licenses of borrowed assets are down below
 `CC-BY-SA-3.0` Taken from https://github.com/vgstation-coders/vgstation13 at 1dbcf389b0ec6b2c51b002df5fef8dd1519f8068, inhands by mubururu_ (github), Growth stages, harvest, dead, and produce sprites created by Chaoticaa (GitHub), inhands modified by Prole0 (GitHub)
 - src/main/resources/assets/spacestation/textures/block/plant/blood_tomato
 
+`CC-BY-SA-3.0` taken from https://github.com/DesertRose2/desertrose/blob/0348c98f8343b5cb82d87df12411ba647b2b1b4f/icons/obj/kitchen.dmi. Inhand sprites created by deltanedas (github) for SS14. Belt sprite taken from unknown file in tgstation at commit https://github.com/tgstation/tgstation/commit/dc89ef0239830774bd3d9d7d6c8da2856da2b869
+- src/main/resources/assets/spacestation/textures/item/tool/rolling_pin.png
+
 `CC0-1.0` Made by Thinbug for space station 14 :33
 - src/main/resources/assets/spacestation/textures/item/plant/bloonion
 - src/main/resources/assets/spacestation/textures/block/plant/bloonion
@@ -153,12 +156,6 @@ Licenses of borrowed assets are down below
 - src/main/resources/assets/spacestation/textures/item/plant/towercap
 - src/main/resources/assets/spacestation/textures/block/plant/towercap
 
-`CC-BY-NC-SA-3.0` Taken from tgstation at https://github.com/tgstation/tgstation/commit/e1142f20f5e4661cb6845cfcf2dd69f864d67432, equipped-HELMET sprite made by Cinder, in-hand lizard plushie sprites by KieueCaprie, plushie_lizard_inversed and inhand sprites modified from plushie_lizard_mirrored and plushielizard-inhand-left, plushielizard-inhand-right by ArtisticRoomba, spacelizard-equipped-HELMET by miamioni, spacelizard-inhand-(left/right) by SeamLesss (GitHub), rainbowlizardplush-equipped-HELMET modified from equipped-HELMET by perryprog.
-
-`CC-BY-NC-SA-3.0` Taken from tgstation at https://github.com/tgstation/tgstation/commit/e1142f20f5e4661cb6845cfcf2dd69f864d67432, equipped-HELMET and in-hand sprites drawn by Ubaser
-
-`CC-BY-NC-SA-3.0` Sprite by LinkUyx#6557, inhand and helmet sprites by TiniestShark (github)
-
 `CC-BY-NC-SA-3.0` Taken from tgstation at https://github.com/tgstation/tgstation/commit/e1142f20f5e4661cb6845cfcf2dd69f864d67432
 - src/main/resources/assets/spacestation/textures/item/plushies
 
@@ -180,9 +177,6 @@ Licenses of borrowed assets are down below
 `CC-BY-SA-3.0` Taken from tgstation and modified by Swept, potato1234x and deltanedas at https://github.com/tgstation/tgstation/commit/40d75cc340c63582fb66ce15bf75a36115f6bdaa, snail by IproduceWidgets (github) and Kezu (discord), anomalymeat/cooked by august-sun, dragoncutlet, dragoncutlet_veins, dragoncutlet-cooked and dragon-cooked by JuneSzalkowska (discord), raw and cooked patty taken from tgstation at https://github.com/tgstation/tgstation/commit/b83c7deee4c91df4de130db242facce20308aa8a. A lot of inhands by Orsoniks.
 - src/main/resources/assets/spacestation/textures/item/food/meat/*
 - EXCEPT: cutlet_meat.png and cutlet_raw.png
-
-`CC-BY-SA-3.0` 
-- 
 
 `CC-BY-SA-3.0` 
 - 

@@ -3,7 +3,8 @@
   "ingredients": [
     { "item": "spacestation:bun" },
     { "item": "spacestation:cheese_wedge" },
-    { "item": "spacestation:cutlet_cooked" }
+    { "item": "spacestation:cutlet_cooked" },
+    { "item": "spacestation:cabbage" }
   ],
   "result": {
     "id": "spacestation:burger_cheese",
