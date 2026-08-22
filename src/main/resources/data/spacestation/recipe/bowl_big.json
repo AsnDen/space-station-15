@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "   ",
-    "G G",
-    "GGG"
+    "T T",
+    " T "
   ],
   "key": {
-    "G": { "item": "minecraft:glass" }
+    "T": { "tag": "minecraft:terracotta" }
   },
   "result": {
     "id": "spacestation:bowl_big",
