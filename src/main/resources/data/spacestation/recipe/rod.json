@@ -1,8 +1,12 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": [
-    { "item": "spacestation:steel" }
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "S ",
+    "S "
   ],
+  "key": {
+    "S": { "item": "spacestation:steel" }
+  },
   "result": {
     "id": "spacestation:rod",
     "count": 4
