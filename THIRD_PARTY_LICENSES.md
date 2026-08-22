@@ -180,5 +180,8 @@ Licenses of borrowed assets are down below
 `CC-BY-SA-3.0` Taken from tgstation and modified by Swept and potato1234x at https://github.com/tgstation/tgstation/commit/40d75cc340c63582fb66ce15bf75a36115f6bdaa, ian.png created by EmoGarbage, mothroach.png created by TurboTracker, screwed by TheShuEd. Inhands by Tiniest Shark (Github)
 - src/main/resources/assets/spacestation/textures/item/food/burger/*
 
+`CC-BY-SA-3.0` Added by Phunny, dragon taco modified from beef taco by MisterImp (GitHub)
+- src/main/resources/assets/spacestation/textures/item/food/taco/*
+
 `CC-BY-SA-3.0` 
 - 
