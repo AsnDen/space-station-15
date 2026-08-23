@@ -2,16 +2,22 @@ package org.technocracy.spacestation.client;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
 import net.minecraft.client.item.ModelPredicateProviderRegistry;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import org.technocracy.spacestation.SpaceStation;
-import org.technocracy.spacestation.client.chemistry.ChemMasterScreen;
+import org.technocracy.spacestation.client.chemistry.chemmaster.ChemMasterScreen;
+import org.technocracy.spacestation.client.chemistry.sublimator.SublimatorScreen;
+import org.technocracy.spacestation.client.chemistry.ChemColors;
 import org.technocracy.spacestation.client.hud.TimerHud;
+import org.technocracy.spacestation.chemistry.ChemData;
 import org.technocracy.spacestation.chemistry.ModScreenHandlers;
 import org.technocracy.spacestation.registry.ModBlocks;
+import org.technocracy.spacestation.registry.ModComponents;
+import org.technocracy.spacestation.registry.items.ChemItems;
 import org.technocracy.spacestation.registry.blocks.PlantBlocks;
 import org.technocracy.spacestation.registry.items.ToolItems;
 
@@ -23,6 +29,12 @@ public class SpaceStationClient implements ClientModInitializer {
 
         ModScreenHandlers.register(); // добавь это первым!
         HandledScreens.register(ModScreenHandlers.CHEM_MASTER, ChemMasterScreen::new);
+        HandledScreens.register(ModScreenHandlers.SUBLIMATOR, SublimatorScreen::new);
+        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> {
+            if (tintIndex != 1) return -1;
+            ChemData data = stack.get(ModComponents.CHEM_DATA);
+            return ChemColors.getMixedColor(data);
+        }, ChemItems.BEAKER);
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.SUSPICIOUS_GRASS, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.WALL_GIRDER, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.WALL_GIRDER_REINFORCED, RenderLayer.getCutout());

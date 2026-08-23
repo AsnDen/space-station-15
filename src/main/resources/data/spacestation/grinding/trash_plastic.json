@@ -1,0 +1,4 @@
+{
+  "ingredient": "spacestation:trash_plastic",
+  "results": { "carbon": 0.5, "oil": 0.5, "toxin": 0.25 }
+}

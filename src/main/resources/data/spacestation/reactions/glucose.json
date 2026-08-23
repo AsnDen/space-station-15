@@ -1,0 +1,5 @@
+{
+  "reagents": { "starch": 0.75, "water": 0.25 },
+  "results": { "glucose": 0.75 },
+  "min_volume": 1.0
+}

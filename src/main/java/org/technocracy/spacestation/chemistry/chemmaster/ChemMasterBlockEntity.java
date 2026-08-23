@@ -1,4 +1,4 @@
-package org.technocracy.spacestation.chemistry;
+package org.technocracy.spacestation.chemistry.chemmaster;
 
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.minecraft.block.BlockState;
@@ -25,6 +25,9 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import org.technocracy.spacestation.registry.ModComponents;
+import org.technocracy.spacestation.chemistry.ChemData;
+import org.technocracy.spacestation.chemistry.ChemRegistry;
+import org.technocracy.spacestation.chemistry.ModBlockEntities;
 
 import java.util.HashMap;
 import java.util.Map;
