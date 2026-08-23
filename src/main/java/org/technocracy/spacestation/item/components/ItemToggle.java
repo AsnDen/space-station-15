@@ -4,6 +4,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
@@ -38,9 +39,11 @@ public class ItemToggle extends Item {
                 user.getItemCooldownManager().set(item, cooldown);
             }
 
+            SoundEvent sound = stack.getItem() instanceof ItemTool tool ? tool.SOUND_ON_USE : SoundEvents.BLOCK_LAVA_EXTINGUISH;
+
             // TODO: maybe add normal sound?
             world.playSound(null, user.getX(), user.getY(), user.getZ(),
-                    SoundEvents.BLOCK_LEVER_CLICK, SoundCategory.PLAYERS, 0.25F, !isActivated ? 0.5F : 0.6F);
+                    sound, SoundCategory.PLAYERS, 0.25F, !isActivated ? 0.5F : 0.6F);
         }
 
         return TypedActionResult.success(stack, world.isClient());

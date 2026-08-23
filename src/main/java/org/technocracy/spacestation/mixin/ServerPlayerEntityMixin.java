@@ -14,6 +14,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import org.technocracy.spacestation.item.components.ChargeData;
+import org.technocracy.spacestation.item.components.Utils;
 import org.technocracy.spacestation.registry.ModComponents;
 
 import java.util.List;
@@ -30,10 +31,10 @@ public class ServerPlayerEntityMixin {
 
         ChargeData data = offHand.get(ModComponents.CHARGE_COMPONENT);
 
-        if (mainHand.isOf(Items.LAVA_BUCKET) && data != null) { // yeah, shitcode
+        if (Utils.FUELS.containsKey(offHand.getItem()) && data != null) { // yeah, shitcode
             if (data.charge() >= data.maxCharge()) return;
 
-            offHand.set(ModComponents.CHARGE_COMPONENT, data.withCharge(data.charge() + 50));
+            offHand.set(ModComponents.CHARGE_COMPONENT, data.withCharge(data.charge() + Utils.FUELS.get(offHand.getItem())));
 
             if (!player.getAbilities().creativeMode) {
                 player.setStackInHand(Hand.MAIN_HAND, new ItemStack(Items.BUCKET));
@@ -42,8 +43,8 @@ public class ServerPlayerEntityMixin {
             player.networkHandler.sendPacket(new EntityEquipmentUpdateS2CPacket(
                     player.getId(),
                     List.of(
-                            Pair.of(EquipmentSlot.MAINHAND, player.getMainHandStack()),
-                            Pair.of(EquipmentSlot.OFFHAND, player.getOffHandStack())
+                            Pair.of(EquipmentSlot.MAINHAND, mainHand),
+                            Pair.of(EquipmentSlot.OFFHAND, offHand)
                     )
             ));
 

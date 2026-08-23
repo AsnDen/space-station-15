@@ -4,8 +4,10 @@ import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.block.*;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
+import net.minecraft.item.Items;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
@@ -15,6 +17,10 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.event.GameEvent;
 import org.technocracy.spacestation.registry.ModComponents;
+
+import java.lang.reflect.Array;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Utils {
 
@@ -60,4 +66,9 @@ public class Utils {
     public static boolean isTool(ItemStack stack) {
         return stack.getItem() instanceof ItemTool;
     }
+
+    public static final Map<Item, Float> FUELS = Map.of(
+            Items.LAVA_BUCKET, 100F,
+            Items.COAL, 50F
+    );
 }

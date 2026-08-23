@@ -8,9 +8,11 @@ import net.minecraft.item.ItemUsageContext;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
+import net.minecraft.util.Language;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
@@ -27,11 +29,11 @@ public class ItemTool extends Item {
     public final SoundEvent SOUND_ON_USE;
 
     public ItemTool(Item.Settings settings, ToolQuality... qualities) {
-        this(settings, new HashSet<>(Set.of(qualities)), 1f, SoundEvents.BLOCK_LEVER_CLICK);
+        this(settings, new HashSet<>(Set.of(qualities)), 1f, SoundEvents.BLOCK_LAVA_EXTINGUISH);
     }
 
     public ItemTool(Item.Settings settings, Float speed, ToolQuality... qualities) {
-        this(settings, new HashSet<>(Set.of(qualities)), speed, SoundEvents.BLOCK_LEVER_CLICK);
+        this(settings, new HashSet<>(Set.of(qualities)), speed, SoundEvents.BLOCK_LAVA_EXTINGUISH);
     }
 
     public ItemTool(Item.Settings settings, SoundEvent soundOnUse, ToolQuality... qualities) {
@@ -120,9 +122,11 @@ public class ItemTool extends Item {
 
 
         List<String> names = new ArrayList<>();
+        Language lang = Language.getInstance();
         for (ToolQuality quality : QUALITIES) {
-            names.add("quality.spacestation." + quality.name().toLowerCase());
+            names.add(lang.get("quality.spacestation." + quality.name().toLowerCase()));
         }
+
         tooltip.add(Text.translatable("tooltip.spacestation.tool", String.join(", ", names)));
 
         @Nullable

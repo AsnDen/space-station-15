@@ -27,22 +27,22 @@ import org.technocracy.spacestation.system.ActionTimer;
 import java.util.*;
 
 public class AssemblyBlock extends Block {
-    record Upgrade(Block result, float cost, float assemblyTime, float disCost, float disassemblyTime, ToolIngredient tools) {}
+    record Upgrade(Block result, float cost, float assemblyTime, float fuelCost, float disassemblyTime, ToolIngredient tools) {}
     // source + material -> upgrade
     private static final Map<Block, Map<ToolIngredient, AssemblyBlock.Upgrade>> ASSEMBLY_REGISTRY = new HashMap<>();
     // assembled block -> source (для разбора)
     private static final Map<Block, AssemblyBlock.Upgrade> DISASSEMBLY_REGISTRY = new HashMap<>();
 
     public static void registerUpgrade(Block source, Block result,
-                                       float cost, float assemblyTime, float disCost, float disassemblyTime,
+                                       float cost, float assemblyTime, float fuelCost, float disassemblyTime,
                                        ToolIngredient assembly, ToolIngredient disassembly) {
-        Upgrade upgrade = new Upgrade(result, cost, assemblyTime, disCost, disassemblyTime, assembly);
+        Upgrade upgrade = new Upgrade(result, cost, assemblyTime, fuelCost, disassemblyTime, assembly);
 
         ASSEMBLY_REGISTRY.computeIfAbsent(source, k -> new HashMap<>())
                 .put(assembly, upgrade);
 
         if (!disassembly.isEmpty()) {
-            DISASSEMBLY_REGISTRY.put(result, new Upgrade(source, cost, assemblyTime, disCost, disassemblyTime, disassembly));
+            DISASSEMBLY_REGISTRY.put(result, new Upgrade(source, cost, assemblyTime, fuelCost, disassemblyTime, disassembly));
         }
     }
     public static void registerUpgrade(Block source, Block result,
@@ -100,7 +100,7 @@ public class AssemblyBlock extends Block {
 
             ActionTimer.start((ServerPlayerEntity) player, pos, upgrade.assemblyTime() / speed, false, p -> {
                 if (data != null) {
-                    stack.set(ModComponents.CHARGE_COMPONENT, data.withCharge(data.charge() - upgrade.cost()));
+                    stack.set(ModComponents.CHARGE_COMPONENT, data.withCharge(data.charge() - upgrade.fuelCost()));
                 }
 
                 if (p.getMainHandStack().getItem() == heldItem &&
@@ -142,7 +142,7 @@ public class AssemblyBlock extends Block {
 
             world.setBlockState(pos, disassembly.result().getDefaultState());
             if (data != null) {
-                stack.set(ModComponents.CHARGE_COMPONENT, data.withCharge(data.charge() - e.getValue().disCost()));
+                stack.set(ModComponents.CHARGE_COMPONENT, data.withCharge(data.charge() - e.getValue().fuelCost()));
             }
 
             if (!p.getAbilities().creativeMode && data == null) {

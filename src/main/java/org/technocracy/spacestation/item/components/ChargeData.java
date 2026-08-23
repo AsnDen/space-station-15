@@ -18,7 +18,7 @@ public record ChargeData(float charge, float maxCharge, float chargeUsage) {
         charge = Math.max(0f, Math.min(charge, maxCharge));
     }
     public ChargeData(float charge, float maxCharge) {
-        this(charge, maxCharge, 0.05F);
+        this(charge, maxCharge, 0.025F);
     }
 
     public static final ChargeData DEFAULT = new ChargeData(0f, 0f, 0f);
