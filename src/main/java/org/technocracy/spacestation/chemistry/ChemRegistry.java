@@ -104,6 +104,10 @@ public class ChemRegistry {
         return Optional.ofNullable(GRINDING.get(itemId));
     }
 
+    public static Collection<GrindingRecipe> getGrindingRecipes() {
+        return Collections.unmodifiableCollection(GRINDING.values());
+    }
+
     // Получить все рецепты реакций
     public static List<ReactionRecipe> getReactions() {
         return Collections.unmodifiableList(REACTIONS);
