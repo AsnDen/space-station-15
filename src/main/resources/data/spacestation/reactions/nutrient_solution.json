@@ -1,0 +1,5 @@
+{
+  "reagents": { "glucose": 0.5, "protein": 0.25, "water": 0.25 },
+  "results": { "nutrient_solution": 0.75 },
+  "min_volume": 1.0
+}

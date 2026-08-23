@@ -1,0 +1,5 @@
+{
+  "reagents": { "benzene": 0.5, "ethanol": 0.25, "nitrogen": 0.25 },
+  "results": { "local_anesthetic": 0.75 },
+  "min_volume": 1.0
+}

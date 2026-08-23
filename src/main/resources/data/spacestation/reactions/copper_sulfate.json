@@ -1,0 +1,5 @@
+{
+  "reagents": { "copper": 0.5, "sulfuric_acid": 0.5 },
+  "results": { "copper_sulfate": 0.75 },
+  "min_volume": 1.0
+}

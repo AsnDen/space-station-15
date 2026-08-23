@@ -1,4 +1,4 @@
-package org.technocracy.spacestation.chemistry;
+package org.technocracy.spacestation.chemistry.chemmaster;
 
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -7,6 +7,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.util.math.BlockPos;
+import org.technocracy.spacestation.chemistry.ChemContainer;
+import org.technocracy.spacestation.chemistry.ModScreenHandlers;
 
 public class ChemMasterScreenHandler extends ScreenHandler {
 

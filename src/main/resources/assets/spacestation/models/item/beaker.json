@@ -1,6 +1,8 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "spacestation:item/beakers/beaker"
+    "layer0": "spacestation:item/beakers/beaker/beaker",
+    "layer1": "spacestation:item/beakers/beaker/liquid",
+    "layer2": "spacestation:item/beakers/beaker/glare"
   }
 }

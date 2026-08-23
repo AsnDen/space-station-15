@@ -1,0 +1,5 @@
+{
+  "reagents": { "ammonia": 0.5, "phosphorus": 0.25, "potassium": 0.25 },
+  "results": { "fertilizer": 0.75 },
+  "min_volume": 1.0
+}

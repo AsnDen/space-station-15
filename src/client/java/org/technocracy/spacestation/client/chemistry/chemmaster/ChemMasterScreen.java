@@ -1,4 +1,4 @@
-package org.technocracy.spacestation.client.chemistry;
+package org.technocracy.spacestation.client.chemistry.chemmaster;
 
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.minecraft.client.gui.DrawContext;
@@ -6,8 +6,9 @@ import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.text.Text;
 import org.technocracy.spacestation.chemistry.ChemData;
-import org.technocracy.spacestation.chemistry.ChemMasterBlockEntity;
-import org.technocracy.spacestation.chemistry.ChemMasterScreenHandler;
+import org.technocracy.spacestation.client.chemistry.ChemColors;
+import org.technocracy.spacestation.chemistry.chemmaster.ChemMasterBlockEntity;
+import org.technocracy.spacestation.chemistry.chemmaster.ChemMasterScreenHandler;
 import org.technocracy.spacestation.network.ModPackets;
 import org.technocracy.spacestation.registry.ModComponents;
 

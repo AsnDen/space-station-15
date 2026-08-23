@@ -12,7 +12,8 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import org.technocracy.spacestation.SpaceStation;
 import org.technocracy.spacestation.block.AssemblyBlock;
-import org.technocracy.spacestation.chemistry.ChemMasterBlock;
+import org.technocracy.spacestation.chemistry.chemmaster.ChemMasterBlock;
+import org.technocracy.spacestation.chemistry.sublimator.SublimatorBlock;
 import org.technocracy.spacestation.registry.blocks.PlantBlocks;
 import org.technocracy.spacestation.item.components.ToolIngredient;
 import org.technocracy.spacestation.item.components.ToolQuality;
@@ -125,6 +126,15 @@ public final class ModBlocks {
     public static final Block CHEM_MASTER_BLOCK = register(
             "chem_master_block",
             ChemMasterBlock::new,
+            AbstractBlock.Settings.create()
+                    .strength(5.0f, 30.0f)
+                    .requiresTool(),
+            true
+    );
+
+    public static final Block SUBLIMATOR = register(
+            "sublimator",
+            SublimatorBlock::new,
             AbstractBlock.Settings.create()
                     .strength(5.0f, 30.0f)
                     .requiresTool(),

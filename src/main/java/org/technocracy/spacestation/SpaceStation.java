@@ -7,6 +7,7 @@ import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.entity.player.PlayerEntity;
 import org.technocracy.spacestation.chemistry.*;
+import org.technocracy.spacestation.chemistry.chemmaster.ChemMasterScreenHandler;
 import org.technocracy.spacestation.network.ModPackets;
 import org.technocracy.spacestation.registry.*;
 import org.technocracy.spacestation.registry.items.*;

@@ -1,5 +1,7 @@
 package org.technocracy.spacestation.client.chemistry;
 
+import org.technocracy.spacestation.chemistry.ChemData;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -165,6 +167,35 @@ public final class ChemColors {
             return color;
         }
         return hashColor(chemId);
+    }
+
+    public static int getMixedColor(ChemData data) {
+        if (data == null || data.chemicals().isEmpty()) {
+            return 0xFFFFFFFF;
+        }
+
+        double red = 0.0;
+        double green = 0.0;
+        double blue = 0.0;
+        double total = 0.0;
+
+        for (Map.Entry<String, Double> entry : data.chemicals().entrySet()) {
+            double volume = Math.max(0.0, entry.getValue());
+            int color = get(entry.getKey());
+            red += ((color >> 16) & 0xFF) * volume;
+            green += ((color >> 8) & 0xFF) * volume;
+            blue += (color & 0xFF) * volume;
+            total += volume;
+        }
+
+        if (total <= 0.0) {
+            return 0xFFFFFFFF;
+        }
+
+        int mixedRed = (int) Math.round(red / total);
+        int mixedGreen = (int) Math.round(green / total);
+        int mixedBlue = (int) Math.round(blue / total);
+        return 0xFF000000 | (mixedRed << 16) | (mixedGreen << 8) | mixedBlue;
     }
 
     /** Stable distinct color for unknown/new reagents. */
