@@ -1,4 +1,4 @@
-package org.technocracy.spacestation.registry.components;
+package org.technocracy.spacestation.item.components;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -8,6 +8,7 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
+import org.technocracy.spacestation.registry.ModComponents;
 
 public class ItemToggle extends Item {
     public ItemToggle(Item.Settings settings) {

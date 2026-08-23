@@ -17,42 +17,44 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.entity.EquipmentSlot;
 import org.jetbrains.annotations.Nullable;
-import org.technocracy.spacestation.registry.components.ChargeData;
-import org.technocracy.spacestation.registry.components.ModComponents;
-import org.technocracy.spacestation.registry.components.ToolIngredient;
-import org.technocracy.spacestation.registry.components.ToolQuality;
-import org.technocracy.spacestation.registry.items.ItemTool;
-import org.technocracy.spacestation.registry.items.ToolItems;
+import org.technocracy.spacestation.item.components.ChargeData;
+import org.technocracy.spacestation.item.components.Utils;
+import org.technocracy.spacestation.registry.ModComponents;
+import org.technocracy.spacestation.item.components.ToolIngredient;
+import org.technocracy.spacestation.item.components.ItemTool;
 import org.technocracy.spacestation.system.ActionTimer;
 
-import javax.tools.Tool;
 import java.util.*;
 
 public class AssemblyBlock extends Block {
-    public static final Float CHARGE_USED = 20f; // test var
-
-    record Upgrade(Block result, int cost, float assemblyTime, float disassemblyTime, ToolIngredient tools) {}
+    record Upgrade(Block result, float cost, float assemblyTime, float disCost, float disassemblyTime, ToolIngredient tools) {}
     // source + material -> upgrade
     private static final Map<Block, Map<ToolIngredient, AssemblyBlock.Upgrade>> ASSEMBLY_REGISTRY = new HashMap<>();
     // assembled block -> source (для разбора)
     private static final Map<Block, AssemblyBlock.Upgrade> DISASSEMBLY_REGISTRY = new HashMap<>();
 
     public static void registerUpgrade(Block source, Block result,
-                                       int cost, float assemblyTime, float disassemblyTime,
+                                       float cost, float assemblyTime, float disCost, float disassemblyTime,
                                        ToolIngredient assembly, ToolIngredient disassembly) {
-        Upgrade upgrade = new Upgrade(result, cost, assemblyTime, 1f, assembly);
+        Upgrade upgrade = new Upgrade(result, cost, assemblyTime, disCost, disassemblyTime, assembly);
 
         ASSEMBLY_REGISTRY.computeIfAbsent(source, k -> new HashMap<>())
                 .put(assembly, upgrade);
 
         if (!disassembly.isEmpty()) {
-            DISASSEMBLY_REGISTRY.put(result, new Upgrade(source, cost, assemblyTime, disassemblyTime, disassembly));
+            DISASSEMBLY_REGISTRY.put(result, new Upgrade(source, cost, assemblyTime, disCost, disassemblyTime, disassembly));
         }
     }
     public static void registerUpgrade(Block source, Block result,
-                                       int cost, float assemblyTime,
+                                       float cost, float assemblyTime,
                                        ToolIngredient assembly) {
-        registerUpgrade(source, result, cost, assemblyTime, 0f, assembly, ToolIngredient.of());
+        registerUpgrade(source, result, cost, assemblyTime, 0f, 0f, assembly, ToolIngredient.of());
+    }
+
+    public static void registerUpgrade(Block source, Block result,
+                                       float cost, float assemblyTime,
+                                       float disassemblyTime, ToolIngredient assembly, ToolIngredient disassembly) {
+        registerUpgrade(source, result, cost, assemblyTime, 0f, disassemblyTime, assembly, disassembly);
     }
 
     public AssemblyBlock(Settings settings) {
@@ -93,19 +95,19 @@ public class AssemblyBlock extends Block {
         // Assemble
         if (canAssemble) {
             Upgrade upgrade = match.get().getValue();
-            if (stack.getCount() < upgrade.cost() && stack.getMaxCount() != 1) return ItemActionResult.FAIL;
+            if (stack.getCount() < upgrade.cost() && Utils.isTool(stack)) return ItemActionResult.FAIL;
             if (ActionTimer.isActive((ServerPlayerEntity) player, pos)) return ItemActionResult.SUCCESS;
 
             ActionTimer.start((ServerPlayerEntity) player, pos, upgrade.assemblyTime() / speed, false, p -> {
                 if (data != null) {
-                    stack.set(ModComponents.CHARGE_COMPONENT, data.withCharge(data.charge() - CHARGE_USED));
+                    stack.set(ModComponents.CHARGE_COMPONENT, data.withCharge(data.charge() - upgrade.cost()));
                 }
 
                 if (p.getMainHandStack().getItem() == heldItem &&
                         (p.getMainHandStack().getCount() >= upgrade.cost() || p.getMainHandStack().getMaxCount() == 1)) {
                     world.setBlockState(pos, upgrade.result().getDefaultState());
                     if (!p.getAbilities().creativeMode && data == null) {
-                        p.getMainHandStack().decrement(upgrade.cost());
+                        p.getMainHandStack().decrement((int) upgrade.cost());
                     }
                     spawnAssemblyEffects(world, pos);
                 }
@@ -114,8 +116,9 @@ public class AssemblyBlock extends Block {
                         ItemStack curStack = p.getStackInHand(hand);
                         boolean rightTool = upgrade.tools.contains(curStack);
                         boolean isNowActivated = curStack.getOrDefault(ModComponents.ITEM_TOGGLE_COMPONENT, true);
-                        boolean hasFuel = !curStack.contains(ModComponents.CHARGE_COMPONENT)
-                                || curStack.getOrDefault(ModComponents.CHARGE_COMPONENT, new ChargeData(0f, 100f)).charge() > 0f;
+                        ChargeData chargeData = curStack.get(ModComponents.CHARGE_COMPONENT);
+                        boolean hasFuel = chargeData == null
+                                || chargeData.charge() > 0f;
                         return rightTool && isNowActivated && hasFuel;
             });
             return ItemActionResult.SUCCESS;
@@ -125,28 +128,36 @@ public class AssemblyBlock extends Block {
         if (ActionTimer.isActive((ServerPlayerEntity) player, pos)) return ItemActionResult.SUCCESS;
 
         ActionTimer.start((ServerPlayerEntity) player, pos, disassembly.disassemblyTime() / speed, true, p -> {
+            Optional<Map.Entry<ToolIngredient, Upgrade>> disMatch = ASSEMBLY_REGISTRY.getOrDefault(disassembly.result(), Map.of())
+                    .entrySet().stream()
+                    .filter(e -> e.getValue().result().equals(this))
+                    .findFirst();
+            if (disMatch.isEmpty()) return;
+
+            Map.Entry<ToolIngredient, Upgrade> e = disMatch.get();
+
+            if (!e.getKey().needItems().isEmpty()) {
+                p.dropItem(new ItemStack(e.getKey().needItems().iterator().next(), (int) e.getValue().cost()), false);
+            }
+
             world.setBlockState(pos, disassembly.result().getDefaultState());
             if (data != null) {
-                stack.set(ModComponents.CHARGE_COMPONENT, data.withCharge(data.charge() - CHARGE_USED));
+                stack.set(ModComponents.CHARGE_COMPONENT, data.withCharge(data.charge() - e.getValue().disCost()));
             }
 
             if (!p.getAbilities().creativeMode && data == null) {
                 stack.damage(1, p, hand == Hand.MAIN_HAND ? EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND);
             }
 
-            ASSEMBLY_REGISTRY.getOrDefault(disassembly.result(), Map.of())
-                    .entrySet().stream()
-                    .filter(e -> e.getValue().result().equals(this))
-                    .findFirst()
-                    .ifPresent(e -> p.dropItem(new ItemStack(e.getKey().needItems().iterator().next(), e.getValue().cost()), false));
             spawnDisassemblyEffects(world, pos);
         },
                 p -> {
                     ItemStack curStack = p.getStackInHand(hand);
                     boolean rightTool = disassembly.tools.contains(curStack);
                     boolean isNowActivated = curStack.getOrDefault(ModComponents.ITEM_TOGGLE_COMPONENT, true);
-                    boolean hasFuel = !curStack.contains(ModComponents.CHARGE_COMPONENT)
-                            || curStack.getOrDefault(ModComponents.CHARGE_COMPONENT, new ChargeData(0f, 100f)).charge() > 0f;
+                    ChargeData chargeData = curStack.get(ModComponents.CHARGE_COMPONENT);
+                    boolean hasFuel = chargeData == null
+                            || chargeData.charge() > 0f;
                     return rightTool && isNowActivated && hasFuel;
                 });
         return ItemActionResult.SUCCESS;

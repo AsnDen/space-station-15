@@ -6,9 +6,10 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import org.technocracy.spacestation.SpaceStation;
 import org.technocracy.spacestation.item.KnifeItem;
-import org.technocracy.spacestation.registry.components.ChargeData;
-import org.technocracy.spacestation.registry.components.ModComponents;
-import org.technocracy.spacestation.registry.components.ToolQuality;
+import org.technocracy.spacestation.item.components.ChargeData;
+import org.technocracy.spacestation.item.components.ItemTool;
+import org.technocracy.spacestation.registry.ModComponents;
+import org.technocracy.spacestation.item.components.ToolQuality;
 
 public final class ToolItems {
 
@@ -21,23 +22,30 @@ public final class ToolItems {
 
     public static final Item CROWBAR_RED = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "crowbar_red"),
-            new Item(new Item.Settings().maxCount(1).maxDamage(100))
+            new Item(new Item.Settings()
+                    .maxCount(1)
+                    .maxDamage(100))
     );
 
     public static final Item CROWBAR_BRASS = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "crowbar_brass"),
-            new Item(new Item.Settings().maxCount(1).maxDamage(100))
+            new Item(new Item.Settings()
+                    .maxCount(1).
+                    maxDamage(100))
     );
 
     public static final Item SCREWDRIVER = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "screwdriver"),
             new ItemTool(new Item.Settings()
-                    .maxDamage(100), ToolQuality.SCREWING)
+                    .maxDamage(100),
+                    ToolQuality.SCREWING)
     );
 
     public static final Item WRENCH = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "wrench"),
-            new Item(new Item.Settings().maxCount(1).maxDamage(100))
+            new ItemTool(new Item.Settings()
+                    .maxDamage(100),
+                    ToolQuality.ANCHORING)
     );
 
     public static final Item WELDER = Registry.register(

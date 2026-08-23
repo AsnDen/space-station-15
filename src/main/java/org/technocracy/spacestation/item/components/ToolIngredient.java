@@ -1,8 +1,7 @@
-package org.technocracy.spacestation.registry.components;
+package org.technocracy.spacestation.item.components;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import org.technocracy.spacestation.registry.items.ItemTool;
 
 import java.util.HashSet;
 import java.util.Set;

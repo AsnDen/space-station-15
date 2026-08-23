@@ -1,4 +1,4 @@
-package org.technocracy.spacestation.registry.components;
+package org.technocracy.spacestation.item.components;
 
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.block.*;
@@ -14,6 +14,7 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.event.GameEvent;
+import org.technocracy.spacestation.registry.ModComponents;
 
 public class Utils {
 
@@ -54,5 +55,9 @@ public class Utils {
 
             return ActionResult.success(world.isClient());
         }
+    }
+
+    public static boolean isTool(ItemStack stack) {
+        return stack.getItem() instanceof ItemTool;
     }
 }

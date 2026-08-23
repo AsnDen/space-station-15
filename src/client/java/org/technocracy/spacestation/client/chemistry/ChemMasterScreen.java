@@ -9,7 +9,7 @@ import org.technocracy.spacestation.chemistry.ChemData;
 import org.technocracy.spacestation.chemistry.ChemMasterBlockEntity;
 import org.technocracy.spacestation.chemistry.ChemMasterScreenHandler;
 import org.technocracy.spacestation.network.ModPackets;
-import org.technocracy.spacestation.registry.components.ModComponents;
+import org.technocracy.spacestation.registry.ModComponents;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -108,7 +108,7 @@ public class ChemMasterScreen extends HandledScreen<ChemMasterScreenHandler> {
 
     private static int clampScroll(int offset, int itemCount, int rowsVisible) {
         int maxOffset = Math.max(0, itemCount - rowsVisible);
-        return Math.clamp(offset, 0, maxOffset);
+        return Math.max(0, Math.min(offset, maxOffset));
     }
 
     @Override

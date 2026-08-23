@@ -158,5 +158,10 @@
   "item.spacestation.wrench": "Гаечный Ключ",
   "subtitles.spacestation.plushie.squeak": "Плюшка Пищит",
   "tooltip.spacestation.tool": "Этот предмет можно использовать чтобы совершать§e %s.",
-  "tooltip.spacestation.charge": "Топливо: %s"
+  "tooltip.spacestation.charge": "Топливо: %s",
+  "quality.spacestation.screwing": "Свинчивание",
+  "quality.spacestation.welding": "Варка",
+  "quality.spacestation.ignition": "Поджигание",
+  "quality.spacestation.prying": "Монтирование",
+  "quality.spacestation.anchoring": "Закрепление"
 }

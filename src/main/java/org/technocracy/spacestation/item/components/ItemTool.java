@@ -1,4 +1,4 @@
-package org.technocracy.spacestation.registry.items;
+package org.technocracy.spacestation.item.components;
 
 import net.minecraft.component.ComponentMap;
 import net.minecraft.entity.player.PlayerEntity;
@@ -14,10 +14,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
-import org.technocracy.spacestation.registry.components.ChargeData;
-import org.technocracy.spacestation.registry.components.ModComponents;
-import org.technocracy.spacestation.registry.components.ToolQuality;
-import org.technocracy.spacestation.registry.components.Utils;
+import org.technocracy.spacestation.registry.ModComponents;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -100,7 +97,7 @@ public class ItemTool extends Item {
     @Override
     public int getItemBarColor(ItemStack stack) {
         ChargeData data = stack.get(ModComponents.CHARGE_COMPONENT);
-        if (data == null) return super.getItemBarStep(stack);
+        if (data == null) return super.getItemBarColor(stack);
         return data.charge() < data.maxCharge() / 4f ? 0xff8C00 : 0xffA500;
     }
 
@@ -124,7 +121,7 @@ public class ItemTool extends Item {
 
         List<String> names = new ArrayList<>();
         for (ToolQuality quality : QUALITIES) {
-            names.add(quality.name());
+            names.add("quality.spacestation." + quality.name().toLowerCase());
         }
         tooltip.add(Text.translatable("tooltip.spacestation.tool", String.join(", ", names)));
 

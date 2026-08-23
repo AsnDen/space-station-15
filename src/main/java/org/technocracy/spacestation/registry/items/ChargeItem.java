@@ -6,9 +6,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
-import org.technocracy.spacestation.registry.components.ChargeData;
-import org.technocracy.spacestation.registry.components.ItemToggle;
-import org.technocracy.spacestation.registry.components.ModComponents;
+import org.technocracy.spacestation.item.components.ChargeData;
+import org.technocracy.spacestation.item.components.ItemToggle;
+import org.technocracy.spacestation.registry.ModComponents;
 
 public class ChargeItem extends ItemToggle {
     public ChargeItem(Item.Settings settings) {
@@ -33,7 +33,7 @@ public class ChargeItem extends ItemToggle {
 
     @Override
     public int getItemBarColor(ItemStack stack) {
-        ChargeData chargeData = stack.getOrDefault(ModComponents.CHARGE_COMPONENT, new ChargeData(0F, 100F));
+        ChargeData chargeData = stack.getOrDefault(ModComponents.CHARGE_COMPONENT, ChargeData.DEFAULT);
         return chargeData.charge() <= chargeData.maxCharge() / 4F ? 0xff8C00 : 0xffA500;
     }
 

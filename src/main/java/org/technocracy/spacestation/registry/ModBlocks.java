@@ -14,11 +14,10 @@ import org.technocracy.spacestation.SpaceStation;
 import org.technocracy.spacestation.block.AssemblyBlock;
 import org.technocracy.spacestation.chemistry.ChemMasterBlock;
 import org.technocracy.spacestation.registry.blocks.PlantBlocks;
-import org.technocracy.spacestation.registry.components.ToolIngredient;
-import org.technocracy.spacestation.registry.components.ToolQuality;
+import org.technocracy.spacestation.item.components.ToolIngredient;
+import org.technocracy.spacestation.item.components.ToolQuality;
 import org.technocracy.spacestation.registry.items.*;
 
-import java.util.concurrent.locks.AbstractOwnableSynchronizer;
 import java.util.function.Function;
 
 public final class ModBlocks {
@@ -140,14 +139,16 @@ public final class ModBlocks {
 
         // Несколько инструментов для разбора:
         // AssemblyBlock.registerUpgrade(<НАЗВАНИЕ_БЛОКА_С_КОТОРЫМ_ВЗАИМОДЕЙСТВУЕМ>, ModItems.<НАЗВАНИЕ_ИНГРИДИЕНТА>, <НАЗВАНИЕ_БЛОКА_КОТОРЫЙ_ПОЛУЧИМ>, <ВРЕМЯ_РАЗБОРА>, ModItems.<ПЕРВЫЙ_ПРЕДМЕТ_ДЛЯ_РАЗБОРА>, ModItems.<ВТОРОЙ, ТРЕТИЙ, ..._ПРЕДМЕТ_ДЛЯ_РАЗБОРА>);
+        // FUTURE: AssemblyBlock.registerUpgrade(<БЛОК ЦЕЛЬ>, <БЛОК ПОЛУЧЕНИЕ>, <ЦЕНА(предмет - количество, инструмент - трата заряда)>, <ВРЕМЯ СБОРКИ>, <ВОЗРАТ ЦЕНЫ(инструменты - трата заряда, предметы возрат столько сколько потратили)>, <ВРЕМЯ РАЗБОРКИ>, ToolIngredient.of(<ЧЕМ СОБИРАЕМ>), ToolIngredient.of(<ЧЕМ РАЗБИРАЕМ>));
 
         // Без разбора вообще:
         // AssemblyBlock.registerUpgrade(НАЗВАНИЕ_БЛОКА_С_КОТОРЫМ_ВЗАИМОДЕЙСТВУЕМ, ModItems.<НАЗВАНИЕ_ИНГРИДИЕНТА>, <НАЗВАНИЕ_БЛОКА_КОТОРЫЙ_ПОЛУЧИМ>, <ВРЕМЯ_РАЗБОРА>);
+        // FUTURE: AssemblyBlock.registerUpgrade(<БЛОК ЦЕЛЬ>, <БЛОК ПОЛУЧЕНИЕ>, <ЦЕНА СБОРКИ>, <ВРЕМЯ СБОРКИ>, ToolIngredient.of(<ЧЕМ СОБИРАЕМ>));
 
         // ============ КОНЕЦ ============
 
         // ============ НИЖЕ РЕЦЕПТЫ ИНГЕЙМ КРАФТА ============
-        AssemblyBlock.registerUpgrade(WALL_GIRDER, STEEL_WALL, 2, 0.4f, 1.2f, ToolIngredient.of(MiscItems.STEEL, ToolQuality.IGNITION), ToolIngredient.of(ToolItems.OMNITOOL, ToolQuality.WELDING));
+        AssemblyBlock.registerUpgrade(WALL_GIRDER, STEEL_WALL, 2, 0.4f, 20f, 1.2f, ToolIngredient.of(MiscItems.STEEL, ToolQuality.IGNITION), ToolIngredient.of(ToolItems.OMNITOOL, ToolQuality.WELDING));
         AssemblyBlock.registerUpgrade(WALL_GIRDER_REINFORCED, STEEL_WALL_REINFORCED, 2, 0.4f, 1.2f, ToolIngredient.of(MiscItems.PLASTEEL), ToolIngredient.of(ToolItems.OMNITOOL, ToolQuality.PRYING));
         AssemblyBlock.registerUpgrade(WALL_GIRDER, WALL_GIRDER_REINFORCED, 4, 0.4f, 1.2f, ToolIngredient.of(MiscItems.ROD), ToolIngredient.of(ToolItems.OMNITOOL, ToolQuality.SCREWING));
 

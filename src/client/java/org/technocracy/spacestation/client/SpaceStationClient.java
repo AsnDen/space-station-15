@@ -15,7 +15,7 @@ import org.technocracy.spacestation.registry.ModBlocks;
 import org.technocracy.spacestation.registry.blocks.PlantBlocks;
 import org.technocracy.spacestation.registry.items.ToolItems;
 
-import static org.technocracy.spacestation.registry.components.ModComponents.ITEM_TOGGLE_COMPONENT;
+import static org.technocracy.spacestation.registry.ModComponents.ITEM_TOGGLE_COMPONENT;
 
 public class SpaceStationClient implements ClientModInitializer {
     @Override

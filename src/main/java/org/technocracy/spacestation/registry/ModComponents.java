@@ -1,4 +1,4 @@
-package org.technocracy.spacestation.registry.components;
+package org.technocracy.spacestation.registry;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.component.ComponentType;
@@ -8,6 +8,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import org.technocracy.spacestation.SpaceStation;
 import org.technocracy.spacestation.chemistry.ChemData;
+import org.technocracy.spacestation.item.components.ChargeData;
 
 public class ModComponents {
     public static ComponentType<ChemData> CHEM_DATA;

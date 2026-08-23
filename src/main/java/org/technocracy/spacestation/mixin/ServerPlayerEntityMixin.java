@@ -13,9 +13,8 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import org.technocracy.spacestation.registry.components.ChargeData;
-import org.technocracy.spacestation.registry.components.ModComponents;
-import org.technocracy.spacestation.registry.items.ChargeItem;
+import org.technocracy.spacestation.item.components.ChargeData;
+import org.technocracy.spacestation.registry.ModComponents;
 
 import java.util.List;
 
@@ -29,9 +28,9 @@ public class ServerPlayerEntityMixin {
         ItemStack mainHand = player.getMainHandStack();
         ItemStack offHand = player.getOffHandStack();
 
-        if (mainHand.isOf(Items.LAVA_BUCKET) && offHand.getItem().getComponents().contains(ModComponents.CHARGE_COMPONENT)) { // yeah, shitcode
-            ChargeData data = offHand.getOrDefault(ModComponents.CHARGE_COMPONENT, new ChargeData(0F, 100F));
+        ChargeData data = offHand.get(ModComponents.CHARGE_COMPONENT);
 
+        if (mainHand.isOf(Items.LAVA_BUCKET) && data != null) { // yeah, shitcode
             if (data.charge() >= data.maxCharge()) return;
 
             offHand.set(ModComponents.CHARGE_COMPONENT, data.withCharge(data.charge() + 50));

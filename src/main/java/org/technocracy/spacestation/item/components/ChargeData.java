@@ -1,4 +1,4 @@
-package org.technocracy.spacestation.registry.components;
+package org.technocracy.spacestation.item.components;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
@@ -11,36 +11,57 @@ import net.minecraft.network.codec.PacketCodecs;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
+import org.technocracy.spacestation.registry.ModComponents;
 
-public record ChargeData(float charge, float maxCharge) {
+public record ChargeData(float charge, float maxCharge, float chargeUsage) {
     public ChargeData {
-        charge = Math.clamp(charge, 0f, maxCharge);
+        charge = Math.max(0f, Math.min(charge, maxCharge));
     }
+    public ChargeData(float charge, float maxCharge) {
+        this(charge, maxCharge, 0.05F);
+    }
+
+    public static final ChargeData DEFAULT = new ChargeData(0f, 0f, 0f);
     public static final Codec<ChargeData> CODEC = RecordCodecBuilder.create(instance -> instance.group(
             Codec.FLOAT.fieldOf("charge").forGetter(ChargeData::charge),
-            Codec.FLOAT.fieldOf("max_charge").forGetter(ChargeData::maxCharge)
+            Codec.FLOAT.fieldOf("max_charge").forGetter(ChargeData::maxCharge),
+            Codec.FLOAT.fieldOf("charge_usage").forGetter(ChargeData::chargeUsage)
     ).apply(instance, ChargeData::new));
 
     public static final PacketCodec<RegistryByteBuf, ChargeData> PACKET_CODEC = PacketCodec.tuple(
             PacketCodecs.FLOAT, ChargeData::charge,
             PacketCodecs.FLOAT, ChargeData::maxCharge,
+            PacketCodecs.FLOAT, ChargeData::chargeUsage,
             ChargeData::new
     );
 
     public ChargeData withCharge(float newCharge) {
         float clamped = Math.clamp(newCharge, 0F, this.maxCharge);
-        return new ChargeData(clamped, this.maxCharge);
+        return new ChargeData(clamped, this.maxCharge, this.chargeUsage);
+    }
+
+    public ChargeData withMaxCharge(float newMaxCharge) {
+        return new ChargeData(this.charge, Math.max(0F, newMaxCharge), this.chargeUsage);
+    }
+
+    public ChargeData withChargeUsage(float newChargeUsage) {
+        return new ChargeData(this.charge, this.maxCharge, newChargeUsage);
     }
 
     public static void inventoryTick(ItemStack stack, World world, net.minecraft.entity.Entity entity, int slot, boolean selected) {
         if (!world.isClient() && stack.getOrDefault(ModComponents.ITEM_TOGGLE_COMPONENT, false)) {// every 1 second
 
-            ChargeData data = stack.getOrDefault(ModComponents.CHARGE_COMPONENT, new ChargeData(0F, 100F));
+            ChargeData data = stack.get(ModComponents.CHARGE_COMPONENT);
 
-            if (data.charge() > 1) {
-                stack.set(ModComponents.CHARGE_COMPONENT, data.withCharge(data.charge() - 0.05F));
+            if (data == null) {
+                stack.set(ModComponents.ITEM_TOGGLE_COMPONENT, false);
+                return;
+            }
+
+            if (data.charge() > 0) {
+                stack.set(ModComponents.CHARGE_COMPONENT, data.withCharge(data.charge() - data.chargeUsage()));
             } else {
-                stack.set(ModComponents.CHARGE_COMPONENT, new ChargeData(0F, 100F));
+                stack.set(ModComponents.CHARGE_COMPONENT, data.withCharge(0));
                 stack.set(ModComponents.ITEM_TOGGLE_COMPONENT, false);
 
                 world.playSound(null, entity.getX(), entity.getY(), entity.getZ(),
@@ -65,7 +86,7 @@ public record ChargeData(float charge, float maxCharge) {
     }
 
     public static int getBarStep(ItemStack stack) {
-        ChargeData chargeData = stack.getOrDefault(ModComponents.CHARGE_COMPONENT, new ChargeData(0F, 100F));
+        ChargeData chargeData = stack.getOrDefault(ModComponents.CHARGE_COMPONENT, new ChargeData(0F, 100F, 1F));
         return Math.round(chargeData.charge() * 13 / chargeData.maxCharge());
     }
 }

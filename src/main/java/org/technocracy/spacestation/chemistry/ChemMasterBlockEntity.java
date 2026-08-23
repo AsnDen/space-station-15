@@ -24,7 +24,7 @@ import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
-import org.technocracy.spacestation.registry.components.ModComponents;
+import org.technocracy.spacestation.registry.ModComponents;
 
 import java.util.HashMap;
 import java.util.Map;
