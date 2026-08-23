@@ -8,8 +8,8 @@ import net.minecraft.text.Text;
 import org.technocracy.spacestation.chemistry.ChemData;
 import org.technocracy.spacestation.chemistry.ChemMasterBlockEntity;
 import org.technocracy.spacestation.chemistry.ChemMasterScreenHandler;
-import org.technocracy.spacestation.chemistry.ModComponents;
 import org.technocracy.spacestation.network.ModPackets;
+import org.technocracy.spacestation.registry.ModComponents;
 
 import java.util.ArrayList;
 import java.util.List;
