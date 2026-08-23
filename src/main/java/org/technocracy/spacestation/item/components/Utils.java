@@ -1,13 +1,15 @@
 package org.technocracy.spacestation.item.components;
 
 import net.minecraft.advancement.criterion.Criteria;
-import net.minecraft.block.*;
+import net.minecraft.block.AbstractFireBlock;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.CampfireBlock;
+import net.minecraft.block.CandleBlock;
+import net.minecraft.block.CandleCakeBlock;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
-import net.minecraft.item.Items;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
@@ -18,11 +20,9 @@ import net.minecraft.world.World;
 import net.minecraft.world.event.GameEvent;
 import org.technocracy.spacestation.registry.ModComponents;
 
-import java.lang.reflect.Array;
-import java.util.HashMap;
-import java.util.Map;
+public final class Utils {
 
-public class Utils {
+    private Utils() {}
 
     public static ActionResult ignite(ItemUsageContext context) {
         PlayerEntity playerEntity = context.getPlayer();
@@ -42,8 +42,8 @@ public class Utils {
                 world.setBlockState(blockPos2, blockState2, 11);
                 world.emitGameEvent(playerEntity, GameEvent.BLOCK_PLACE, blockPos);
                 ItemStack itemStack = context.getStack();
-                if (playerEntity instanceof ServerPlayerEntity) {
-                    Criteria.PLACED_BLOCK.trigger((ServerPlayerEntity)playerEntity, blockPos2, itemStack);
+                if (playerEntity instanceof ServerPlayerEntity serverPlayer) {
+                    Criteria.PLACED_BLOCK.trigger(serverPlayer, blockPos2, itemStack);
                     itemStack.damage(1, playerEntity, LivingEntity.getSlotForHand(context.getHand()));
                 }
 
@@ -64,11 +64,6 @@ public class Utils {
     }
 
     public static boolean isTool(ItemStack stack) {
-        return stack.getItem() instanceof ItemTool;
+        return stack != null && stack.getItem() instanceof ItemTool;
     }
-
-    public static final Map<Item, Float> FUELS = Map.of(
-            Items.LAVA_BUCKET, 100F,
-            Items.COAL, 50F
-    );
 }

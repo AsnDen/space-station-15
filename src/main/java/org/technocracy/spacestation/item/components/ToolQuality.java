@@ -1,10 +1,41 @@
 package org.technocracy.spacestation.item.components;
 
-public record ToolQuality(String name) {
-    public static final ToolQuality SCREWING = new ToolQuality("Screwing");
-    public static final ToolQuality WELDING = new ToolQuality("Welding");
-    public static final ToolQuality IGNITION = new ToolQuality("Ignition");
-    public static final ToolQuality PRYING = new ToolQuality("Prying");
-    public static final ToolQuality ANCHORING = new ToolQuality("Anchoring");
-    public static final ToolQuality[] ALL = { SCREWING, WELDING, IGNITION, PRYING, ANCHORING };
+import java.util.Locale;
+import java.util.Optional;
+
+public enum ToolQuality {
+    SCREWING("screwing"),
+    WELDING("welding"),
+    IGNITION("ignition"),
+    PRYING("prying"),
+    ANCHORING("anchoring");
+
+    public static final ToolQuality[] ALL = values();
+
+    private final String id;
+
+    ToolQuality(String id) {
+        this.id = id;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getTranslationKey() {
+        return "quality.spacestation." + id;
+    }
+
+    public static Optional<ToolQuality> fromName(String name) {
+        if (name == null || name.isBlank()) {
+            return Optional.empty();
+        }
+        String lower = name.trim().toLowerCase(Locale.ROOT);
+        for (ToolQuality quality : ALL) {
+            if (quality.id.equals(lower) || quality.name().equalsIgnoreCase(name)) {
+                return Optional.of(quality);
+            }
+        }
+        return Optional.empty();
+    }
 }

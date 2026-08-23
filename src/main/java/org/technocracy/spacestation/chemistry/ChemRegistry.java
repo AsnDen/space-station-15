@@ -1,19 +1,22 @@
 package org.technocracy.spacestation.chemistry;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import com.google.gson.JsonArray;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.fabricmc.fabric.api.resource.SimpleSynchronousResourceReloadListener;
+import net.minecraft.item.Item;
+import net.minecraft.registry.Registries;
 import net.minecraft.resource.ResourceManager;
 import net.minecraft.resource.ResourceType;
 import net.minecraft.util.Identifier;
-import net.minecraft.registry.Registries;
+import org.technocracy.spacestation.SpaceStation;
 import org.technocracy.spacestation.block.AssemblyBlock;
+import org.technocracy.spacestation.chemistry.sublimator.SublimationRecipe;
 import org.technocracy.spacestation.item.components.ToolIngredient;
 import org.technocracy.spacestation.item.components.ToolQuality;
-import org.technocracy.spacestation.chemistry.sublimator.SublimationRecipe;
+
 import java.io.InputStreamReader;
 import java.util.*;
 
@@ -36,7 +39,7 @@ public class ChemRegistry {
                 .registerReloadListener(new SimpleSynchronousResourceReloadListener() {
                     @Override
                     public Identifier getFabricId() {
-                        return Identifier.of("spacestation", "chem_registry");
+                        return Identifier.of(SpaceStation.MOD_ID, "chem_registry");
                     }
 
                     @Override
@@ -52,7 +55,7 @@ public class ChemRegistry {
     private static void loadGrinding(ResourceManager manager) {
         GRINDING.clear();
         manager.findResources("grinding", id ->
-                id.getNamespace().equals("spacestation") && id.getPath().endsWith(".json")
+                id.getNamespace().equals(SpaceStation.MOD_ID) && id.getPath().endsWith(".json")
         ).forEach((id, resource) -> {
             try (InputStreamReader reader = new InputStreamReader(resource.getInputStream())) {
                 JsonObject json = GSON.fromJson(reader, JsonObject.class);
@@ -60,16 +63,16 @@ public class ChemRegistry {
                 Map<String, Double> results = parseDoubleMap(json.getAsJsonObject("results"));
                 GRINDING.put(ingredient, new GrindingRecipe(ingredient, results));
             } catch (Exception e) {
-                System.err.println("[SpaceStation] Ошибка загрузки grinding рецепта: " + id + " — " + e.getMessage());
+                SpaceStation.LOGGER.error("Ошибка загрузки grinding рецепта {}: {}", id, e.getMessage());
             }
         });
-        System.out.println("[SpaceStation] Загружено grinding рецептов: " + GRINDING.size());
+        SpaceStation.LOGGER.info("Загружено grinding рецептов: {}", GRINDING.size());
     }
 
     private static void loadReactions(ResourceManager manager) {
         REACTIONS.clear();
         manager.findResources("reactions", id ->
-                id.getNamespace().equals("spacestation") && id.getPath().endsWith(".json")
+                id.getNamespace().equals(SpaceStation.MOD_ID) && id.getPath().endsWith(".json")
         ).forEach((id, resource) -> {
             try (InputStreamReader reader = new InputStreamReader(resource.getInputStream())) {
                 JsonObject json = GSON.fromJson(reader, JsonObject.class);
@@ -94,16 +97,16 @@ public class ChemRegistry {
                     REACTIONS.add(new ReactionRecipe(reagents, results, minVolume));
                 }
             } catch (Exception e) {
-                System.err.println("[SpaceStation] Ошибка загрузки reaction рецепта: " + id + " — " + e.getMessage());
+                SpaceStation.LOGGER.error("Ошибка загрузки reaction рецепта {}: {}", id, e.getMessage());
             }
         });
-        System.out.println("[SpaceStation] Загружено reaction рецептов: " + REACTIONS.size());
+        SpaceStation.LOGGER.info("Загружено reaction рецептов: {}", REACTIONS.size());
     }
 
     private static void loadSublimation(ResourceManager manager) {
         SUBLIMATION.clear();
         manager.findResources("sublimation", id ->
-                id.getNamespace().equals("spacestation") && id.getPath().endsWith(".json")
+                id.getNamespace().equals(SpaceStation.MOD_ID) && id.getPath().endsWith(".json")
         ).forEach((id, resource) -> {
             try (InputStreamReader reader = new InputStreamReader(resource.getInputStream())) {
                 JsonObject json = GSON.fromJson(reader, JsonObject.class);
@@ -115,16 +118,16 @@ public class ChemRegistry {
                 if (units <= 0.0) throw new IllegalArgumentException("units must be positive");
                 SUBLIMATION.put(chemical, new SublimationRecipe(chemical, output, units));
             } catch (Exception e) {
-                System.err.println("[SpaceStation] Ошибка загрузки sublimation рецепта: " + id + " — " + e.getMessage());
+                SpaceStation.LOGGER.error("Ошибка загрузки sublimation рецепта {}: {}", id, e.getMessage());
             }
         });
-        System.out.println("[SpaceStation] Загружено sublimation рецептов: " + SUBLIMATION.size());
+        SpaceStation.LOGGER.info("Загружено sublimation рецептов: {}", SUBLIMATION.size());
     }
 
     private static void loadAssembly(ResourceManager manager) {
         AssemblyBlock.clearRecipes();
         manager.findResources("assembly", id ->
-                id.getNamespace().equals("spacestation") && id.getPath().endsWith(".json")
+                id.getNamespace().equals(SpaceStation.MOD_ID) && id.getPath().endsWith(".json")
         ).forEach((id, resource) -> {
             try (InputStreamReader reader = new InputStreamReader(resource.getInputStream())) {
                 JsonObject json = GSON.fromJson(reader, JsonObject.class);
@@ -139,27 +142,31 @@ public class ChemRegistry {
                         parseToolIngredient(json.getAsJsonObject("disassembly_tool"))
                 );
             } catch (Exception e) {
-                System.err.println("[SpaceStation] Ошибка загрузки assembly рецепта: " + id + " — " + e.getMessage());
+                SpaceStation.LOGGER.error("Ошибка загрузки assembly рецепта {}: {}", id, e.getMessage());
             }
         });
-        System.out.println("[SpaceStation] Загружено assembly рецептов: " + AssemblyBlock.getRecipes().size());
+        SpaceStation.LOGGER.info("Загружено assembly рецептов: {}", AssemblyBlock.getRecipes().size());
     }
 
     private static ToolIngredient parseToolIngredient(JsonObject json) {
-        Set<net.minecraft.item.Item> items = new HashSet<>();
+        if (json == null) return ToolIngredient.empty();
+
+        Set<Item> items = new HashSet<>();
         Set<ToolQuality> qualities = new HashSet<>();
-        if (json == null) return ToolIngredient.of();
 
-        JsonArray itemArray = json.has("items") ? json.getAsJsonArray("items") : new JsonArray();
-        itemArray.forEach(entry -> items.add(Registries.ITEM.get(Identifier.of(entry.getAsString()))));
+        if (json.has("items")) {
+            JsonArray itemArray = json.getAsJsonArray("items");
+            itemArray.forEach(entry -> items.add(Registries.ITEM.get(Identifier.of(entry.getAsString()))));
+        }
 
-        JsonArray qualityArray = json.has("qualities") ? json.getAsJsonArray("qualities") : new JsonArray();
-        qualityArray.forEach(entry -> {
-            for (ToolQuality quality : ToolQuality.ALL) {
-                if (quality.name().equalsIgnoreCase(entry.getAsString())) qualities.add(quality);
-            }
-        });
-        return new ToolIngredient(Set.copyOf(items), Set.copyOf(qualities));
+        if (json.has("qualities")) {
+            JsonArray qualityArray = json.getAsJsonArray("qualities");
+            qualityArray.forEach(entry ->
+                    ToolQuality.fromName(entry.getAsString()).ifPresent(qualities::add)
+            );
+        }
+
+        return new ToolIngredient(items, qualities);
     }
 
     private static Map<String, Double> parseDoubleMap(JsonObject obj) {

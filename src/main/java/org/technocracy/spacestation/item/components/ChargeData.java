@@ -13,6 +13,8 @@ import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 import org.technocracy.spacestation.registry.ModComponents;
 
+import java.util.Map;
+
 public record ChargeData(float charge, float maxCharge, float chargeUsage) {
     public ChargeData {
         charge = Math.max(0f, Math.min(charge, maxCharge));
@@ -83,6 +85,43 @@ public record ChargeData(float charge, float maxCharge, float chargeUsage) {
         }
 
         return ItemToggle.toggle(world, user, hand, item);
+    }
+
+    public static final Map<Item, Float> FUELS = Map.of(
+            net.minecraft.item.Items.LAVA_BUCKET, 100F,
+            net.minecraft.item.Items.COAL, 50F,
+            net.minecraft.item.Items.CHARCOAL, 50F
+    );
+
+    public static boolean tryRefuel(PlayerEntity player, ItemStack fuelStack, ItemStack targetStack) {
+        if (fuelStack == null || fuelStack.isEmpty() || targetStack == null || targetStack.isEmpty()) {
+            return false;
+        }
+
+        ChargeData data = targetStack.get(ModComponents.CHARGE_COMPONENT);
+        if (data == null || data.charge() >= data.maxCharge()) {
+            return false;
+        }
+
+        Float fuelAmount = FUELS.get(fuelStack.getItem());
+        if (fuelAmount == null) {
+            if (fuelStack.isOf(org.technocracy.spacestation.registry.items.MiscItems.SOLID_FUEL)) {
+                fuelAmount = 50f;
+            } else {
+                return false;
+            }
+        }
+
+        targetStack.set(ModComponents.CHARGE_COMPONENT, data.withCharge(data.charge() + fuelAmount));
+
+        if (!player.getAbilities().creativeMode) {
+            if (fuelStack.isOf(net.minecraft.item.Items.LAVA_BUCKET)) {
+                player.setStackInHand(Hand.MAIN_HAND, new ItemStack(net.minecraft.item.Items.BUCKET));
+            } else {
+                fuelStack.decrement(1);
+            }
+        }
+        return true;
     }
 
     public static int getBarStep(ItemStack stack) {
