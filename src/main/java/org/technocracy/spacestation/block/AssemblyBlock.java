@@ -28,15 +28,22 @@ import java.util.*;
 
 public class AssemblyBlock extends Block {
     record Upgrade(Block result, float cost, float assemblyTime, float fuelCost, float disassemblyTime, ToolIngredient tools) {}
+    public record AssemblyRecipe(Block source, Block result, float cost, float assemblyTime,
+                                 float fuelCost, float disassemblyTime,
+                                 ToolIngredient assemblyTool, ToolIngredient disassemblyTool) {}
     // source + material -> upgrade
     private static final Map<Block, Map<ToolIngredient, AssemblyBlock.Upgrade>> ASSEMBLY_REGISTRY = new HashMap<>();
     // assembled block -> source (для разбора)
     private static final Map<Block, AssemblyBlock.Upgrade> DISASSEMBLY_REGISTRY = new HashMap<>();
+    private static final List<AssemblyRecipe> RECIPES = new ArrayList<>();
 
     public static void registerUpgrade(Block source, Block result,
                                        float cost, float assemblyTime, float fuelCost, float disassemblyTime,
                                        ToolIngredient assembly, ToolIngredient disassembly) {
         Upgrade upgrade = new Upgrade(result, cost, assemblyTime, fuelCost, disassemblyTime, assembly);
+
+        RECIPES.add(new AssemblyRecipe(source, result, cost, assemblyTime, fuelCost,
+            disassemblyTime, assembly, disassembly));
 
         ASSEMBLY_REGISTRY.computeIfAbsent(source, k -> new HashMap<>())
                 .put(assembly, upgrade);
@@ -44,6 +51,10 @@ public class AssemblyBlock extends Block {
         if (!disassembly.isEmpty()) {
             DISASSEMBLY_REGISTRY.put(result, new Upgrade(source, cost, assemblyTime, fuelCost, disassemblyTime, disassembly));
         }
+    }
+
+    public static List<AssemblyRecipe> getRecipes() {
+        return List.copyOf(RECIPES);
     }
     public static void registerUpgrade(Block source, Block result,
                                        float cost, float assemblyTime,
