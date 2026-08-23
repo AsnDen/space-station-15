@@ -1,0 +1,16 @@
+{
+  "source": "spacestation:wall_girder",
+  "result": "spacestation:steel_wall",
+  "cost": 2,
+  "assembly_time": 0.4,
+  "fuel_cost": 4.0,
+  "disassembly_time": 1.2,
+  "assembly_tool": {
+    "items": ["spacestation:steel"],
+    "qualities": ["IGNITION"]
+  },
+  "disassembly_tool": {
+    "items": ["spacestation:omnitool"],
+    "qualities": ["WELDING"]
+  }
+}

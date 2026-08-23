@@ -157,16 +157,6 @@ public final class ModBlocks {
 
         // ============ КОНЕЦ ============
 
-        // ============ НИЖЕ РЕЦЕПТЫ ИНГЕЙМ КРАФТА ============
-        AssemblyBlock.registerUpgrade(WALL_GIRDER, STEEL_WALL, 2, 0.4f, 4f, 1.2f, ToolIngredient.of(MiscItems.STEEL, ToolQuality.IGNITION), ToolIngredient.of(ToolItems.OMNITOOL, ToolQuality.WELDING));
-        AssemblyBlock.registerUpgrade(WALL_GIRDER_REINFORCED, STEEL_WALL_REINFORCED, 2, 0.4f, 1.2f, ToolIngredient.of(MiscItems.PLASTEEL), ToolIngredient.of(ToolItems.OMNITOOL, ToolQuality.PRYING));
-        AssemblyBlock.registerUpgrade(WALL_GIRDER, WALL_GIRDER_REINFORCED, 4, 0.4f, 1.2f, ToolIngredient.of(MiscItems.ROD), ToolIngredient.of(ToolItems.OMNITOOL, ToolQuality.SCREWING));
-
-
-
-        AssemblyBlock.registerUpgrade(WALL_GIRDER, TELECRYSTAL_BLOCK, 9,  0.4f, ToolIngredient.of(MiscItems.TELECRYSTAL));
-        // Смотреть Комментарий в МодИтемс.жава
-
         PlantBlocks.register();
     }
 

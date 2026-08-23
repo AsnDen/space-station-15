@@ -56,6 +56,12 @@ public class AssemblyBlock extends Block {
     public static List<AssemblyRecipe> getRecipes() {
         return List.copyOf(RECIPES);
     }
+
+    public static void clearRecipes() {
+        ASSEMBLY_REGISTRY.clear();
+        DISASSEMBLY_REGISTRY.clear();
+        RECIPES.clear();
+    }
     public static void registerUpgrade(Block source, Block result,
                                        float cost, float assemblyTime,
                                        ToolIngredient assembly) {

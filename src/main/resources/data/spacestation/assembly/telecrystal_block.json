@@ -1,0 +1,9 @@
+{
+  "source": "spacestation:wall_girder",
+  "result": "spacestation:telecrystal_block",
+  "cost": 9,
+  "assembly_time": 0.4,
+  "assembly_tool": {
+    "items": ["spacestation:telecrystal"]
+  }
+}

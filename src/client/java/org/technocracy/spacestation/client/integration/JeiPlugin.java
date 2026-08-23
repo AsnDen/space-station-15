@@ -19,7 +19,7 @@ import org.technocracy.spacestation.client.integration.chemmaster.ChemMasterJeiC
 import org.technocracy.spacestation.client.integration.chemmaster.ChemMasterJeiRecipe;
 import org.technocracy.spacestation.client.integration.sublimator.SublimationJeiCategory;
 import org.technocracy.spacestation.client.integration.sublimator.SublimationJeiRecipe;
-import org.technocracy.spacestation.chemistry.sublimator.SublimatorBlockEntity;
+import org.technocracy.spacestation.chemistry.sublimator.SublimationRecipe;
 import org.technocracy.spacestation.registry.ModComponents;
 import org.technocracy.spacestation.registry.items.ChemItems;
 import java.util.ArrayList;
@@ -82,14 +82,14 @@ public class JeiPlugin implements IModPlugin {
     @Override
     public void registerRecipes(IRecipeRegistration registration) {
         List<SublimationJeiRecipe> recipes = new ArrayList<>();
-        for (Map.Entry<String, Identifier> entry : SublimatorBlockEntity.getOutputs().entrySet()) {
+        for (SublimationRecipe recipe : ChemRegistry.getSublimationRecipes()) {
             ItemStack input = new ItemStack(ChemItems.BEAKER);
             input.set(ModComponents.CHEM_DATA,
                     new org.technocracy.spacestation.chemistry.ChemData(
-                            Map.of(entry.getKey(), SublimatorBlockEntity.UNITS_PER_ITEM),
+                    Map.of(recipe.chemical(), recipe.units()),
                             org.technocracy.spacestation.chemistry.ChemData.EMPTY_BEAKER.capacity()));
             recipes.add(new SublimationJeiRecipe(input, new ItemStack(
-                    net.minecraft.registry.Registries.ITEM.get(entry.getValue())), entry.getKey()));
+                net.minecraft.registry.Registries.ITEM.get(recipe.output())), recipe.chemical()));
         }
         registration.addRecipes(SUBLIMATION, recipes);
 

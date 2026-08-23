@@ -16,7 +16,6 @@ import net.minecraft.registry.Registries;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -25,26 +24,12 @@ import org.technocracy.spacestation.registry.ModComponents;
 import org.technocracy.spacestation.chemistry.ChemContainer;
 import org.technocracy.spacestation.chemistry.ChemData;
 import org.technocracy.spacestation.chemistry.ModBlockEntities;
+import org.technocracy.spacestation.chemistry.ChemRegistry;
 
-import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class SublimatorBlockEntity extends BlockEntity implements Inventory, ExtendedScreenHandlerFactory<BlockPos> {
-    public static final double UNITS_PER_ITEM = 25.0;
     public static final int PROCESS_TIME = 40;
-    private static final Map<String, Identifier> OUTPUTS = new LinkedHashMap<>();
-
-    static {
-        OUTPUTS.put("uranium", Identifier.of("spacestation", "uranium"));
-        OUTPUTS.put("copper", Identifier.of("minecraft", "copper_ingot"));
-        OUTPUTS.put("iron", Identifier.of("minecraft", "iron_ingot"));
-        OUTPUTS.put("carbon", Identifier.of("minecraft", "coal"));
-        OUTPUTS.put("charcoal", Identifier.of("minecraft", "charcoal"));
-        OUTPUTS.put("plasma", Identifier.of("spacestation", "plasma"));
-        OUTPUTS.put("silicon", Identifier.of("minecraft", "quartz"));
-        OUTPUTS.put("sulfur", Identifier.of("minecraft", "gunpowder"));
-    }
-
     public final DefaultedList<ItemStack> slots = DefaultedList.ofSize(2, ItemStack.EMPTY);
     private int processTicker;
     private int processProgress;
@@ -71,10 +56,10 @@ public class SublimatorBlockEntity extends BlockEntity implements Inventory, Ext
         }
 
         for (Map.Entry<String, Double> entry : data.chemicals().entrySet()) {
-            Identifier outputId = OUTPUTS.get(entry.getKey());
-            if (outputId == null || entry.getValue() < UNITS_PER_ITEM) continue;
+            SublimationRecipe recipe = ChemRegistry.getSublimation(entry.getKey()).orElse(null);
+            if (recipe == null || entry.getValue() < recipe.units()) continue;
 
-            Item resultItem = Registries.ITEM.get(outputId);
+            Item resultItem = Registries.ITEM.get(recipe.output());
             if (resultItem == null) continue;
             if (!canAddResult(output, resultItem)) {
                 resetProgress(world, pos, state);
@@ -88,7 +73,7 @@ public class SublimatorBlockEntity extends BlockEntity implements Inventory, Ext
                 return;
             }
 
-            slots.set(0, updatedInput(input, data, entry.getKey()));
+            slots.set(0, updatedInput(input, data, entry.getKey(), recipe.units()));
             if (output.isEmpty()) slots.set(1, new ItemStack(resultItem));
             else output.increment(1);
             processProgress = 0;
@@ -112,18 +97,14 @@ public class SublimatorBlockEntity extends BlockEntity implements Inventory, Ext
         return processProgress;
     }
 
-    private ItemStack updatedInput(ItemStack input, ChemData data, String chemical) {
+    private ItemStack updatedInput(ItemStack input, ChemData data, String chemical, double units) {
         ItemStack updated = input.copy();
-        updated.set(ModComponents.CHEM_DATA, data.remove(chemical, UNITS_PER_ITEM));
+        updated.set(ModComponents.CHEM_DATA, data.remove(chemical, units));
         return updated;
     }
 
     private boolean canAddResult(ItemStack output, Item item) {
         return output.isEmpty() || (output.isOf(item) && output.getCount() < output.getMaxCount());
-    }
-
-    public static Map<String, Identifier> getOutputs() {
-        return Map.copyOf(OUTPUTS);
     }
 
     @Override public int size() { return 2; }
