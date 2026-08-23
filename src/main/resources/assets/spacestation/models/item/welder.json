@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "spacestation:item/tool/welder"
+    "layer0": "spacestation:item/tool/welder/welder"
   },
   "overrides": [
     {
