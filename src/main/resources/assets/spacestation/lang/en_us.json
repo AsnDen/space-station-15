@@ -156,5 +156,12 @@
   "item.spacestation.uranium_ore": "Uranium Ore",
   "item.spacestation.welder": "Welder",
   "item.spacestation.wrench": "Wrench",
-  "subtitles.spacestation.plushie.squeak": "Plushie squeaks"
+  "subtitles.spacestation.plushie.squeak": "Plushie squeaks",
+  "tooltip.spacestation.tool": "This item can be used for§e %s.",
+  "tooltip.spacestation.charge": "Fuel: %s",
+  "quality.spacestation.screwing": "Screwing",
+  "quality.spacestation.welding": "Welding",
+  "quality.spacestation.ignition":  "Ignition",
+  "quality.spacestation.prying": "Prying",
+  "quality.spacestation.anchoring": "Anchoring"
 }
