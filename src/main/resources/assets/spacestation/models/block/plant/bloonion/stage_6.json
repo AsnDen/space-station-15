@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "spacestation:block/plant/bloonion/stage_6"
+  }
+}

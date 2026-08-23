@@ -1,28 +1,28 @@
 {
   "variants": {
     "age=0": {
-      "model": "spacestation:block/plant/tomato/stage0"
+      "model": "spacestation:block/plant/tomato/stage_0"
     },
     "age=1": {
-      "model": "spacestation:block/plant/tomato/stage1"
+      "model": "spacestation:block/plant/tomato/stage_1"
     },
     "age=2": {
-      "model": "spacestation:block/plant/tomato/stage2"
+      "model": "spacestation:block/plant/tomato/stage_2"
     },
     "age=3": {
-      "model": "spacestation:block/plant/tomato/stage3"
+      "model": "spacestation:block/plant/tomato/stage_3"
     },
     "age=4": {
-      "model": "spacestation:block/plant/tomato/stage4"
+      "model": "spacestation:block/plant/tomato/stage_4"
     },
     "age=5": {
-      "model": "spacestation:block/plant/tomato/stage5"
+      "model": "spacestation:block/plant/tomato/stage_5"
     },
     "age=6": {
-      "model": "spacestation:block/plant/tomato/stage6"
+      "model": "spacestation:block/plant/tomato/stage_6"
     },
     "age=7": {
-      "model": "spacestation:block/plant/tomato/stage7"
+      "model": "spacestation:block/plant/tomato/stage_7"
     }
   }
 }

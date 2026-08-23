@@ -22,19 +22,25 @@ public final class FoodItems {
     public static final Item BUN = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "bun"),
             new Item(new Item.Settings().food(new FoodComponent.Builder()
-                    .nutrition(2).saturationModifier(0.2f).build()))
+                    .nutrition(2)
+                    .saturationModifier(0.2f)
+                    .build()))
     );
 
     public static final Item BUN_BOTTOM = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "bun_bottom"),
             new Item(new Item.Settings().food(new FoodComponent.Builder()
-                    .nutrition(1).saturationModifier(0.1f).build()))
+                    .nutrition(1)
+                    .saturationModifier(0.1f)
+                    .build()))
     );
 
     public static final Item BUN_TOP = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "bun_top"),
             new Item(new Item.Settings().food(new FoodComponent.Builder()
-                    .nutrition(1).saturationModifier(0.1f).build()))
+                    .nutrition(1)
+                    .saturationModifier(0.1f)
+                    .build()))
     );
 
     public static final Item BURGER = Registry.register(

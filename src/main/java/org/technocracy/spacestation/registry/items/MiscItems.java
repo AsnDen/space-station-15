@@ -9,6 +9,7 @@ import org.technocracy.spacestation.SpaceStation;
 public final class MiscItems {
 
     public static final Item BANANIUM_ORE  = register("bananium_ore");
+    public static final Item BLOODY_RED_BALLISTIC_PLATE  = register("bloody_red_ballistic_plate");
     public static final Item CLOTH         = register("cloth");
     public static final Item PLASMA_ORE    = register("plasma_ore");
     public static final Item PLASMA        = register("plasma");
@@ -24,6 +25,7 @@ public final class MiscItems {
     public static final Item URANIUM       = register("uranium");
     public static final Item URANIUM_ORE   = register("uranium_ore");
     public static final Item STEEL         = register("steel");
+    public static final Item SOLID_FUEL    = register("solid_fuel");
     public static final Item PLASTEEL      = register("plasteel");
     public static final Item ROD           = register("rod");
     public static final Item PLASTIC       = register("plastic");

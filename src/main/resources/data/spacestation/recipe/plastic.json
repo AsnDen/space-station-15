@@ -1,8 +1,8 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    { "item": "minecraft:coal" },
-    { "item": "minecraft:coal" },
+    { "tag": "minecraft:coals" },
+    { "tag": "minecraft:coals" },
     { "item": "minecraft:slime_ball" }
   ],
   "result": {

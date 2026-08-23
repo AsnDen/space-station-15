@@ -55,6 +55,13 @@ public final class ToolItems {
             new ItemTool(new Item.Settings(), 100f, ToolQuality.ALL)
     );
 
+    public static final Item ROLLING_PIN = Registry.register(
+            Registries.ITEM,
+            Identifier.of(SpaceStation.MOD_ID, "rolling_pin"),
+            new KnifeItem(new Item.Settings()
+                    .maxDamage(128))
+    );
+
     public static final Item KNIFE_KITCHEN = Registry.register(
             Registries.ITEM,
             Identifier.of(SpaceStation.MOD_ID, "knife_kitchen"),

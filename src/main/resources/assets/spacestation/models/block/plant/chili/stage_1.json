@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "spacestation:block/plant/chili/stage_1"
+  }
+}
