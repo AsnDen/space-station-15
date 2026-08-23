@@ -1,0 +1,14 @@
+{
+  "source": "spacestation:wall_girder_reinforced",
+  "result": "spacestation:steel_wall_reinforced",
+  "cost": 2,
+  "assembly_time": 0.4,
+  "disassembly_time": 1.2,
+  "assembly_tool": {
+    "items": ["spacestation:plasteel"]
+  },
+  "disassembly_tool": {
+    "items": ["spacestation:omnitool"],
+    "qualities": ["PRYING"]
+  }
+}
