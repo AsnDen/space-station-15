@@ -65,7 +65,7 @@ public class AssemblyBlock extends Block {
     public static void registerUpgrade(Block source, Block result,
                                        float cost, float assemblyTime,
                                        ToolIngredient assembly) {
-        registerUpgrade(source, result, cost, assemblyTime, 0f, 0f, assembly, ToolIngredient.of());
+        registerUpgrade(source, result, cost, assemblyTime, 0f, 0f, assembly, ToolIngredient.empty());
     }
 
     public static void registerUpgrade(Block source, Block result,

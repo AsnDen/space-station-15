@@ -15,8 +15,12 @@ import org.technocracy.spacestation.system.ActionTimer;
 import org.technocracy.spacestation.world.ModLootModifiers;
 import org.technocracy.spacestation.world.ModWorldGeneration;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class SpaceStation implements ModInitializer {
     public static final String MOD_ID = "spacestation";
+    public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
     @Override
     public void onInitialize() {

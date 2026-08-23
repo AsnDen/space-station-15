@@ -1,6 +1,7 @@
 package org.technocracy.spacestation.item.components;
 
 import net.minecraft.component.ComponentMap;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -8,7 +9,6 @@ import net.minecraft.item.ItemUsageContext;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
-import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
@@ -19,38 +19,42 @@ import org.jetbrains.annotations.Nullable;
 import org.technocracy.spacestation.registry.ModComponents;
 
 import java.util.ArrayList;
-import java.util.HashSet;
+import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
 public class ItemTool extends Item {
-    public final HashSet<ToolQuality> QUALITIES;
-    public final Float SPEED;
+    public static final int COLOR_LOW_CHARGE = 0xFF8C00;
+    public static final int COLOR_NORMAL_CHARGE = 0xFFA500;
+
+    public final Set<ToolQuality> QUALITIES;
+    public final float SPEED;
     public final SoundEvent SOUND_ON_USE;
 
     public ItemTool(Item.Settings settings, ToolQuality... qualities) {
-        this(settings, new HashSet<>(Set.of(qualities)), 1f, SoundEvents.BLOCK_LAVA_EXTINGUISH);
+        this(settings, Set.of(qualities), 1.0f, SoundEvents.BLOCK_LAVA_EXTINGUISH);
     }
 
-    public ItemTool(Item.Settings settings, Float speed, ToolQuality... qualities) {
-        this(settings, new HashSet<>(Set.of(qualities)), speed, SoundEvents.BLOCK_LAVA_EXTINGUISH);
+    public ItemTool(Item.Settings settings, float speed, ToolQuality... qualities) {
+        this(settings, Set.of(qualities), speed, SoundEvents.BLOCK_LAVA_EXTINGUISH);
     }
 
     public ItemTool(Item.Settings settings, SoundEvent soundOnUse, ToolQuality... qualities) {
-        this(settings, new HashSet<>(Set.of(qualities)), 1f, soundOnUse);
+        this(settings, Set.of(qualities), 1.0f, soundOnUse);
     }
 
-    public ItemTool(Item.Settings settings, Float speed, SoundEvent soundOnUse, ToolQuality... qualities) {
-        this(settings, new HashSet<>(Set.of(qualities)), speed, soundOnUse);
+    public ItemTool(Item.Settings settings, float speed, SoundEvent soundOnUse, ToolQuality... qualities) {
+        this(settings, Set.of(qualities), speed, soundOnUse);
     }
-    public ItemTool(Item.Settings settings, HashSet<ToolQuality> qualities, Float speed, SoundEvent soundOnUse) {
+
+    public ItemTool(Item.Settings settings, Set<ToolQuality> qualities, float speed, SoundEvent soundOnUse) {
         super(settings.maxCount(1));
-        QUALITIES = qualities;
-        SPEED = speed;
-        SOUND_ON_USE = soundOnUse;
+        this.QUALITIES = qualities == null ? Set.of() : Set.copyOf(qualities);
+        this.SPEED = speed;
+        this.SOUND_ON_USE = soundOnUse != null ? soundOnUse : SoundEvents.BLOCK_LAVA_EXTINGUISH;
     }
 
-    public HashSet<ToolQuality> getQualities() {
+    public Set<ToolQuality> getQualities() {
         return QUALITIES;
     }
 
@@ -63,23 +67,23 @@ public class ItemTool extends Item {
     }
 
     @Override
-    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand)
-    {
+    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         ItemStack stack = user.getStackInHand(hand);
         ComponentMap allComps = stack.getComponents();
-        if (allComps.contains(ModComponents.CHARGE_COMPONENT)) return ChargeData.use(world, user, hand, this);
+        if (allComps.contains(ModComponents.CHARGE_COMPONENT)) {
+            return ChargeData.use(world, user, hand, this);
+        }
         return super.use(world, user, hand);
     }
 
     @Override
     public ActionResult useOnBlock(ItemUsageContext context) {
-        HashSet<ToolQuality> qualities = getQualities();
-        if (qualities.contains(ToolQuality.WELDING)) return Utils.ignite(context);
-        if (qualities.contains(ToolQuality.IGNITION)) return Utils.ignite(context);
+        Set<ToolQuality> qualities = getQualities();
+        if (qualities.contains(ToolQuality.WELDING) || qualities.contains(ToolQuality.IGNITION)) {
+            return Utils.ignite(context);
+        }
         return super.useOnBlock(context);
     }
-
-
 
     @Override
     public boolean isItemBarVisible(ItemStack stack) {
@@ -100,12 +104,12 @@ public class ItemTool extends Item {
     public int getItemBarColor(ItemStack stack) {
         ChargeData data = stack.get(ModComponents.CHARGE_COMPONENT);
         if (data == null) return super.getItemBarColor(stack);
-        return data.charge() < data.maxCharge() / 4f ? 0xff8C00 : 0xffA500;
+        return data.charge() < data.maxCharge() / 4f ? COLOR_LOW_CHARGE : COLOR_NORMAL_CHARGE;
     }
 
     @Override
-    public void inventoryTick(ItemStack stack, World world, net.minecraft.entity.Entity entity, int slot, boolean selected) {
-        ChargeData.inventoryTick(stack, world, entity, slot,selected);
+    public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
+        ChargeData.inventoryTick(stack, world, entity, slot, selected);
     }
 
     @Override
@@ -120,21 +124,21 @@ public class ItemTool extends Item {
             return;
         }
 
-
         List<String> names = new ArrayList<>();
         Language lang = Language.getInstance();
         for (ToolQuality quality : QUALITIES) {
-            names.add(lang.get("quality.spacestation." + quality.name().toLowerCase()));
+            names.add(lang.get(quality.getTranslationKey()));
         }
 
         tooltip.add(Text.translatable("tooltip.spacestation.tool", String.join(", ", names)));
 
         @Nullable
-        ChargeData data = stack.getComponents().get(ModComponents.CHARGE_COMPONENT);
+        ChargeData data = stack.get(ModComponents.CHARGE_COMPONENT);
         if (data != null) {
-            String curCharge = String.format("%6.2f", data.charge());
-            String maxCharge = String.format("%-6.2f", data.maxCharge());
-            Text text = Text.literal(curCharge + "/" + maxCharge).styled(style -> style.withColor(data.charge() < data.maxCharge() / 4f ? 0xff8C00 : 0xffA500));
+            int color = data.charge() < data.maxCharge() / 4f ? COLOR_LOW_CHARGE : COLOR_NORMAL_CHARGE;
+            String curCharge = String.format("%.2f", data.charge());
+            String maxCharge = String.format("%.2f", data.maxCharge());
+            Text text = Text.literal(curCharge + " / " + maxCharge).styled(style -> style.withColor(color));
             tooltip.add(Text.translatable("tooltip.spacestation.charge", text));
         }
     }
