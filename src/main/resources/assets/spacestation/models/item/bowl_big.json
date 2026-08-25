@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "spacestation:item/food/bowl/bowl"
+    "layer0": "spacestation:item/misc/bowl/bowl"
   }
 }
