@@ -109,6 +109,19 @@ public final class FoodItems {
                     .nutrition(4).saturationModifier(0.8f).build()))
     );
 
+    // Bread
+    public static final Item CORNBREAD = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "cornbread"),
+            new Item(new Item.Settings().food(new FoodComponent.Builder()
+                    .nutrition(6).saturationModifier(1.3f).build()))
+    );
+
+    public static final Item CORNBREAD_SLICE = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "cornbread_slice"),
+            new Item(new Item.Settings().food(new FoodComponent.Builder()
+                    .nutrition(2).saturationModifier(0.6f).build()))
+    );
+
     public static final Item SAUSAGE_BREAD = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "sausage_bread"),
             new Item(new Item.Settings().food(new FoodComponent.Builder()

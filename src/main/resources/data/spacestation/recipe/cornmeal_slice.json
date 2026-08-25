@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    { "item": "spacestation:cornbread" },
+    { "tag": "spacestation:knives" }
+  ],
+  "result": {
+    "id": "spacestation:cornbread_slice",
+    "count": 3
+  }
+}
