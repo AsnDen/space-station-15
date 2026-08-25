@@ -35,7 +35,7 @@ public final class MiscItems {
 
     public static final Item BOWL_BIG =     Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "bowl_big"),
-            new Item(new Item.Settings()));
+            new Item(new Item.Settings().maxCount(16)));
 
 
     private static Item register(String name) {
