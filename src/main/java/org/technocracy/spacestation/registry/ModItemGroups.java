@@ -130,6 +130,7 @@ public final class ModItemGroups {
                         entries.add(FoodItems.SOUP_BUNGO);
                         entries.add(FoodItems.SOUP_NETTLE);
                         entries.add(FoodItems.SOUP_ONION);
+                        entries.add(FoodItems.SOUP_PEA);
                         entries.add(FoodItems.SOUP_TOMATO_BLOOD);
                         entries.add(FoodItems.SPAGHETTI);
 
