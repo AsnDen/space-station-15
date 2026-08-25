@@ -243,6 +243,25 @@ public final class FoodItems {
                     .nutrition(2).saturationModifier(1.5f).build()))
     );
 
+    public static final Item PIZZA_VEGETABLE_RAW = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "pizza_vegetable_raw"),
+            new Item(new Item.Settings().food(new FoodComponent.Builder()
+                    .nutrition(4).saturationModifier(1f).build()).maxCount(1))
+    );
+
+    public static final Item PIZZA_VEGETABLE = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "pizza_vegetable"),
+            new Item(new Item.Settings().food(new FoodComponent.Builder()
+                    .nutrition(16).saturationModifier(6f).build()).maxCount(1))
+    );
+
+    public static final Item PIZZA_VEGETABLE_SLICE = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "pizza_vegetable_slice"),
+            new Item(new Item.Settings().food(new FoodComponent.Builder()
+                    .nutrition(2).saturationModifier(1.5f).build()))
+    );
+
+
     // Salads
 
     public static final Item SALAD_HERB = Registry.register(
