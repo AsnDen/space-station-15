@@ -33,6 +33,11 @@ public final class MiscItems {
     public static final Item PLASTIC                = register("plastic");
     public static final Item ID_CARD                = register("id_card");
 
+    public static final Item BOWL_BIG =     Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "bowl_big"),
+            new Item(new Item.Settings()));
+
+
     private static Item register(String name) {
         return Registry.register(
                 Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, name),

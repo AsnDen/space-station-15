@@ -12,6 +12,8 @@ import org.technocracy.spacestation.SpaceStation;
 
 public final class FoodItems {
 
+    public static final Item _BOWL_BIG = MiscItems.BOWL_BIG;
+    
     public static final Item BANANIUM = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "bananium"),
             new Item(new Item.Settings().food(new FoodComponent.Builder()
@@ -19,11 +21,6 @@ public final class FoodItems {
                     .statusEffect(new StatusEffectInstance(StatusEffects.POISON, 30, 4), 1.0f)
                     .build()))
     );
-
-    public static final Item BOWL_BIG =     Registry.register(
-            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "bowl_big"),
-            new Item(new Item.Settings()));
-
 
     public static final Item BUN = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "bun"),
@@ -267,13 +264,13 @@ public final class FoodItems {
     public static final Item SALAD_HERB = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "salad_herb"),
             new Item(new Item.Settings().food(new FoodComponent.Builder()
-                    .nutrition(5).saturationModifier(1.5f).usingConvertsTo(BOWL_BIG).build()).maxCount(1))
+                    .nutrition(5).saturationModifier(1.5f).usingConvertsTo(_BOWL_BIG).build()).maxCount(1))
     );
 
     public static final Item SALAD_VALID = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "salad_valid"),
             new Item(new Item.Settings().food(new FoodComponent.Builder()
-                    .nutrition(5).saturationModifier(1.5f).usingConvertsTo(BOWL_BIG).build()).maxCount(1))
+                    .nutrition(5).saturationModifier(1.5f).usingConvertsTo(_BOWL_BIG).build()).maxCount(1))
     );
 
     // Soups
@@ -281,7 +278,7 @@ public final class FoodItems {
     public static final Item SOUP_BUNGO = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "soup_bungo"),
             new Item(new Item.Settings().food(new FoodComponent.Builder()
-                    .nutrition(8).saturationModifier(2.5f).usingConvertsTo(BOWL_BIG).build())
+                    .nutrition(8).saturationModifier(2.5f).usingConvertsTo(_BOWL_BIG).build())
                     .maxCount(1)
                     .recipeRemainder(Items.BUCKET))
     );
@@ -290,7 +287,7 @@ public final class FoodItems {
     public static final Item SOUP_NETTLE = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "soup_nettle"),
             new Item(new Item.Settings().food(new FoodComponent.Builder()
-                    .nutrition(6).saturationModifier(2.5f).usingConvertsTo(BOWL_BIG).build())
+                    .nutrition(6).saturationModifier(2.5f).usingConvertsTo(_BOWL_BIG).build())
                     .maxCount(1)
                     .recipeRemainder(Items.BUCKET))
     );
@@ -298,7 +295,7 @@ public final class FoodItems {
     public static final Item SOUP_ONION = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "soup_onion"),
             new Item(new Item.Settings().food(new FoodComponent.Builder()
-                            .nutrition(6).saturationModifier(2.5f).usingConvertsTo(BOWL_BIG).build())
+                            .nutrition(6).saturationModifier(2.5f).usingConvertsTo(_BOWL_BIG).build())
                     .maxCount(1)
                     .recipeRemainder(Items.BUCKET))
     );
@@ -306,7 +303,7 @@ public final class FoodItems {
     public static final Item SOUP_PEA = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "soup_pea"),
             new Item(new Item.Settings().food(new FoodComponent.Builder()
-                            .nutrition(6).saturationModifier(2.5f).usingConvertsTo(BOWL_BIG).build())
+                            .nutrition(6).saturationModifier(2.5f).usingConvertsTo(_BOWL_BIG).build())
                     .maxCount(1)
                     .recipeRemainder(Items.BUCKET))
     );
@@ -314,7 +311,7 @@ public final class FoodItems {
     public static final Item SOUP_TOMATO_BLOOD = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "soup_tomato_blood"),
             new Item(new Item.Settings().food(new FoodComponent.Builder()
-                            .nutrition(8).saturationModifier(2.5f).usingConvertsTo(BOWL_BIG).build()).maxCount(1))
+                            .nutrition(8).saturationModifier(2.5f).usingConvertsTo(_BOWL_BIG).build()).maxCount(1))
     );
 
     private FoodItems() {}

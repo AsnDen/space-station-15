@@ -88,7 +88,6 @@ public final class ModItemGroups {
 
                         // ======== FOOD ========
                         entries.add(FoodItems.BANANIUM);
-                        entries.add(FoodItems.BOWL_BIG);
                         entries.add(FoodItems.BUN);
                         entries.add(FoodItems.BUN_BOTTOM);
                         entries.add(FoodItems.BUN_TOP);
@@ -218,6 +217,7 @@ public final class ModItemGroups {
                         // ======== MISC ========
                         entries.add(MiscItems.BANANIUM_ORE);
                         entries.add(MiscItems.BLOODY_RED_BALLISTIC_PLATE);
+                        entries.add(MiscItems.BOWL_BIG);
                         entries.add(MiscItems.BUTTER);
                         entries.add(MiscItems.BUTTER_SLICE);
                         entries.add(MiscItems.CLOTH);
