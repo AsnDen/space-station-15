@@ -110,14 +110,14 @@ public final class FoodItems {
     // =============== BREAD ===============
     //
 
-    public static final Item CORNBREAD = Registry.register(
-            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "cornbread"),
+    public static final Item BREAD_CORN = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "bread_corn"),
             new Item(new Item.Settings().food(new FoodComponent.Builder()
                     .nutrition(6).saturationModifier(1.3f).build()))
     );
 
-    public static final Item CORNBREAD_SLICE = Registry.register(
-            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "cornbread_slice"),
+    public static final Item BREAD_CORN_SLICE = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "bread_corn_slice"),
             new Item(new Item.Settings().food(new FoodComponent.Builder()
                     .nutrition(2).saturationModifier(0.6f).build()))
     );
