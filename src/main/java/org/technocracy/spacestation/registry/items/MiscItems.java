@@ -19,8 +19,8 @@ public final class MiscItems {
     public static final Item DOUGH                  = register("dough");
     public static final Item DOUGH_SLICE            = register("dough_slice");
     public static final Item DOUGH_FLAT             = register("dough_flat");
-    public static final Item CORNMEAL               = register("cornmeal");
-    public static final Item DOUGH_CORNMEAL         = register("dough_cornmeal");
+    public static final Item FLOUR_CORN               = register("flour_corn");
+    public static final Item DOUGH_CORN         = register("dough_corn");
     public static final Item TELECRYSTAL            = register("telecrystal");
     public static final Item TRASH_PLASTIC          = register("trash_plastic");
     public static final Item STEEL_ORE              = register("steel_ore");

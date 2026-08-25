@@ -1,12 +1,12 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    { "item": "spacestation:cornmeal" },
+    { "item": "spacestation:flour_corn" },
     { "item": "minecraft:milk_bucket" },
     { "item": "minecraft:egg" }
   ],
   "result": {
-    "id": "spacestation:dough_cornmeal",
+    "id": "spacestation:dough_corn",
     "count": 1
   }
 }
