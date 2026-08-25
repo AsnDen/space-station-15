@@ -295,6 +295,14 @@ public final class FoodItems {
                     .recipeRemainder(Items.BUCKET))
     );
 
+    public static final Item SOUP_ONION = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "soup_onion"),
+            new Item(new Item.Settings().food(new FoodComponent.Builder()
+                            .nutrition(6).saturationModifier(2.5f).usingConvertsTo(BOWL_BIG).build())
+                    .maxCount(1)
+                    .recipeRemainder(Items.BUCKET))
+    );
+
     public static final Item SOUP_TOMATO_BLOOD = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "soup_tomato_blood"),
             new Item(new Item.Settings().food(new FoodComponent.Builder()
