@@ -12,8 +12,11 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import org.technocracy.spacestation.SpaceStation;
 import org.technocracy.spacestation.block.AssemblyBlock;
-import org.technocracy.spacestation.chemistry.ChemMasterBlock;
+import org.technocracy.spacestation.chemistry.chemmaster.ChemMasterBlock;
+import org.technocracy.spacestation.chemistry.sublimator.SublimatorBlock;
 import org.technocracy.spacestation.registry.blocks.PlantBlocks;
+import org.technocracy.spacestation.item.components.ToolIngredient;
+import org.technocracy.spacestation.item.components.ToolQuality;
 import org.technocracy.spacestation.registry.items.*;
 
 import java.util.function.Function;
@@ -129,6 +132,15 @@ public final class ModBlocks {
             true
     );
 
+    public static final Block SUBLIMATOR = register(
+            "sublimator",
+            SublimatorBlock::new,
+            AbstractBlock.Settings.create()
+                    .strength(5.0f, 30.0f)
+                    .requiresTool(),
+            true
+    );
+
     private ModBlocks() {}
 
     public static void register() {
@@ -137,21 +149,13 @@ public final class ModBlocks {
 
         // Несколько инструментов для разбора:
         // AssemblyBlock.registerUpgrade(<НАЗВАНИЕ_БЛОКА_С_КОТОРЫМ_ВЗАИМОДЕЙСТВУЕМ>, ModItems.<НАЗВАНИЕ_ИНГРИДИЕНТА>, <НАЗВАНИЕ_БЛОКА_КОТОРЫЙ_ПОЛУЧИМ>, <ВРЕМЯ_РАЗБОРА>, ModItems.<ПЕРВЫЙ_ПРЕДМЕТ_ДЛЯ_РАЗБОРА>, ModItems.<ВТОРОЙ, ТРЕТИЙ, ..._ПРЕДМЕТ_ДЛЯ_РАЗБОРА>);
+        // FUTURE: AssemblyBlock.registerUpgrade(<БЛОК ЦЕЛЬ>, <БЛОК ПОЛУЧЕНИЕ>, <ЦЕНА(предмет - количество, инструмент - трата заряда)>, <ВРЕМЯ СБОРКИ>, <ТРАТА ТОПЛИВА>, <ВРЕМЯ РАЗБОРКИ>, ToolIngredient.of(<ЧЕМ СОБИРАЕМ>), ToolIngredient.of(<ЧЕМ РАЗБИРАЕМ>));
 
         // Без разбора вообще:
         // AssemblyBlock.registerUpgrade(НАЗВАНИЕ_БЛОКА_С_КОТОРЫМ_ВЗАИМОДЕЙСТВУЕМ, ModItems.<НАЗВАНИЕ_ИНГРИДИЕНТА>, <НАЗВАНИЕ_БЛОКА_КОТОРЫЙ_ПОЛУЧИМ>, <ВРЕМЯ_РАЗБОРА>);
+        // FUTURE: AssemblyBlock.registerUpgrade(<БЛОК ЦЕЛЬ>, <БЛОК ПОЛУЧЕНИЕ>, <ЦЕНА СБОРКИ>, <ВРЕМЯ СБОРКИ>, ToolIngredient.of(<ЧЕМ СОБИРАЕМ>));
 
         // ============ КОНЕЦ ============
-
-        // ============ НИЖЕ РЕЦЕПТЫ ИНГЕЙМ КРАФТА ============
-        AssemblyBlock.registerUpgrade(WALL_GIRDER, MiscItems.STEEL, STEEL_WALL, 2, 0.4f, 1.2f, ModItems.CROWBAR, ToolItems.OMNITOOL);
-        AssemblyBlock.registerUpgrade(WALL_GIRDER_REINFORCED, MiscItems.PLASTEEL, STEEL_WALL_REINFORCED, 2, 0.4f, 1.2f, ModItems.CROWBAR, ToolItems.OMNITOOL);
-        AssemblyBlock.registerUpgrade(WALL_GIRDER, MiscItems.ROD, WALL_GIRDER_REINFORCED, 4, 0.4f, 1.2f, ToolItems.SCREWDRIVER, ToolItems.OMNITOOL);
-
-
-
-        AssemblyBlock.registerUpgrade(WALL_GIRDER, MiscItems.TELECRYSTAL, TELECRYSTAL_BLOCK, 9,  0.4f, 1.2f);
-        // Смотреть Комментарий в МодИтемс.жава
 
         PlantBlocks.register();
     }

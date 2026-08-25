@@ -1,0 +1,5 @@
+{
+  "reagents": { "carbon": 1.0, "oxygen": 1.0 },
+  "results": { "carbon_dioxide": 1.5 },
+  "min_volume": 2.0
+}

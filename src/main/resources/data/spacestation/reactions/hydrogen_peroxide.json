@@ -1,0 +1,5 @@
+{
+  "reagents": { "water": 1.0, "oxygen": 1.0 },
+  "results": { "hydrogen_peroxide": 1.5 },
+  "min_volume": 2.0
+}

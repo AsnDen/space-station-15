@@ -19,11 +19,7 @@ Licenses of borrowed assets are down below
 - src/main/resources/assets/spacestation/textures/item/food/ingredient/bun_top.png
 - src/main/resources/assets/spacestation/textures/item/food/ingredient/bun_bottom.png
 - src/main/resources/assets/spacestation/textures/item/food/spaghetti
-
 - src/main/resources/assets/spacestation/textures/item/misc/id_card.png
-
-`CC-BY-SA-3.0` by Gavin-TC
-- src/main/resources/assets/spacestation/textures/item/misc/plastic_knife.png
 
 `CC-BY-SA-3.0` Taken from baystation at commit https://github.com/Baystation12/Baystation12/commit/464342c5dc8c417b7e79d56c69aa30445bdf3b75
 - src/main/resources/assets/spacestation/textures/item/misc/trash_plastic.png
@@ -48,9 +44,6 @@ Licenses of borrowed assets are down below
 
 `CC-BY-SA-3.0` Taken from https://github.com/vgstation-coders/vgstation13 at 1dbcf389b0ec6b2c51b002df5fef8dd1519f8068, inhands by mubururu_ (github), Growth stages, harvest, dead, and produce sprites created by Chaoticaa (GitHub), inhands modified by Prole0 (GitHub)
 - src/main/resources/assets/spacestation/textures/block/plant/blood_tomato
-
-`CC-BY-SA-3.0` taken from https://github.com/DesertRose2/desertrose/blob/0348c98f8343b5cb82d87df12411ba647b2b1b4f/icons/obj/kitchen.dmi. Inhand sprites created by deltanedas (github) for SS14. Belt sprite taken from unknown file in tgstation at commit https://github.com/tgstation/tgstation/commit/dc89ef0239830774bd3d9d7d6c8da2856da2b869
-- src/main/resources/assets/spacestation/textures/item/tool/rolling_pin.png
 
 `CC0-1.0` Made by Thinbug for space station 14 :33
 - src/main/resources/assets/spacestation/textures/item/plant/bloonion
@@ -120,14 +113,6 @@ Licenses of borrowed assets are down below
 - src/main/resources/assets/spacestation/textures/item/plant/oat
 - src/main/resources/assets/spacestation/textures/block/plant/oat
 
-`CC-BY-SA-3.0` Taken from tgstation at https://github.com/tgstation/tgstation/commit/9b0c2e771e9d2442dd7d21c019b970c1299b5cf4, inhands by mubururu_ (github), slice modified from https://github.com/space-wizards/space-station-14/pull/3436/files#diff-65d1e265b787136da82b8e8b56ede11fdb879c31f9d14b4236d33a9a89d6a815 by Chaoticaa (GitHub), Growth stages, harvest, dead, and produce created by Chaoticaa (GitHub), inhands modified by Prole0 (GitHub)
-- src/main/resources/assets/spacestation/textures/item/plant/onion
-- src/main/resources/assets/spacestation/textures/block/plant/onion
-
-`CC-BY-SA-3.0` Taken from tgstation at https://github.com/tgstation/tgstation/commit/9b0c2e771e9d2442dd7d21c019b970c1299b5cf4, inhands by mubururu_ (github), seed modified from https://github.com/space-wizards/space-station-14/pull/23210/files#diff-6b89a02e399bc4dd9c50c16ad274a353a92c8a0f462083fab0c1e5045d957ad2 by Chaoticaa (GitHub), slice modified from https://github.com/space-wizards/space-station-14/pull/3436/files#diff-65d1e265b787136da82b8e8b56ede11fdb879c31f9d14b4236d33a9a89d6a815 by Chaoticaa (GitHub), Growth, harvest, dead, and produce created by Chaoticaa (GitHub), inhands modified by Prole0 (GitHub)
-- src/main/resources/assets/spacestation/textures/item/plant/onion_red
-- src/main/resources/assets/spacestation/textures/block/plant/onion_red
-
 `CC-BY-SA-3.0` Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/a5e6db8f99b436b643bd3b76fa131ac074dfd856, inhands by mubururu_ (github), Growth, harvest, dead, and produce created by Chaoticaa (GitHub), inhands modified by Prole0 (GitHub)
 - src/main/resources/assets/spacestation/textures/item/plant/pea
 - src/main/resources/assets/spacestation/textures/block/plant/pea
@@ -157,18 +142,6 @@ Licenses of borrowed assets are down below
 
 `CC-BY-NC-SA-3.0` Taken from tgstation at https://github.com/tgstation/tgstation/commit/e1142f20f5e4661cb6845cfcf2dd69f864d67432
 - src/main/resources/assets/spacestation/textures/item/plushies
-
-`CC-BY-SA-3.0` Taken/modified from desertrose at https://github.com/DesertRose2/desertrose/pull/378/commits/9e081bd2a0d7614be5a9dabbca34886ce204105d
-- src/main/resources/assets/spacestation/textures/item/tool/knife_kitchen.png
-
-`CC-BY-SA-3.0` Taken from tgstation at https://github.com/tgstation/tgstation/commit/a28b24f149702527f3eb22f5c686f06c836f2f99; sprite has been edited. Engraved zippo drawn by Darkenson.
-- src/main/resources/assets/spacestation/textures/item/tool/lighter.png
-
-`CC-BY-NC-SA-3.0` Taken from https://github.com/goonstation/goonstation at commit 68aa9d134c07ed345755ff4cc0e11eae531f624e
-- src/main/resources/assets/spacestation/textures/item/tool/omnitool.png
-
-`CC-BY-NC-SA-3.0` Taken from skyrat-tg at https://github.com/Skyrat-SS13/Skyrat-tg/commit/31156a1fcd48d67a717e7b63c11513172b28eeb1
-- src/main/resources/assets/spacestation/textures/item/tool/welder.png
 
 `CC-BY-SA-3.0` Taken from tgstation and modified by Swept at https://github.com/tgstation/tgstation/commit/40d75cc340c63582fb66ce15bf75a36115f6bdaa. escargot from tgstation at https://github.com/tgstation/tgstation/commit/7ffd61b6fa6a6183daa8900f9a490f46f7a81955. Fills created by potato1234_x
 - src/main/resources/assets/spacestation/textures/item/food/bowl/*

@@ -1,0 +1,5 @@
+{
+  "reagents": { "ethanol": 0.5, "water": 0.25, "chlorine": 0.25 },
+  "results": { "antiseptic": 0.75 },
+  "min_volume": 1.0
+}

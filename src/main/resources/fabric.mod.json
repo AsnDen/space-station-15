@@ -20,6 +20,9 @@
         ],
         "client": [
           "org.technocracy.spacestation.client.SpaceStationClient"
+		],
+		"jei_mod_plugin": [
+		  "org.technocracy.spacestation.client.integration.JeiPlugin"
         ]
 	},
 	"depends": {
@@ -27,5 +30,8 @@
 		"minecraft": "~1.21.1",
 		"java": ">=21",
 		"fabric-api": "*"
-	}
+	},
+	"mixins": [
+		"spacestation.mixins.json"
+	]
 }

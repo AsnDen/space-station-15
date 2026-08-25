@@ -1,0 +1,14 @@
+{
+  "source": "spacestation:wall_girder",
+  "result": "spacestation:wall_girder_reinforced",
+  "cost": 4,
+  "assembly_time": 0.4,
+  "disassembly_time": 1.2,
+  "assembly_tool": {
+    "items": ["spacestation:rod"]
+  },
+  "disassembly_tool": {
+    "items": ["spacestation:omnitool"],
+    "qualities": ["SCREWING"]
+  }
+}

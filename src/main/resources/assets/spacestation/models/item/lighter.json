@@ -1,6 +1,14 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "spacestation:item/tool/lighter"
-  }
+    "layer0": "spacestation:item/tool/lighter/lighter"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "spacestation:item_toggle": 1
+      },
+      "model": "spacestation:item/lighter_on"
+    }
+  ]
 }

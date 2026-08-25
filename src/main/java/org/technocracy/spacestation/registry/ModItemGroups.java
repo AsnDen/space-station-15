@@ -8,9 +8,54 @@ import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import org.technocracy.spacestation.SpaceStation;
+import org.technocracy.spacestation.chemistry.ChemData;
+import org.technocracy.spacestation.registry.ModComponents;
 import org.technocracy.spacestation.registry.items.*;
 
+import java.util.Map;
+
 public final class ModItemGroups {
+    public static final ItemGroup CHEMISTRY = Registry.register(
+            Registries.ITEM_GROUP,
+            Identifier.of(SpaceStation.MOD_ID, "chemistry"),
+            FabricItemGroup.builder()
+                    .icon(() -> new ItemStack(ChemItems.BEAKER))
+                    .displayName(Text.translatable("itemGroup.spacestation.chemistry"))
+                    .entries((context, entries) -> {
+                        entries.add(ChemItems.BEAKER);
+                        entries.add(ChemItems.CANISTER);
+
+                        String[] chemicals = {
+                                "acetone", "aloxadone", "ambuzol", "ambuzol_plus", "ammonia",
+                                "antiseptic", "arithrazine", "arkryox", "benzene", "bicaridine",
+                                "bleach", "britvium", "bruizine", "carbon_dioxide", "charcoal",
+                                "chloral_hydrate", "cognizine", "copper_sulfate", "cryoxadone",
+                                "cryptobiolin", "dermaline", "desoxyephedrine", "dexalin",
+                                "dexalin_plus", "diethylamine", "diphenhydramine",
+                                "diphenylmethylamine", "doxarubixadone", "dylovene", "ephedrine",
+                                "epinephrine", "ethyloxyephedrine", "ethylredoxrazine", "fertilizer",
+                                "fluorosulfuric_acid", "fluorosurfactant", "foaming_agent", "glucose",
+                                "haloperidol", "happiness", "heartbreaker_toxin", "hemorrhaginol",
+                                "holy_water", "hydrogen_peroxide", "hydroxide", "hyperzine", "hyronalin",
+                                "impedrezene", "inaprovaline", "insuzine", "ipecac", "iron_silicide",
+                                "kelotane", "lacerinol", "leporazine", "lexorin", "lipolicide", "lipozine",
+                                "local_anesthetic", "mannitol", "mindbreaker_toxin", "mute_toxin", "necrosol",
+                                "nocturine", "norepinephrine_acid", "nutrient_paste", "nutrient_solution",
+                                "oculine", "opporozidone", "paks", "phalangimine", "phenol",
+                                "polytrinic_acid", "potassium_iodide", "psicodine", "puncturase", "pyrazine",
+                                "saline", "siderlac", "sigynate", "sodium_carbonate", "sodium_chloride",
+                                "sodium_hydroxide", "sodium_polycarbonate", "space_cleaner", "space_drugs",
+                                "stimulants", "sulfuric_acid", "synaptizine", "table_salt", "tazinide",
+                                "thermite", "tranexamic_acid", "tricordrazine", "ultravasculine",
+                                "unstable_mutagen", "warfarin"
+                        };
+                        for (String chemical : chemicals) {
+                            entries.add(chemicalBeaker(chemical));
+                        }
+                    })
+                    .build()
+    );
+
     public static final ItemGroup CONTENT = Registry.register(
             Registries.ITEM_GROUP,
             Identifier.of(SpaceStation.MOD_ID, "content"),
@@ -22,6 +67,7 @@ public final class ModItemGroups {
                         // ======== BLOCKS ========
                         entries.add(ModBlocks.BANANIUM_ORE_BLOCK.asItem());
                         entries.add(ModBlocks.CHEM_MASTER_BLOCK.asItem());
+                        entries.add(ModBlocks.SUBLIMATOR.asItem());
                         entries.add(ModBlocks.SUSPICIOUS_GRASS.asItem());
                         entries.add(ModBlocks.PLASMA_ORE_BLOCK.asItem());
                         entries.add(ModBlocks.STEEL_TILE.asItem());
@@ -193,6 +239,13 @@ public final class ModItemGroups {
                     })
                     .build()
     );
+
+    private static ItemStack chemicalBeaker(String chemical) {
+        ItemStack stack = new ItemStack(ChemItems.BEAKER);
+        stack.set(ModComponents.CHEM_DATA,
+                new ChemData(Map.of(chemical, 100.0), ChemData.EMPTY_BEAKER.capacity()));
+        return stack;
+    }
 
     private ModItemGroups() {}
 

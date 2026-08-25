@@ -1,0 +1,5 @@
+{
+  "reagents": { "sodium": 0.5, "chlorine": 0.5 },
+  "results": { "sodium_chloride": 0.75 },
+  "min_volume": 1.0
+}
