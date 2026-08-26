@@ -8,28 +8,35 @@ import org.technocracy.spacestation.SpaceStation;
 
 public final class MiscItems {
 
-    public static final Item BANANIUM_ORE  = register("bananium_ore");
+    public static final Item BANANIUM_ORE           = register("bananium_ore");
     public static final Item BLOODY_RED_BALLISTIC_PLATE  = register("bloody_red_ballistic_plate");
-    public static final Item CLOTH         = register("cloth");
-    public static final Item PLASMA_ORE    = register("plasma_ore");
-    public static final Item PLASMA        = register("plasma");
-    public static final Item FLOUR         = register("flour");
-    public static final Item BUTTER        = register("butter");
-    public static final Item BUTTER_SLICE  = register("butter_slice");
-    public static final Item DOUGH         = register("dough");
-    public static final Item DOUGH_SLICE   = register("dough_slice");
-    public static final Item DOUGH_FLAT    = register("dough_flat");
-    public static final Item TELECRYSTAL   = register("telecrystal");
-    public static final Item TRASH_PLASTIC = register("trash_plastic");
-    public static final Item STEEL_ORE     = register("steel_ore");
-    public static final Item URANIUM       = register("uranium");
-    public static final Item URANIUM_ORE   = register("uranium_ore");
-    public static final Item STEEL         = register("steel");
-    public static final Item SOLID_FUEL    = register("solid_fuel");
-    public static final Item PLASTEEL      = register("plasteel");
-    public static final Item ROD           = register("rod");
-    public static final Item PLASTIC       = register("plastic");
-    public static final Item ID_CARD       = register("id_card");
+    public static final Item CLOTH                  = register("cloth");
+    public static final Item PLASMA_ORE             = register("plasma_ore");
+    public static final Item PLASMA                 = register("plasma");
+    public static final Item FLOUR                  = register("flour");
+    public static final Item BUTTER                 = register("butter");
+    public static final Item BUTTER_SLICE           = register("butter_slice");
+    public static final Item DOUGH                  = register("dough");
+    public static final Item DOUGH_SLICE            = register("dough_slice");
+    public static final Item DOUGH_FLAT             = register("dough_flat");
+    public static final Item FLOUR_CORN               = register("flour_corn");
+    public static final Item DOUGH_CORN         = register("dough_corn");
+    public static final Item TELECRYSTAL            = register("telecrystal");
+    public static final Item TRASH_PLASTIC          = register("trash_plastic");
+    public static final Item STEEL_ORE              = register("steel_ore");
+    public static final Item URANIUM                = register("uranium");
+    public static final Item URANIUM_ORE            = register("uranium_ore");
+    public static final Item STEEL                  = register("steel");
+    public static final Item SOLID_FUEL             = register("solid_fuel");
+    public static final Item PLASTEEL               = register("plasteel");
+    public static final Item ROD                    = register("rod");
+    public static final Item PLASTIC                = register("plastic");
+    public static final Item ID_CARD                = register("id_card");
+
+    public static final Item BOWL_BIG =     Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "bowl_big"),
+            new Item(new Item.Settings().maxCount(16)));
+
 
     private static Item register(String name) {
         return Registry.register(

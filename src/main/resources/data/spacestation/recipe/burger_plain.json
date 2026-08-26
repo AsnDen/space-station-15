@@ -6,7 +6,7 @@
     { "item": "spacestation:cabbage" }
   ],
   "result": {
-    "id": "spacestation:burger",
+    "id": "spacestation:burger_plain",
     "count": 1
   }
 }

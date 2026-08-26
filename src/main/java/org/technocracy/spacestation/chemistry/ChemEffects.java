@@ -23,7 +23,11 @@ public final class ChemEffects {
     private static final List<EffectSpec> DEFAULT_EFFECT = List.of(new EffectSpec(StatusEffects.NAUSEA, 80, 0));
 
     static {
-        // Regeneration
+
+        //
+        // =============== Regeneration ===============
+        //
+
         register(List.of("bicaridine", "inaprovaline", "saline"),
                 new EffectSpec(StatusEffects.REGENERATION, 120, 0));
         register(List.of("nutrient_solution", "nutrient_paste", "mannitol"),
@@ -33,28 +37,43 @@ public final class ChemEffects {
         register(List.of("tricordrazine", "ultravasculine", "opporozidone", "britvium"),
                 new EffectSpec(StatusEffects.REGENERATION, 100, 1));
 
-        // Fire Resistance
+        //
+        // =============== Fire Resistance ===============
+        //
+
         register(List.of("aloxadone", "cryoxadone", "leporazine"),
                 new EffectSpec(StatusEffects.FIRE_RESISTANCE, 160, 0));
         register("pyrazine",
                 new EffectSpec(StatusEffects.FIRE_RESISTANCE, 100, 0));
 
-        // Arkryox (Fire Resistance + Resistance)
+        //
+        // =============== Arkryox (Fire Resistance + Resistance) ===============
+        //
+
         register("arkryox",
                 new EffectSpec(StatusEffects.FIRE_RESISTANCE, 120, 0),
                 new EffectSpec(StatusEffects.RESISTANCE, 80, 0));
 
-        // Water Breathing
+        //
+        // =============== Water Breathing ===============
+        //
+
         register(List.of("dexalin", "dexalin_plus"),
                 new EffectSpec(StatusEffects.WATER_BREATHING, 180, 0));
 
-        // Resistance
+        //
+        // =============== Resistance ===============
+        //
+
         register(List.of("kelotane", "dermaline", "antiseptic", "hydrogen_peroxide"),
                 new EffectSpec(StatusEffects.RESISTANCE, 100, 0));
         register(List.of("charcoal", "dylovene", "tranexamic_acid"),
                 new EffectSpec(StatusEffects.RESISTANCE, 80, 0));
 
-        // Speed & Haste & Epinephrine
+        //
+        // =============== Speed & Haste & Epinephrine ===============
+        //
+
         register(List.of("epinephrine", "norepinephrine_acid"),
                 new EffectSpec(StatusEffects.REGENERATION, 100, 0),
                 new EffectSpec(StatusEffects.SPEED, 80, 0));
@@ -64,13 +83,19 @@ public final class ChemEffects {
         register("glucose",
                 new EffectSpec(StatusEffects.HASTE, 100, 0));
 
-        // Night Vision
+        //
+        // =============== Night Vision ===============
+        //
+
         register(List.of("cognizine", "psicodine", "synaptizine"),
                 new EffectSpec(StatusEffects.NIGHT_VISION, 160, 0));
         register("oculine",
                 new EffectSpec(StatusEffects.NIGHT_VISION, 220, 0));
 
-        // Nausea & Toxins
+        //
+        // =============== Nausea & Toxins ===============
+        //
+
         register(List.of("cryptobiolin", "bruizine"),
                 new EffectSpec(StatusEffects.NAUSEA, 140, 0));
         register(List.of("paks", "space_drugs", "lipozine", "lipolicide", "mindbreaker_toxin",
@@ -80,17 +105,26 @@ public final class ChemEffects {
                 new EffectSpec(StatusEffects.NAUSEA, 180, 0),
                 new EffectSpec(StatusEffects.SLOWNESS, 120, 0));
 
-        // Saturation & Blessing
+        //
+        // =============== Saturation & Blessing ===============
+        //
+
         register(List.of("happiness", "holy_water", "blessing"),
                 new EffectSpec(StatusEffects.SATURATION, 40, 0));
 
-        // Weakness
+        //
+        // =============== Weakness ===============
+        //
+
         register(List.of("tazinide", "siderlac", "sigynate", "phalangimine"),
                 new EffectSpec(StatusEffects.WEAKNESS, 120, 0));
         register("lexorin",
                 new EffectSpec(StatusEffects.WEAKNESS, 220, 1));
 
-        // Poison & Acids
+        //
+        // =============== Poison & Acids ===============
+        //
+
         register(List.of("carbon_dioxide", "fluorosulfuric_acid", "polytrinic_acid", "thermite",
                 "uranium", "unstable_mutagen", "ambuzol", "ambuzol_plus", "necrosol"),
                 new EffectSpec(StatusEffects.POISON, 220, 1));
@@ -98,20 +132,32 @@ public final class ChemEffects {
                 new EffectSpec(StatusEffects.POISON, 260, 3),
                 new EffectSpec(StatusEffects.WITHER, 160, 3));
 
-        // Local Anesthetic
+        //
+        // =============== Local Anesthetic ===============
+        //
+
         register("local_anesthetic",
                 new EffectSpec(StatusEffects.SLOWNESS, 140, 0),
                 new EffectSpec(StatusEffects.RESISTANCE, 100, 0));
 
-        // Mining Fatigue
+        //
+        // =============== Mining Fatigue ===============
+        //
+
         register(List.of("arithrazine", "hyronalin", "haloperidol", "impedrezene"),
                 new EffectSpec(StatusEffects.MINING_FATIGUE, 180, 0));
 
-        // Wither
+        //
+        // =============== Wither ===============
+        //
+
         register(List.of("lacerinol", "puncturase", "hemorrhaginol", "warfarin"),
                 new EffectSpec(StatusEffects.WITHER, 140, 0));
 
-        // Inert reagents (no direct effect when ingested)
+        //
+        // =============== Inert reagents (no direct effect when ingested) ===============
+        //
+
         registerInert(List.of(
                 "foaming_agent", "fluorosurfactant", "space_cleaner", "space_glue",
                 "fertilizer", "copper_sulfate", "sodium_chloride", "acetone", "ammonia",

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "spacestation:dough_corn"
+  },
+  "result": {
+    "id": "spacestation:bread_corn"
+  },
+  "experience": 0.10,
+  "cookingtime": 200
+}

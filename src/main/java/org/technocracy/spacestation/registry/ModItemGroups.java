@@ -91,16 +91,21 @@ public final class ModItemGroups {
                         entries.add(FoodItems.BUN);
                         entries.add(FoodItems.BUN_BOTTOM);
                         entries.add(FoodItems.BUN_TOP);
-                        entries.add(FoodItems.BURGER);
                         entries.add(FoodItems.BURGER_CHEESE);
+                        entries.add(FoodItems.BURGER_FIVE_ALARM);
+                        entries.add(FoodItems.BURGER_PLAIN);
                         entries.add(FoodItems.CHEESE_WEDGE);
                         entries.add(FoodItems.CHEESE_WEDGE_FRESH);
                         entries.add(FoodItems.CHEESE_WHEEL);
                         entries.add(FoodItems.CHEESE_WHEEL_FRESH);
+                        entries.add(FoodItems.BREAD_CORN);
+                        entries.add(FoodItems.BREAD_CORN_SLICE);
                         entries.add(FoodItems.CROISSANT);
                         entries.add(FoodItems.CROISSANT_RAW);
                         entries.add(FoodItems.CUTLET_COOKED);
                         entries.add(FoodItems.CUTLET_RAW);
+                        entries.add(FoodItems.MEATBALL);
+                        entries.add(FoodItems.MEATBALL_COOKED);
                         entries.add(FoodItems.PIZZA_MARGHERITA);
                         entries.add(FoodItems.PIZZA_MARGHERITA_RAW);
                         entries.add(FoodItems.PIZZA_MARGHERITA_SLICE);
@@ -113,9 +118,19 @@ public final class ModItemGroups {
                         entries.add(FoodItems.PIZZA_PINEAPPLE);
                         entries.add(FoodItems.PIZZA_PINEAPPLE_RAW);
                         entries.add(FoodItems.PIZZA_PINEAPPLE_SLICE);
+                        entries.add(FoodItems.PIZZA_VEGETABLE);
+                        entries.add(FoodItems.PIZZA_VEGETABLE_RAW);
+                        entries.add(FoodItems.PIZZA_VEGETABLE_SLICE);
+                        entries.add(FoodItems.SALAD_HERB);
+                        entries.add(FoodItems.SALAD_VALID);
                         entries.add(FoodItems.SAUSAGE_BREAD);
                         entries.add(FoodItems.SAUSAGE_BREAD_RAW);
                         entries.add(FoodItems.SAUSAGE_BREAD_SLICE);
+                        entries.add(FoodItems.SOUP_BUNGO);
+                        entries.add(FoodItems.SOUP_NETTLE);
+                        entries.add(FoodItems.SOUP_ONION);
+                        entries.add(FoodItems.SOUP_PEA);
+                        entries.add(FoodItems.SOUP_TOMATO_BLOOD);
                         entries.add(FoodItems.SPAGHETTI);
 
                         // ======== TOOLS ========
@@ -202,12 +217,15 @@ public final class ModItemGroups {
                         // ======== MISC ========
                         entries.add(MiscItems.BANANIUM_ORE);
                         entries.add(MiscItems.BLOODY_RED_BALLISTIC_PLATE);
+                        entries.add(MiscItems.BOWL_BIG);
                         entries.add(MiscItems.BUTTER);
                         entries.add(MiscItems.BUTTER_SLICE);
                         entries.add(MiscItems.CLOTH);
                         entries.add(MiscItems.DOUGH);
                         entries.add(MiscItems.DOUGH_FLAT);
                         entries.add(MiscItems.DOUGH_SLICE);
+                        entries.add(MiscItems.FLOUR_CORN);
+                        entries.add(MiscItems.DOUGH_CORN);
                         entries.add(MiscItems.FLOUR);
                         entries.add(MiscItems.ID_CARD);
                         entries.add(MiscItems.PLASMA);
