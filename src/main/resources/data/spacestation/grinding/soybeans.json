@@ -1,4 +1,4 @@
 {
   "ingredient": "spacestation:soybeans",
-  "results": { "water": 1.0, "protein": 1.5, "nitrogen": 0.5 }
+  "results": { "water": 5.0, "protein": 3.0, "nitrogen": 2.5 }
 }

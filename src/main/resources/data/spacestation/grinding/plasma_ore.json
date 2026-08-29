@@ -1,0 +1,7 @@
+{
+  "ingredient": "spacestation:plasma",
+  "results": {
+    "plasma": 20.0,
+    "rock": 10.0
+  }
+}

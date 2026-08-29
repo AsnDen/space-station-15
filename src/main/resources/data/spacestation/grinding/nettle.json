@@ -1,4 +1,4 @@
 {
   "ingredient": "spacestation:nettle",
-  "results": { "water": 1.0, "carbon": 1.0, "histamine": 0.5 }
+  "results": { "water": 5.0, "carbon": 5.0, "histamine": 2.5 }
 }

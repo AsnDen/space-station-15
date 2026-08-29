@@ -1,4 +1,4 @@
 {
   "ingredient": "spacestation:aloe",
-  "results": { "water": 1.0, "aloe": 2.0, "carbon": 0.5 }
+  "results": { "water": 5.0, "aloe": 10.0, "carbon": 2.5 }
 }

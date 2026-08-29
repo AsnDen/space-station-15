@@ -1,4 +1,4 @@
 {
   "ingredient": "spacestation:steel",
-  "results": { "iron": 2.0, "carbon": 0.5 }
+  "results": { "iron": 10.0, "carbon": 2.5 }
 }
