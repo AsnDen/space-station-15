@@ -1,4 +1,4 @@
 {
   "ingredient": "spacestation:oat",
-  "results": { "water": 1.0, "sugar": 1.0, "protein": 0.5 }
+  "results": { "water": 5.0, "sugar": 5.0, "protein": 2.5 }
 }

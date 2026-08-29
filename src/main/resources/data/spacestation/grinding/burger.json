@@ -1,4 +1,4 @@
 {
   "ingredient": "spacestation:burger",
-  "results": { "water": 1.0, "protein": 1.5, "starch": 1.0, "fat": 1.0 }
+  "results": { "water": 5.0, "protein": 3.0, "starch": 5.0, "fat": 5.0 }
 }

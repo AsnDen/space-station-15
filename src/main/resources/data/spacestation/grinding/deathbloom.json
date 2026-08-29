@@ -1,4 +1,4 @@
 {
   "ingredient": "spacestation:deathbloom",
-  "results": { "water": 1.0, "carbon": 1.0, "toxin": 1.0 }
+  "results": { "water": 5.0, "carbon": 5.0, "toxin": 5.0 }
 }

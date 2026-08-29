@@ -1,7 +1,7 @@
 {
   "ingredient": "minecraft:sea_pickle",
   "results": {
-    "chlorine": 1.0,
-    "sodium": 1.0
+    "chlorine": 5.0,
+    "sodium": 5.0
   }
 }

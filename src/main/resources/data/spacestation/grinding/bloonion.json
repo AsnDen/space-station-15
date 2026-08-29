@@ -1,4 +1,4 @@
 {
   "ingredient": "spacestation:bloonion",
-  "results": { "water": 1.0, "sulfur": 0.5, "carbon": 1.0 }
+  "results": { "water": 5.0, "sulfur": 2.5, "helium": 5.0 }
 }

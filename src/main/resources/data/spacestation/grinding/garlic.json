@@ -1,4 +1,4 @@
 {
   "ingredient": "spacestation:garlic",
-  "results": { "water": 1.0, "sulfur": 1.0, "carbon": 0.5 }
+  "results": { "water": 5.0, "sulfur": 5.0, "carbon": 2.5 }
 }

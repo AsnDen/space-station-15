@@ -1,4 +1,4 @@
 {
   "ingredient": "spacestation:blood_tomato",
-  "results": { "water": 2.0, "carbon": 1.0, "iron": 0.5 }
+  "results": { "water": 10.0, "carbon": 5.0, "iron": 2.5 }
 }

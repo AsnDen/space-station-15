@@ -1,4 +1,4 @@
 {
   "ingredient": "spacestation:plasteel",
-  "results": { "iron": 1.0, "carbon": 0.5, "plasma": 0.5 }
+  "results": { "iron": 5.0, "carbon": 2.5, "plasma": 2.5 }
 }
