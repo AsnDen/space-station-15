@@ -200,7 +200,7 @@ public final class ChemColors {
         return 0xFF000000 | (mixedRed << 16) | (mixedGreen << 8) | mixedBlue;
     }
 
-    /** Stable distinct color for unknown/new reagents. */
+    /** Цвета для неизвестных реагентов. */
     private static int hashColor(String chemId) {
         int h = chemId.hashCode();
         int r = 96 + ((h) & 0x7F);

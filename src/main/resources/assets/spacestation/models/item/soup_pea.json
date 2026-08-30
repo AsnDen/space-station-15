@@ -2,6 +2,6 @@
   "parent": "minecraft:item/generated",
   "textures": {
     "layer0": "spacestation:item/misc/bowl/bowl",
-    "layer1": "spacestation:item/food/soup/pea"
+    "layer1": "spacestation:item/food/soup/onion"
   }
 }

@@ -11,6 +11,72 @@ import net.minecraft.util.Identifier;
 import org.technocracy.spacestation.SpaceStation;
 
 public final class FoodItems {
+
+    //
+    // =============== INGREDIENTS ===============
+    //
+
+    public static final Item FLOUR = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "flour"),
+            new Item(new Item.Settings().food(new FoodComponent.Builder()
+                    .nutrition(2).saturationModifier(0.3f)
+                    .statusEffect(new StatusEffectInstance(StatusEffects.POISON, 30, 4), 1.0f)
+                    .build()))
+    );
+
+    public static final Item BUTTER = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "butter"),
+            new Item(new Item.Settings().food(new FoodComponent.Builder()
+                    .nutrition(20).saturationModifier(10f)
+                    .statusEffect(new StatusEffectInstance(StatusEffects.POISON, 300, 1), 1.0f)
+                    .statusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 600, 1), 1.0f)
+                    .build()))
+    );
+
+    public static final Item BUTTER_SLICE = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "butter_slice"),
+            new Item(new Item.Settings().food(new FoodComponent.Builder()
+                    .nutrition(5).saturationModifier(2f)
+                    .statusEffect(new StatusEffectInstance(StatusEffects.POISON, 100, 1), 1.0f)
+                    .statusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 200, 1), 1.0f)
+                    .build()))
+    );
+
+    public static final Item DOUGH = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "dough"),
+            new Item(new Item.Settings().food(new FoodComponent.Builder()
+                    .nutrition(2).saturationModifier(0.3f)
+                    .build()))
+    );
+
+    public static final Item DOUGH_FLAT = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "dough_flat"),
+            new Item(new Item.Settings().food(new FoodComponent.Builder()
+                    .nutrition(2).saturationModifier(0.3f)
+                    .build()))
+    );
+
+    public static final Item DOUGH_SLICE = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "dough_slice"),
+            new Item(new Item.Settings().food(new FoodComponent.Builder()
+                    .nutrition(2).saturationModifier(0.3f)
+                    .build()))
+    );
+
+    public static final Item FLOUR_CORN = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "flour_corn"),
+            new Item(new Item.Settings().food(new FoodComponent.Builder()
+                    .nutrition(2).saturationModifier(0.3f)
+                    .statusEffect(new StatusEffectInstance(StatusEffects.POISON, 30, 4), 1.0f)
+                    .build()))
+    );
+
+    public static final Item DOUGH_CORN = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "dough_corn"),
+            new Item(new Item.Settings().food(new FoodComponent.Builder()
+                    .nutrition(2).saturationModifier(0.3f)
+                    .build()))
+    );
     
     public static final Item BANANIUM = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "bananium"),
@@ -122,20 +188,20 @@ public final class FoodItems {
                     .nutrition(2).saturationModifier(0.6f).build()))
     );
 
-    public static final Item SAUSAGE_BREAD = Registry.register(
-            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "sausage_bread"),
+    public static final Item BREAD_SAUSAGE = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "bread_sausage"),
             new Item(new Item.Settings().food(new FoodComponent.Builder()
                     .nutrition(6).saturationModifier(1.3f).build()))
     );
 
-    public static final Item SAUSAGE_BREAD_RAW = Registry.register(
-            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "sausage_bread_raw"),
+    public static final Item BREAD_SAUSAGE_RAW = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "bread_sausage_raw"),
             new Item(new Item.Settings().food(new FoodComponent.Builder()
                     .nutrition(6).saturationModifier(1.3f).build()))
     );
 
-    public static final Item SAUSAGE_BREAD_SLICE = Registry.register(
-            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "sausage_bread_slice"),
+    public static final Item BREAD_SAUSAGE_SLICE = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "bread_sausage_slice"),
             new Item(new Item.Settings().food(new FoodComponent.Builder()
                     .nutrition(2).saturationModifier(0.6f).build()))
     );
