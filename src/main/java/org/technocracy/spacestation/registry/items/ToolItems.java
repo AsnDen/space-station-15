@@ -20,20 +20,6 @@ public final class ToolItems {
                     ToolQuality.PRYING)
     );
 
-    public static final Item CROWBAR_RED = Registry.register(
-            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "crowbar_red"),
-            new Item(new Item.Settings()
-                    .maxCount(1)
-                    .maxDamage(100))
-    );
-
-    public static final Item CROWBAR_BRASS = Registry.register(
-            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "crowbar_brass"),
-            new Item(new Item.Settings()
-                    .maxCount(1).
-                    maxDamage(100))
-    );
-
     public static final Item SCREWDRIVER = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "screwdriver"),
             new ItemTool(new Item.Settings()

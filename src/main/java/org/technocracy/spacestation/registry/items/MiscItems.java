@@ -13,14 +13,6 @@ public final class MiscItems {
     public static final Item CLOTH                  = register("cloth");
     public static final Item PLASMA_ORE             = register("plasma_ore");
     public static final Item PLASMA                 = register("plasma");
-    public static final Item FLOUR                  = register("flour");
-    public static final Item BUTTER                 = register("butter");
-    public static final Item BUTTER_SLICE           = register("butter_slice");
-    public static final Item DOUGH                  = register("dough");
-    public static final Item DOUGH_SLICE            = register("dough_slice");
-    public static final Item DOUGH_FLAT             = register("dough_flat");
-    public static final Item FLOUR_CORN               = register("flour_corn");
-    public static final Item DOUGH_CORN         = register("dough_corn");
     public static final Item TELECRYSTAL            = register("telecrystal");
     public static final Item TRASH_PLASTIC          = register("trash_plastic");
     public static final Item STEEL_ORE              = register("steel_ore");

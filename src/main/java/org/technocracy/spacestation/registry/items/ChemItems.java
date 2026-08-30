@@ -25,6 +25,18 @@ public final class ChemItems {
                     .component(ModComponents.CHEM_DATA, ChemData.EMPTY_CANISTER))
     );
 
+    public static final Item COFFEE_POWDER = register("coffee_powder");
+    public static final Item COPPER_SULFATE = register("copper_sulfate");
+    public static final Item SALT = register("salt");
+    public static final Item UNSTABLE_MUTAGEN_POWDER = register("unstable_mutagen_powder");
+
+    private static Item register(String name) {
+        return Registry.register(
+                Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, name),
+                new Item(new Item.Settings())
+        );
+    }
+
     private ChemItems() {}
 
     public static void register() {}
