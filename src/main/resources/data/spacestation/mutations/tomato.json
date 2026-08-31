@@ -1,0 +1,13 @@
+{
+  "target": "spacestation:tomato_crop",
+  "mutations": [
+    {
+      "id": "spacestation:death_mutation",
+      "weight": 1
+    },
+    {
+      "id": "spacestation:tomato_mutation",
+      "weight": 1
+    }
+  ]
+}

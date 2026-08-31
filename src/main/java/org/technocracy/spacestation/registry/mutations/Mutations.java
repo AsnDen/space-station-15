@@ -33,6 +33,20 @@ public class Mutations {
             ))
     );
 
+    public static final Mutation TOMATO_MUTATION = register(
+            "tomato_mutation",
+            new TransformMutation(List.of(
+                    new TransformMutation.WeightedBlock(
+                            PlantBlocks.BLUE_TOMATO_CROP.getDefaultState(),
+                            1
+                    ),
+                    new TransformMutation.WeightedBlock(
+                            PlantBlocks.BLOOD_TOMATO_CROP.getDefaultState(),
+                            1
+                    )
+            ))
+    );
+
     private static Mutation register(String id, Mutation mutation) {
         Identifier identifier = Identifier.of(SpaceStation.MOD_ID, id);
 
