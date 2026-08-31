@@ -56,6 +56,7 @@ public class MutatorItem extends Item {
 
             if (mutation != null) {
                 mutation.apply(mutationContext);
+                context.getStack().decrement(1);
             }
         });
 
