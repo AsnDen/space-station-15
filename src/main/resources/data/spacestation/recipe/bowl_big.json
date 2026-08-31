@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    "T T",
+    " T "
+  ],
+  "key": {
+    "T": { "tag": "minecraft:terracotta" }
+  },
+  "result": {
+    "id": "spacestation:bowl_big",
+    "count": 1
+  }
+}

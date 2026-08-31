@@ -16,6 +16,7 @@ public final class ChemColors {
         // Elements & basics
         put("water", 0xFF3399FF);
         put("hydrogen", 0xFFE8F4FF);
+        put("helium", 0xFFBDD6FF);
         put("oxygen", 0xFF66CCFF);
         put("carbon", 0xFF333333);
         put("nitrogen", 0xFF4466AA);
@@ -38,6 +39,7 @@ public final class ChemColors {
         put("plasma", 0xFFFF66FF);
         put("ash", 0xFF555555);
         put("charcoal", 0xFF222222);
+        put("rock", 0xFF444444);
 
         // Simple compounds
         put("ammonia", 0xFF88CCFF);
@@ -198,7 +200,7 @@ public final class ChemColors {
         return 0xFF000000 | (mixedRed << 16) | (mixedGreen << 8) | mixedBlue;
     }
 
-    /** Stable distinct color for unknown/new reagents. */
+    /** Цвета для неизвестных реагентов. */
     private static int hashColor(String chemId) {
         int h = chemId.hashCode();
         int r = 96 + ((h) & 0x7F);

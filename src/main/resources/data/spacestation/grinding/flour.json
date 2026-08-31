@@ -1,4 +1,4 @@
 {
   "ingredient": "spacestation:flour",
-  "results": { "starch": 2.0, "carbon": 0.5 }
+  "results": { "starch": 10.0, "carbon": 2.5 }
 }

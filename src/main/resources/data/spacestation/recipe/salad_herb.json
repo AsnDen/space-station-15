@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    { "item": "spacestation:bowl_big" },
+    { "item": "spacestation:ambrosia" },
+    { "item": "minecraft:apple" }
+  ],
+  "result": {
+    "id": "spacestation:salad_herb",
+    "count": 1
+  }
+}

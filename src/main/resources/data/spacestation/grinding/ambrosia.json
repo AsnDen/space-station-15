@@ -1,4 +1,4 @@
 {
   "ingredient": "spacestation:ambrosia",
-  "results": { "water": 1.0, "sugar": 1.0, "oxygen": 0.5 }
+  "results": { "water": 5.0, "sugar": 5.0, "oxygen": 2.5 }
 }

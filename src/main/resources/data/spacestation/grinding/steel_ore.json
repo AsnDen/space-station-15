@@ -1,4 +1,4 @@
 {
   "ingredient": "spacestation:steel_ore",
-  "results": { "iron": 1.5, "carbon": 0.25, "stone": 0.5 }
+  "results": { "iron": 3.0, "carbon": 0.25, "stone": 2.5 }
 }

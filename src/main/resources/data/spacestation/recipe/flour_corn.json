@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    { "item": "spacestation:corn" },
+    { "item": "spacestation:corn" },
+    { "item": "spacestation:corn" },
+    { "item": "spacestation:corn" }
+  ],
+  "result": {
+    "id": "spacestation:flour_corn",
+    "count": 1
+  }
+}

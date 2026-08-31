@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    { "item": "spacestation:bowl_big" },
+    { "item": "spacestation:pea" },
+    { "item": "spacestation:pea" },
+    { "item": "spacestation:pea" },
+    { "item": "minecraft:water_bucket" }
+  ],
+  "result": {
+    "id": "spacestation:soup_pea",
+    "count": 1
+  }
+}

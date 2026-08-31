@@ -56,43 +56,25 @@ public final class ModItemGroups {
                     .build()
     );
 
-    public static final ItemGroup CONTENT = Registry.register(
+    public static final ItemGroup FOOD = Registry.register(
             Registries.ITEM_GROUP,
-            Identifier.of(SpaceStation.MOD_ID, "content"),
+            Identifier.of(SpaceStation.MOD_ID, "food"),
             FabricItemGroup.builder()
-                    .icon(() -> new ItemStack(MiscItems.STEEL))
-                    .displayName(Text.translatable("itemGroup.spacestation.content"))
+                    .icon(() -> new ItemStack(FoodItems.BREAD_SAUSAGE))
+                    .displayName(Text.translatable("itemGroup.spacestation.food"))
                     .entries((context, entries) -> {
-
-                        // ======== BLOCKS ========
-                        entries.add(ModBlocks.BANANIUM_ORE_BLOCK.asItem());
-                        entries.add(ModBlocks.CHEM_MASTER_BLOCK.asItem());
-                        entries.add(ModBlocks.SUBLIMATOR.asItem());
-                        entries.add(ModBlocks.SUSPICIOUS_GRASS.asItem());
-                        entries.add(ModBlocks.PLASMA_ORE_BLOCK.asItem());
-                        entries.add(ModBlocks.STEEL_TILE.asItem());
-                        entries.add(ModBlocks.STEEL_WALL.asItem());
-                        entries.add(ModBlocks.STEEL_WALL_REINFORCED.asItem());
-                        entries.add(ModBlocks.TELECRYSTAL_BLOCK.asItem());
-                        entries.add(ModBlocks.TELECRYSTAL_CRYSTAL_BLOCK.asItem());
-                        entries.add(ModBlocks.URANIUM_ORE_BLOCK.asItem());
-                        entries.add(ModBlocks.WALL_GIRDER.asItem());
-                        entries.add(ModBlocks.WALL_GIRDER_REINFORCED.asItem());
-
-                        // ======== CHEMISTRY ========
-                        entries.add(ChemItems.BEAKER);
-                        entries.add(ChemItems.CANISTER);
-
-                        // ======== DRINKABLES ========
-                        entries.add(DrinkItems.ENZYME);
-
                         // ======== FOOD ========
                         entries.add(FoodItems.BANANIUM);
+                        entries.add(FoodItems.BREAD_CORN);
+                        entries.add(FoodItems.BREAD_CORN_SLICE);
                         entries.add(FoodItems.BUN);
                         entries.add(FoodItems.BUN_BOTTOM);
                         entries.add(FoodItems.BUN_TOP);
-                        entries.add(FoodItems.BURGER);
                         entries.add(FoodItems.BURGER_CHEESE);
+                        entries.add(FoodItems.BURGER_FIVE_ALARM);
+                        entries.add(FoodItems.BURGER_PLAIN);
+                        entries.add(FoodItems.BUTTER);
+                        entries.add(FoodItems.BUTTER_SLICE);
                         entries.add(FoodItems.CHEESE_WEDGE);
                         entries.add(FoodItems.CHEESE_WEDGE_FRESH);
                         entries.add(FoodItems.CHEESE_WHEEL);
@@ -101,6 +83,14 @@ public final class ModItemGroups {
                         entries.add(FoodItems.CROISSANT_RAW);
                         entries.add(FoodItems.CUTLET_COOKED);
                         entries.add(FoodItems.CUTLET_RAW);
+                        entries.add(FoodItems.DOUGH);
+                        entries.add(FoodItems.DOUGH_CORN);
+                        entries.add(FoodItems.DOUGH_FLAT);
+                        entries.add(FoodItems.DOUGH_SLICE);
+                        entries.add(FoodItems.FLOUR);
+                        entries.add(FoodItems.FLOUR_CORN);
+                        entries.add(FoodItems.MEATBALL);
+                        entries.add(FoodItems.MEATBALL_COOKED);
                         entries.add(FoodItems.PIZZA_MARGHERITA);
                         entries.add(FoodItems.PIZZA_MARGHERITA_RAW);
                         entries.add(FoodItems.PIZZA_MARGHERITA_SLICE);
@@ -113,24 +103,31 @@ public final class ModItemGroups {
                         entries.add(FoodItems.PIZZA_PINEAPPLE);
                         entries.add(FoodItems.PIZZA_PINEAPPLE_RAW);
                         entries.add(FoodItems.PIZZA_PINEAPPLE_SLICE);
-                        entries.add(FoodItems.SAUSAGE_BREAD);
-                        entries.add(FoodItems.SAUSAGE_BREAD_RAW);
-                        entries.add(FoodItems.SAUSAGE_BREAD_SLICE);
+                        entries.add(FoodItems.PIZZA_VEGETABLE);
+                        entries.add(FoodItems.PIZZA_VEGETABLE_RAW);
+                        entries.add(FoodItems.PIZZA_VEGETABLE_SLICE);
+                        entries.add(FoodItems.SALAD_HERB);
+                        entries.add(FoodItems.SALAD_VALID);
+                        entries.add(FoodItems.BREAD_SAUSAGE);
+                        entries.add(FoodItems.BREAD_SAUSAGE_RAW);
+                        entries.add(FoodItems.BREAD_SAUSAGE_SLICE);
+                        entries.add(FoodItems.SOUP_BUNGO);
+                        entries.add(FoodItems.SOUP_NETTLE);
+                        entries.add(FoodItems.SOUP_ONION);
+                        entries.add(FoodItems.SOUP_PEA);
+                        entries.add(FoodItems.SOUP_TOMATO_BLOOD);
                         entries.add(FoodItems.SPAGHETTI);
+                    })
+                    .build()
+    );
 
-                        // ======== TOOLS ========
-                        entries.add(ToolItems.CROWBAR);
-                        entries.add(ToolItems.CROWBAR_BRASS);
-                        entries.add(ToolItems.CROWBAR_RED);
-                        entries.add(ToolItems.KNIFE_KITCHEN);
-                        entries.add(ToolItems.LIGHTER);
-                        entries.add(ToolItems.OMNITOOL);
-                        entries.add(ToolItems.PLASTIC_KNIFE);
-                        entries.add(ToolItems.ROLLING_PIN);
-                        entries.add(ToolItems.SCREWDRIVER);
-                        entries.add(ToolItems.WELDER);
-                        entries.add(ToolItems.WRENCH);
-
+    public static final ItemGroup PLANTS = Registry.register(
+            Registries.ITEM_GROUP,
+            Identifier.of(SpaceStation.MOD_ID, "plants"),
+            FabricItemGroup.builder()
+                    .icon(() -> new ItemStack(PlantItems.TOMATO))
+                    .displayName(Text.translatable("itemGroup.spacestation.plants"))
+                    .entries((context, entries) -> {
                         // ========= PLANTS ===========
                         entries.add(PlantItems.ALOE);
                         entries.add(PlantItems.ALOE_CREAM);
@@ -191,7 +188,55 @@ public final class ModItemGroups {
                         entries.add(PlantItems.SOYBEANS_SEEDS);
                         entries.add(PlantItems.TOMATO);
                         entries.add(PlantItems.TOMATO_SEEDS);
-                        entries.add(PlantItems.TOWERCAP_SEEDS); // (asnden): not implemented yet
+                        entries.add(PlantItems.TOWERCAP_SEEDS);
+                    })
+                    .build()
+    );
+
+    public static final ItemGroup CONTENT = Registry.register(
+            Registries.ITEM_GROUP,
+            Identifier.of(SpaceStation.MOD_ID, "content"),
+            FabricItemGroup.builder()
+                    .icon(() -> new ItemStack(MiscItems.STEEL))
+                    .displayName(Text.translatable("itemGroup.spacestation.content"))
+                    .entries((context, entries) -> {
+
+                        // ======== BLOCKS ========
+                        entries.add(ModBlocks.BANANIUM_ORE_BLOCK.asItem());
+                        entries.add(ModBlocks.CHEM_MASTER_BLOCK.asItem());
+                        entries.add(ModBlocks.PLASMA_ORE_BLOCK.asItem());
+                        entries.add(ModBlocks.STEEL_TILE.asItem());
+                        entries.add(ModBlocks.STEEL_WALL.asItem());
+                        entries.add(ModBlocks.STEEL_WALL_REINFORCED.asItem());
+                        entries.add(ModBlocks.SUBLIMATOR.asItem());
+                        entries.add(ModBlocks.SUSPICIOUS_GRASS.asItem());
+                        entries.add(ModBlocks.TELECRYSTAL_BLOCK.asItem());
+                        entries.add(ModBlocks.TELECRYSTAL_CRYSTAL_BLOCK.asItem());
+                        entries.add(ModBlocks.URANIUM_ORE_BLOCK.asItem());
+                        entries.add(ModBlocks.WALL_GIRDER.asItem());
+                        entries.add(ModBlocks.WALL_GIRDER_REINFORCED.asItem());
+
+                        // ======== CHEMISTRY ========
+                        entries.add(ChemItems.BEAKER);
+                        entries.add(ChemItems.CANISTER);
+                        entries.add(ChemItems.COFFEE_POWDER);
+                        entries.add(ChemItems.COPPER_SULFATE);
+                        entries.add(ChemItems.SALT);
+                        entries.add(ChemItems.UNSTABLE_MUTAGEN_POWDER);
+
+                        // ======== DRINKABLES ========
+                        entries.add(DrinkItems.ENZYME);
+
+                        // ======== TOOLS ========
+                        entries.add(ToolItems.CROWBAR);
+                        entries.add(ToolItems.KNIFE_KITCHEN);
+                        entries.add(ToolItems.LIGHTER);
+                        entries.add(ToolItems.OMNITOOL);
+                        entries.add(ToolItems.PLASTIC_KNIFE);
+                        entries.add(ToolItems.ROLLING_PIN);
+                        entries.add(ToolItems.SCREWDRIVER);
+                        entries.add(ToolItems.WELDER);
+                        entries.add(ToolItems.WRENCH);
 
                         // ======== PLUSHIES ========
                         entries.add(PlushieItems.PLUSHIE_BEE);
@@ -202,13 +247,8 @@ public final class ModItemGroups {
                         // ======== MISC ========
                         entries.add(MiscItems.BANANIUM_ORE);
                         entries.add(MiscItems.BLOODY_RED_BALLISTIC_PLATE);
-                        entries.add(MiscItems.BUTTER);
-                        entries.add(MiscItems.BUTTER_SLICE);
+                        entries.add(MiscItems.BOWL_BIG);
                         entries.add(MiscItems.CLOTH);
-                        entries.add(MiscItems.DOUGH);
-                        entries.add(MiscItems.DOUGH_FLAT);
-                        entries.add(MiscItems.DOUGH_SLICE);
-                        entries.add(MiscItems.FLOUR);
                         entries.add(MiscItems.ID_CARD);
                         entries.add(MiscItems.PLASMA);
                         entries.add(MiscItems.PLASMA_ORE);
