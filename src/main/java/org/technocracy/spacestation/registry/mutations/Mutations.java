@@ -4,6 +4,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.util.Identifier;
 import org.technocracy.spacestation.SpaceStation;
 import org.technocracy.spacestation.mutation.Mutation;
+import org.technocracy.spacestation.mutation.mutations.HarvestMutation;
 import org.technocracy.spacestation.mutation.mutations.TransformMutation;
 import org.technocracy.spacestation.registry.blocks.PlantBlocks;
 
@@ -21,6 +22,11 @@ public class Mutations {
                             1
                     )
             ))
+    );
+
+    public static final Mutation HARVEST_MUTATION = register(
+            "harvest_mutation",
+            new HarvestMutation()
     );
 
     public static final Mutation WHEAT_MUTATION = register(
