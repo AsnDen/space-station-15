@@ -7,6 +7,7 @@ import net.minecraft.util.Identifier;
 import org.technocracy.spacestation.SpaceStation;
 import org.technocracy.spacestation.chemistry.ChemContainer;
 import org.technocracy.spacestation.chemistry.ChemData;
+import org.technocracy.spacestation.item.MutatorItem;
 import org.technocracy.spacestation.registry.ModComponents;
 
 public final class ChemItems {
@@ -28,7 +29,10 @@ public final class ChemItems {
     public static final Item COFFEE_POWDER = register("coffee_powder");
     public static final Item COPPER_SULFATE = register("copper_sulfate");
     public static final Item SALT = register("salt");
-    public static final Item UNSTABLE_MUTAGEN_POWDER = register("unstable_mutagen_powder");
+    public static final Item UNSTABLE_MUTAGEN_POWDER = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "unstable_mutagen_powder"),
+            new MutatorItem(new Item.Settings())
+    );
 
     private static Item register(String name) {
         return Registry.register(

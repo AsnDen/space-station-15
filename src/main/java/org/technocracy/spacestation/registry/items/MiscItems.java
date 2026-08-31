@@ -32,12 +32,6 @@ public final class MiscItems {
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "bowl_big"),
             new Item(new Item.Settings().maxCount(16)));
 
-
-    public static final Item MUTATOR = Registry.register(
-            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "mutator"),
-            new MutatorItem(new Item.Settings())
-    );
-
     private static Item register(String name) {
         return Registry.register(
                 Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, name),
