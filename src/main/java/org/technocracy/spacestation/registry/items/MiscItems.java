@@ -1,10 +1,13 @@
 package org.technocracy.spacestation.registry.items;
 
+import net.minecraft.item.AliasedBlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import org.technocracy.spacestation.SpaceStation;
+import org.technocracy.spacestation.item.MutatorItem;
+import org.technocracy.spacestation.registry.blocks.PlantBlocks;
 
 public final class MiscItems {
 
@@ -30,6 +33,11 @@ public final class MiscItems {
     public static final Item ROD           = register("rod");
     public static final Item PLASTIC       = register("plastic");
     public static final Item ID_CARD       = register("id_card");
+
+    public static final Item MUTATOR = Registry.register(
+            Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "mutator"),
+            new MutatorItem(new Item.Settings())
+    );
 
     private static Item register(String name) {
         return Registry.register(
