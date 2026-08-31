@@ -5,7 +5,6 @@
     { "item": "spacestation:nettle" },
     { "item": "spacestation:ambrosia_olympic" },
     { "item": "minecraft:egg" },
-    { "item": "minecraft:water_bucket" },
     { "item": "minecraft:potato" }
   ],
   "result": {
