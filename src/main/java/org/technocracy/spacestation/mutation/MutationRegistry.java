@@ -6,11 +6,14 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.fabricmc.fabric.api.resource.SimpleSynchronousResourceReloadListener;
+import net.minecraft.block.BlockState;
 import net.minecraft.registry.Registries;
 import net.minecraft.resource.ResourceManager;
 import net.minecraft.resource.ResourceType;
 import net.minecraft.util.Identifier;
 import org.technocracy.spacestation.SpaceStation;
+import org.technocracy.spacestation.mutation.mutations.HarvestMutation;
+import org.technocracy.spacestation.mutation.mutations.TransformMutation;
 
 import java.io.InputStreamReader;
 import java.util.*;
@@ -22,8 +25,8 @@ public class MutationRegistry {
     private static final Map<Identifier, MutationRecipe> MUTATIONS = new HashMap<>();
 
     public record MutationEntry(
-            Identifier id,
-            double chance
+            Mutation mutation,
+            double weight
     ) {}
 
     public record MutationRecipe(
@@ -52,6 +55,8 @@ public class MutationRegistry {
     private static void loadMutations(ResourceManager manager) {
         MUTATIONS.clear();
 
+        HarvestMutation generalHarvestMutation = new HarvestMutation();
+
         manager.findResources(
                 "mutations",
                 id -> id.getPath().endsWith(".json")
@@ -74,15 +79,25 @@ public class MutationRegistry {
                 for (JsonElement element : array) {
                     JsonObject mutation = element.getAsJsonObject();
 
-                    Identifier mutationId = Identifier.of(mutation.get("id").getAsString());
+                    String mutationType = mutation.get("type").getAsString();
 
                     double chance = mutation.get("weight").getAsDouble();
 
                     if (chance <= 0) {
-                        throw new IllegalArgumentException("Mutation chance must be positive: " + mutationId);
+                        throw new IllegalArgumentException("Mutation chance must be positive: " + mutationType);
                     }
 
-                    mutations.add(new MutationEntry(mutationId, chance));
+                    if (mutationType.equals("harvest")) {
+                        mutations.add(new MutationEntry(generalHarvestMutation, chance));
+                    } else if (mutationType.equals("transform")) {
+
+                        List<TransformMutation.WeightedBlock> variants = parseTransformVariants(mutation);
+
+                        mutations.add(new MutationEntry(new TransformMutation(variants), chance));
+                    } else {
+                        throw new IllegalArgumentException("Unknown mutation type: " + mutationType);
+                    }
+
                 }
 
                 MUTATIONS.put(target, new MutationRecipe(target, List.copyOf(mutations)));
@@ -94,6 +109,47 @@ public class MutationRegistry {
 
         SpaceStation.LOGGER.info("Загружено mutation рецептов: {}", MUTATIONS.size()
         );
+    }
+
+    private static List<TransformMutation.WeightedBlock> parseTransformVariants(JsonObject mutation) {
+        JsonArray blocksArray = mutation.getAsJsonArray("blocks");
+        List<TransformMutation.WeightedBlock> blocks = new ArrayList<>();
+
+        for (JsonElement element : blocksArray) {
+            JsonObject blockJson = element.getAsJsonObject();
+
+            Identifier blockId = Identifier.of(
+                    blockJson.get("block").getAsString()
+            );
+
+            double weight = blockJson.get("weight").getAsDouble();
+
+            if (weight <= 0) {
+                throw new IllegalArgumentException(
+                        "Block weight must be positive: " + blockId
+                );
+            }
+
+            if (!Registries.BLOCK.containsId(blockId)) {
+                throw new IllegalArgumentException(
+                        "Unknown block: " + blockId
+                );
+            }
+
+            BlockState state = Registries.BLOCK
+                    .get(blockId)
+                    .getDefaultState();
+
+            blocks.add(new TransformMutation.WeightedBlock(state, weight));
+        }
+
+        if (blocks.isEmpty()) {
+            throw new IllegalArgumentException(
+                    "Transform mutation must contain at least one block"
+            );
+        }
+
+        return List.copyOf(blocks);
     }
 
     public static Optional<MutationRecipe> get(Identifier target) {

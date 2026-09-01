@@ -2,16 +2,23 @@
   "target": "spacestation:tomato_crop",
   "mutations": [
     {
-      "id": "spacestation:death_mutation",
+      "type": "transform",
+      "weight": 1,
+      "blocks": [
+        { "block": "minecraft:dead_bush", "weight": 1 }
+      ]
+    },
+    {
+      "type": "harvest",
       "weight": 1
     },
     {
-      "id": "spacestation:harvest_mutation",
-      "weight": 1
-    },
-    {
-      "id": "spacestation:tomato_mutation",
-      "weight": 1
+      "type": "transform",
+      "weight": 1,
+      "blocks": [
+        { "block": "spacestation:blue_tomato_crop", "weight": 1 },
+        { "block": "spacestation:blood_tomato_crop", "weight": 1 }
+      ]
     }
   ]
 }

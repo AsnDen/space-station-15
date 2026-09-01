@@ -3,7 +3,6 @@ package org.technocracy.spacestation.mutation.mutations;
 import net.minecraft.block.BlockState;
 import net.minecraft.state.property.IntProperty;
 import org.technocracy.spacestation.mutation.Mutation;
-import org.technocracy.spacestation.mutation.MutationContext;
 
 public class HarvestMutation extends Mutation {
 

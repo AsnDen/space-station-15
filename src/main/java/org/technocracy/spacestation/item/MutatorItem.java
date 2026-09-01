@@ -3,16 +3,11 @@ package org.technocracy.spacestation.item;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemUsageContext;
-import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Identifier;
 import org.technocracy.spacestation.mutation.Mutation;
-import org.technocracy.spacestation.mutation.MutationContext;
 import org.technocracy.spacestation.mutation.MutationRegistry;
-import org.technocracy.spacestation.mutation.WeightedMutation;
-import org.technocracy.spacestation.registry.mutations.Mutations;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class MutatorItem extends Item {
@@ -34,25 +29,13 @@ public class MutatorItem extends Item {
         Identifier blockId = net.minecraft.registry.Registries.BLOCK.getId(block);
 
         MutationRegistry.get(blockId).ifPresent(recipe -> {
-            List<WeightedMutation> mutations = new ArrayList<>();
 
-            for (MutationRegistry.MutationEntry entry : recipe.mutations()) {
-                Mutations.get(entry.id()).ifPresent(mutation -> {
-                    mutations.add(
-                            new WeightedMutation(
-                                    mutation,
-                                    entry.chance()
-                            )
-                    );
-                });
-            }
-
-            MutationContext mutationContext = new MutationContext(
+            Mutation.MutationContext mutationContext = new Mutation.MutationContext(
                     context.getWorld(),
                     context.getBlockPos()
             );
 
-            Mutation mutation = chooseMutation(mutations);
+            Mutation mutation = chooseMutation(recipe.mutations());
 
             if (mutation != null) {
                 mutation.apply(mutationContext);
@@ -63,10 +46,10 @@ public class MutatorItem extends Item {
         return ActionResult.SUCCESS;
     }
 
-    private Mutation chooseMutation(List<WeightedMutation> mutations) {
+    private Mutation chooseMutation(List<MutationRegistry.MutationEntry> mutations) {
         double totalWeight = 0;
 
-        for (WeightedMutation entry : mutations) {
+        for (MutationRegistry.MutationEntry entry : mutations) {
             if (entry.weight() > 0) {
                 totalWeight += entry.weight();
             }
@@ -79,7 +62,7 @@ public class MutatorItem extends Item {
         // roll in [0, totalWeight)
         double roll = Math.random() * totalWeight;
 
-        for (WeightedMutation entry : mutations) {
+        for (MutationRegistry.MutationEntry entry : mutations) {
             if (entry.weight() <= 0) {
                 continue;
             }
