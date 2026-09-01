@@ -3,6 +3,8 @@ package org.technocracy.spacestation.item;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemUsageContext;
+import net.minecraft.particle.ParticleTypes;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Identifier;
 import org.technocracy.spacestation.mutation.Mutation;
@@ -40,6 +42,17 @@ public class MutatorItem extends Item {
             if (mutation != null) {
                 mutation.apply(mutationContext);
                 context.getStack().decrement(1);
+                ((ServerWorld) context.getWorld()).spawnParticles(
+                        ParticleTypes.HAPPY_VILLAGER,
+                        context.getBlockPos().getX() + 0.5,
+                        context.getBlockPos().getY() + 0.5,
+                        context.getBlockPos().getZ() + 0.5,
+                        8,
+                        0.3,
+                        0.5,
+                        0.3,
+                        0.1
+                );
             }
         });
 
