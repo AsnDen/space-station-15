@@ -2,6 +2,7 @@
   "ingredient": "spacestation:uranium_ore",
   "results": {
     "uranium": 20.0,
-    "rock": 10.0
+    "rock": 10.0,
+    "radium": 2
   }
 }
