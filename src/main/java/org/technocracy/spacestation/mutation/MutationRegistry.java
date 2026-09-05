@@ -90,15 +90,14 @@ public class MutationRegistry {
                         throw new IllegalArgumentException("Mutation chance must be positive: " + mutationType);
                     }
 
-                    if (mutationType.equals("harvest")) {
-                        mutations.add(new MutationEntry(generalMutationGrow, chance));
-                    } else if (mutationType.equals("nothing")) {
-                        mutations.add(new MutationEntry(generalMutationNothing, chance));
-                    } else if (mutationType.equals("transform")) {
-                        List<MutationTransform.WeightedBlock> variants = parseTransformVariants(mutation);
-                        mutations.add(new MutationEntry(new MutationTransform(variants), chance));
-                    } else {
-                        throw new IllegalArgumentException("Unknown mutation type: " + mutationType);
+                    switch (mutationType) {
+                        case "harvest" -> mutations.add(new MutationEntry(generalMutationGrow, chance));
+                        case "nothing" -> mutations.add(new MutationEntry(generalMutationNothing, chance));
+                        case "transform" -> {
+                            List<MutationTransform.WeightedBlock> variants = parseTransformVariants(mutation);
+                            mutations.add(new MutationEntry(new MutationTransform(variants), chance));
+                        }
+                        default -> throw new IllegalArgumentException("Unknown mutation type: " + mutationType);
                     }
 
                 }
