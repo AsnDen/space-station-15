@@ -6,6 +6,8 @@ import net.minecraft.item.ItemUsageContext;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.registry.Registries;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
@@ -24,6 +26,7 @@ public class MutatorItem extends Item {
         super(settings);
         this.ignoreNegative = false;
     }
+
     public void ignoreNegative() {
         this.ignoreNegative = true;
     }
@@ -65,6 +68,15 @@ public class MutatorItem extends Item {
         context.getStack().decrement(1);
 
         mutation.spawnParticles(mutationContext);
+
+        context.getWorld().playSound(
+                null,
+                pos,
+                SoundEvents.ITEM_BONE_MEAL_USE,
+                SoundCategory.BLOCKS,
+                1.0F,
+                1.0F
+        );
 
         return ActionResult.SUCCESS;
     }
