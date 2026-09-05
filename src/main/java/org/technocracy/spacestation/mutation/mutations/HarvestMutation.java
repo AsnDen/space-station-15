@@ -1,31 +1,38 @@
 package org.technocracy.spacestation.mutation.mutations;
 
 import net.minecraft.block.BlockState;
-import net.minecraft.state.property.IntProperty;
+import net.minecraft.block.Fertilizable;
+import net.minecraft.server.world.ServerWorld;
+import net.minecraft.util.math.BlockPos;
 import org.technocracy.spacestation.mutation.Mutation;
 
 public class HarvestMutation extends Mutation {
 
     @Override
     public void apply(MutationContext context) {
-        BlockState state = context.world().getBlockState(context.pos());
+        if (!(context.world() instanceof ServerWorld serverWorld)) {
+            return;
+        }
 
-        for (var property : state.getProperties()) {
-            if (property instanceof IntProperty intProperty
-                    && intProperty.getName().equals("age")) {
+        BlockPos pos = context.pos();
 
-                int maxAge = intProperty.getValues().stream()
-                        .mapToInt(Integer::intValue)
-                        .max()
-                        .orElse(0);
+        while (true) {
+            BlockState state = serverWorld.getBlockState(pos);
 
-                context.world().setBlockState(
-                        context.pos(),
-                        state.with(intProperty, maxAge)
-                );
-
-                return;
+            if (!(state.getBlock() instanceof Fertilizable fertilizable)) {
+                break;
             }
+
+            if (!fertilizable.isFertilizable(serverWorld, pos, state)) {
+                break;
+            }
+
+            fertilizable.grow(
+                    serverWorld,
+                    serverWorld.getRandom(),
+                    pos,
+                    state
+            );
         }
     }
 }
