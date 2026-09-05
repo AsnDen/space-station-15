@@ -3,7 +3,7 @@ package org.technocracy.spacestation.mutation.mutations;
 import net.minecraft.block.BlockState;
 import org.technocracy.spacestation.mutation.Mutation;
 
-import static org.technocracy.spacestation.mutation.BlockStateReplacer.replaceBlockState;
+import static org.technocracy.spacestation.utils.BlockStateReplacer.replaceBlockState;
 
 public class MutationDeath extends Mutation {
 

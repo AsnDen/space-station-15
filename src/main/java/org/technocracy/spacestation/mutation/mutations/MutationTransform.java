@@ -6,7 +6,7 @@ import org.technocracy.spacestation.mutation.Mutation;
 
 import java.util.List;
 
-import static org.technocracy.spacestation.mutation.BlockStateReplacer.replaceBlockState;
+import static org.technocracy.spacestation.utils.BlockStateReplacer.replaceBlockState;
 
 public class MutationTransform extends Mutation {
 

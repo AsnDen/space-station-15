@@ -1,4 +1,4 @@
-package org.technocracy.spacestation.mutation;
+package org.technocracy.spacestation.utils;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.state.property.Property;
