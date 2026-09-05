@@ -202,8 +202,10 @@ public final class ModItemGroups {
                     .entries((context, entries) -> {
 
                         // ======== BLOCKS ========
+                        entries.add(ModBlocks.BANANIUM_BLOCK.asItem());
                         entries.add(ModBlocks.BANANIUM_ORE_BLOCK.asItem());
                         entries.add(ModBlocks.CHEM_MASTER_BLOCK.asItem());
+                        entries.add(ModBlocks.PLASMA_BLOCK.asItem());
                         entries.add(ModBlocks.PLASMA_ORE_BLOCK.asItem());
                         entries.add(ModBlocks.STEEL_TILE.asItem());
                         entries.add(ModBlocks.STEEL_WALL.asItem());
@@ -212,6 +214,7 @@ public final class ModItemGroups {
                         entries.add(ModBlocks.SUSPICIOUS_GRASS.asItem());
                         entries.add(ModBlocks.TELECRYSTAL_BLOCK.asItem());
                         entries.add(ModBlocks.TELECRYSTAL_CRYSTAL_BLOCK.asItem());
+                        entries.add(ModBlocks.URANIUM_BLOCK.asItem());
                         entries.add(ModBlocks.URANIUM_ORE_BLOCK.asItem());
                         entries.add(ModBlocks.WALL_GIRDER.asItem());
                         entries.add(ModBlocks.WALL_GIRDER_REINFORCED.asItem());
@@ -245,6 +248,7 @@ public final class ModItemGroups {
                         entries.add(PlushieItems.PLUSHIE_XENO);
 
                         // ======== MISC ========
+                        entries.add(MiscItems.BANANIUM);
                         entries.add(MiscItems.BANANIUM_ORE);
                         entries.add(MiscItems.BLOODY_RED_BALLISTIC_PLATE);
                         entries.add(MiscItems.BOWL_BIG);

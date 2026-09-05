@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PPP",
+    "PPP",
+    "PPP"
+  ],
+  "key": {
+    "P": { "item": "spacestation:plasma" }
+  },
+  "result": {
+    "id": "spacestation:plasma_block",
+    "count": 1
+  }
+}

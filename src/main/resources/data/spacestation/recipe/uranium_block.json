@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "UUU",
+    "UUU",
+    "UUU"
+  ],
+  "key": {
+    "U": { "item": "spacestation:uranium" }
+  },
+  "result": {
+    "id": "spacestation:uranium_block",
+    "count": 1
+  }
+}
