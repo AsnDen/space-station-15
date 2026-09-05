@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "top": "spacestation:block/machines/chem_master/chem_master_block_top",
+    "front": "spacestation:block/machines/chem_master/chem_master_block_front",
+    "side": "spacestation:block/machines/chem_master/chem_master_block_side"
+  }
+}

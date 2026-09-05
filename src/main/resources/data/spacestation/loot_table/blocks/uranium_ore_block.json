@@ -6,7 +6,21 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "spacestation:uranium_ore"
+          "name": "spacestation:uranium_ore",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:constant",
+                "value": 1.0
+              }
+            },
+            {
+              "function": "minecraft:apply_bonus",
+              "enchantment": "minecraft:fortune",
+              "formula": "minecraft:ore_drops"
+            }
+          ]
         }
       ],
       "conditions": [
