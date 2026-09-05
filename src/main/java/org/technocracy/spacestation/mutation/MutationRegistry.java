@@ -12,8 +12,8 @@ import net.minecraft.resource.ResourceManager;
 import net.minecraft.resource.ResourceType;
 import net.minecraft.util.Identifier;
 import org.technocracy.spacestation.SpaceStation;
-import org.technocracy.spacestation.mutation.mutations.HarvestMutation;
-import org.technocracy.spacestation.mutation.mutations.TransformMutation;
+import org.technocracy.spacestation.mutation.mutations.MutationGrow;
+import org.technocracy.spacestation.mutation.mutations.MutationTransform;
 
 import java.io.InputStreamReader;
 import java.util.*;
@@ -55,7 +55,7 @@ public class MutationRegistry {
     private static void loadMutations(ResourceManager manager) {
         MUTATIONS.clear();
 
-        HarvestMutation generalHarvestMutation = new HarvestMutation();
+        MutationGrow generalMutationGrow = new MutationGrow();
 
         manager.findResources(
                 "mutations",
@@ -88,12 +88,10 @@ public class MutationRegistry {
                     }
 
                     if (mutationType.equals("harvest")) {
-                        mutations.add(new MutationEntry(generalHarvestMutation, chance));
+                        mutations.add(new MutationEntry(generalMutationGrow, chance));
                     } else if (mutationType.equals("transform")) {
-
-                        List<TransformMutation.WeightedBlock> variants = parseTransformVariants(mutation);
-
-                        mutations.add(new MutationEntry(new TransformMutation(variants), chance));
+                        List<MutationTransform.WeightedBlock> variants = parseTransformVariants(mutation);
+                        mutations.add(new MutationEntry(new MutationTransform(variants), chance));
                     } else {
                         throw new IllegalArgumentException("Unknown mutation type: " + mutationType);
                     }
@@ -111,9 +109,9 @@ public class MutationRegistry {
         );
     }
 
-    private static List<TransformMutation.WeightedBlock> parseTransformVariants(JsonObject mutation) {
+    private static List<MutationTransform.WeightedBlock> parseTransformVariants(JsonObject mutation) {
         JsonArray blocksArray = mutation.getAsJsonArray("blocks");
-        List<TransformMutation.WeightedBlock> blocks = new ArrayList<>();
+        List<MutationTransform.WeightedBlock> blocks = new ArrayList<>();
 
         for (JsonElement element : blocksArray) {
             JsonObject blockJson = element.getAsJsonObject();
@@ -140,7 +138,7 @@ public class MutationRegistry {
                     .get(blockId)
                     .getDefaultState();
 
-            blocks.add(new TransformMutation.WeightedBlock(state, weight));
+            blocks.add(new MutationTransform.WeightedBlock(state, weight));
         }
 
         if (blocks.isEmpty()) {

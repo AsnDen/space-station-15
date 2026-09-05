@@ -9,14 +9,14 @@ import org.technocracy.spacestation.mutation.Mutation;
 
 import java.util.List;
 
-public class TransformMutation extends Mutation {
+public class MutationTransform extends Mutation {
 
     public record WeightedBlock(BlockState state, double weight) {}
 
     private final List<WeightedBlock> blocks;
     private final double totalWeight;
 
-    public TransformMutation(List<WeightedBlock> blocks) {
+    public MutationTransform(List<WeightedBlock> blocks) {
         if (blocks.isEmpty()) {
             throw new IllegalArgumentException("TransformMutation requires at least one block.");
         }

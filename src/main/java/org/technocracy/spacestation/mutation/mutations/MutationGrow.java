@@ -6,7 +6,7 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import org.technocracy.spacestation.mutation.Mutation;
 
-public class HarvestMutation extends Mutation {
+public class MutationGrow extends Mutation {
 
     @Override
     public void apply(MutationContext context) {
