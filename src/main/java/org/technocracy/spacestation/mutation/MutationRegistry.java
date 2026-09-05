@@ -27,7 +27,8 @@ public class MutationRegistry {
 
     public record MutationEntry(
             Mutation mutation,
-            double weight
+            double weight,
+            boolean isNegative
     ) {}
 
     public record MutationRecipe(
@@ -86,16 +87,20 @@ public class MutationRegistry {
 
                     double chance = mutation.get("weight").getAsDouble();
 
+                    // false by default
+                    boolean isNegative = mutation.has("is_negative")
+                            && mutation.get("is_negative").getAsBoolean();;
+
                     if (chance <= 0) {
                         throw new IllegalArgumentException("Mutation chance must be positive: " + mutationType);
                     }
 
                     switch (mutationType) {
-                        case "harvest" -> mutations.add(new MutationEntry(generalMutationGrow, chance));
-                        case "nothing" -> mutations.add(new MutationEntry(generalMutationNothing, chance));
+                        case "harvest" -> mutations.add(new MutationEntry(generalMutationGrow, chance, isNegative));
+                        case "nothing" -> mutations.add(new MutationEntry(generalMutationNothing, chance, isNegative));
                         case "transform" -> {
                             List<MutationTransform.WeightedBlock> variants = parseTransformVariants(mutation);
-                            mutations.add(new MutationEntry(new MutationTransform(variants), chance));
+                            mutations.add(new MutationEntry(new MutationTransform(variants), chance, isNegative));
                         }
                         default -> throw new IllegalArgumentException("Unknown mutation type: " + mutationType);
                     }

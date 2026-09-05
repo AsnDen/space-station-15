@@ -18,8 +18,16 @@ import java.util.Optional;
 
 public class MutatorItem extends Item {
 
-    public MutatorItem(Item.Settings settings) {
+    private final boolean ignoreNegative;
+
+    public MutatorItem(Settings settings) {
         super(settings);
+        this.ignoreNegative = false;
+    }
+
+    public MutatorItem(Settings settings, boolean ignoreNegative) {
+        super(settings);
+        this.ignoreNegative = ignoreNegative;
     }
 
     @Override
@@ -79,6 +87,10 @@ public class MutatorItem extends Item {
         double totalWeight = 0;
 
         for (MutationRegistry.MutationEntry entry : mutations) {
+            if (this.ignoreNegative && entry.isNegative()) {
+                continue;
+            }
+
             if (entry.weight() > 0) {
                 totalWeight += entry.weight();
             }
@@ -92,6 +104,10 @@ public class MutatorItem extends Item {
         double roll = random.nextDouble() * totalWeight;
 
         for (MutationRegistry.MutationEntry entry : mutations) {
+            if (this.ignoreNegative && entry.isNegative()) {
+                continue;
+            }
+
             if (entry.weight() <= 0) {
                 continue;
             }
