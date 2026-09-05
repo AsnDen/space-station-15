@@ -64,19 +64,7 @@ public class MutatorItem extends Item {
 
         context.getStack().decrement(1);
 
-        ServerWorld serverWorld = (ServerWorld) context.getWorld();
-
-        serverWorld.spawnParticles(
-                ParticleTypes.HAPPY_VILLAGER,
-                pos.getX() + 0.5,
-                pos.getY() + 0.5,
-                pos.getZ() + 0.5,
-                8,
-                0.3,
-                0.5,
-                0.3,
-                0.1
-        );
+        mutation.spawnParticles(mutationContext);
 
         return ActionResult.SUCCESS;
     }

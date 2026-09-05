@@ -1,6 +1,9 @@
 package org.technocracy.spacestation.mutation.mutations;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.particle.ParticleTypes;
+import net.minecraft.server.world.ServerWorld;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import org.technocracy.spacestation.mutation.Mutation;
 
@@ -51,6 +54,24 @@ public class MutationTransform extends Mutation {
         BlockState newState = replaceBlockState(selected, context.world(), context.pos());
         context.world().setBlockState(context.pos(), newState);
         return true;
+    }
+
+    @Override
+    public void spawnParticles(MutationContext context) {
+        ServerWorld world = (ServerWorld) context.world();
+        BlockPos pos = context.pos();
+
+        world.spawnParticles(
+                ParticleTypes.HAPPY_VILLAGER,
+                pos.getX() + 0.5,
+                pos.getY() + 0.5,
+                pos.getZ() + 0.5,
+                8,
+                0.3,
+                0.5,
+                0.3,
+                0.1
+        );
     }
 
     public List<WeightedBlock> getBlocks() {
