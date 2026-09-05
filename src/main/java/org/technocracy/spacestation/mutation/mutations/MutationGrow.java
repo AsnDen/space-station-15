@@ -9,12 +9,13 @@ import org.technocracy.spacestation.mutation.Mutation;
 public class MutationGrow extends Mutation {
 
     @Override
-    public void apply(MutationContext context) {
+    public boolean apply(MutationContext context) {
         if (!(context.world() instanceof ServerWorld serverWorld)) {
-            return;
+            return false;
         }
 
         BlockPos pos = context.pos();
+        boolean applied = false;
 
         while (true) {
             BlockState state = serverWorld.getBlockState(pos);
@@ -33,6 +34,9 @@ public class MutationGrow extends Mutation {
                     pos,
                     state
             );
+            applied = true;
         }
+
+        return applied;
     }
 }

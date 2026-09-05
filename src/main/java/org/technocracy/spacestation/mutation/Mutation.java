@@ -7,5 +7,5 @@ public abstract class Mutation {
 
     public record MutationContext(World world, BlockPos pos) {}
 
-    public abstract void apply(MutationContext context);
+    public abstract boolean apply(MutationContext context);
 }

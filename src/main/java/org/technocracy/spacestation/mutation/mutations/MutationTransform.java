@@ -74,9 +74,10 @@ public class MutationTransform extends Mutation {
     }
 
     @Override
-    public void apply(MutationContext context) {
+    public boolean apply(MutationContext context) {
         Random random = context.world().getRandom();
         BlockState selected = chooseBlock(random);
         setBlockState(selected, context.world(), context.pos());
+        return true;
     }
 }
