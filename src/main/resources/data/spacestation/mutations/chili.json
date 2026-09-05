@@ -1,0 +1,27 @@
+{
+  "target": "spacestation:chili_crop",
+  "mutations": [
+    {
+      "type": "nothing",
+      "weight": 1,
+      "is_negative": true
+    },
+    {
+      "type": "death",
+      "weight": 1,
+      "is_negative": true,
+      "block": "minecraft:dead_bush"
+    },
+    {
+      "type": "harvest",
+      "weight": 1
+    },
+    {
+      "type": "transform",
+      "weight": 1,
+      "blocks": [
+        { "block": "spacestation:chilly_crop", "weight": 1 }
+      ]
+    }
+  ]
+}
