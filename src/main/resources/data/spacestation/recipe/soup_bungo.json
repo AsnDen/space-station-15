@@ -4,8 +4,7 @@
     { "item": "spacestation:bowl_big" },
     { "item": "spacestation:bungo" },
     { "item": "spacestation:chili" },
-    { "item": "spacestation:chili" },
-    { "item": "minecraft:water_bucket" }
+    { "item": "spacestation:chili" }
   ],
   "result": {
     "id": "spacestation:soup_bungo",

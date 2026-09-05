@@ -4,8 +4,7 @@
     { "item": "spacestation:bowl_big" },
     { "item": "spacestation:pea" },
     { "item": "spacestation:pea" },
-    { "item": "spacestation:pea" },
-    { "item": "minecraft:water_bucket" }
+    { "item": "spacestation:pea" }
   ],
   "result": {
     "id": "spacestation:soup_pea",

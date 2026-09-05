@@ -3,8 +3,8 @@
   "ingredients": [
     { "item": "spacestation:bowl_big" },
     { "item": "spacestation:onion" },
-    { "item": "spacestation:cheese_wedge" },
-    { "item": "minecraft:water_bucket" }
+    { "item": "spacestation:onion" },
+    { "item": "spacestation:cheese_wedge" }
   ],
   "result": {
     "id": "spacestation:soup_onion",

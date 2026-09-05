@@ -1,6 +1,7 @@
 {
   "ingredient": "spacestation:uranium",
   "results": {
-    "uranium": 25.0
+    "uranium": 20.0,
+    "radium": 5.0
   }
 }
