@@ -137,15 +137,7 @@ public class MutationRegistry {
                 );
             }
 
-            if (!Registries.BLOCK.containsId(blockId)) {
-                throw new IllegalArgumentException(
-                        "Unknown block: " + blockId
-                );
-            }
-
-            BlockState state = Registries.BLOCK
-                    .get(blockId)
-                    .getDefaultState();
+            BlockState state = getBlockStateById(blockId);
 
             blocks.add(new MutationTransform.WeightedBlock(state, weight));
         }
@@ -157,6 +149,18 @@ public class MutationRegistry {
         }
 
         return List.copyOf(blocks);
+    }
+
+    private static BlockState getBlockStateById(Identifier blockId) {
+        if (!Registries.BLOCK.containsId(blockId)) {
+            throw new IllegalArgumentException(
+                    "Unknown block: " + blockId
+            );
+        }
+
+        return Registries.BLOCK
+                .get(blockId)
+                .getDefaultState();
     }
 
     public static Optional<MutationRecipe> get(Identifier target) {
