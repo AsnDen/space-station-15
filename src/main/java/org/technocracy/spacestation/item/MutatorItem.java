@@ -4,13 +4,16 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemUsageContext;
 import net.minecraft.particle.ParticleTypes;
+import net.minecraft.registry.Registries;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.BlockPos;
 import org.technocracy.spacestation.mutation.Mutation;
 import org.technocracy.spacestation.mutation.MutationRegistry;
 
 import java.util.List;
+import java.util.Optional;
 
 public class MutatorItem extends Item {
 
@@ -21,40 +24,51 @@ public class MutatorItem extends Item {
     @Override
     public ActionResult useOnBlock(ItemUsageContext context) {
         if (context.getWorld().isClient()) {
-            return ActionResult.SUCCESS;
+            return ActionResult.PASS;
         }
 
-        Block block = context.getWorld()
-                .getBlockState(context.getBlockPos())
-                .getBlock();
+        BlockPos pos = context.getBlockPos();
+        Block block = context.getWorld().getBlockState(pos).getBlock();
+        Identifier blockId = Registries.BLOCK.getId(block);
 
-        Identifier blockId = net.minecraft.registry.Registries.BLOCK.getId(block);
+        Optional<MutationRegistry.MutationRecipe> recipe = MutationRegistry.get(blockId);
 
-        MutationRegistry.get(blockId).ifPresent(recipe -> {
+        if (recipe.isEmpty()) {
+            return ActionResult.PASS;
+        }
 
-            Mutation.MutationContext mutationContext = new Mutation.MutationContext(
-                    context.getWorld(),
-                    context.getBlockPos()
-            );
+        Mutation mutation = chooseMutation(recipe.get().mutations());
 
-            Mutation mutation = chooseMutation(recipe.mutations());
+        if (mutation == null) {
+            return ActionResult.PASS;
+        }
 
-            if (mutation != null) {
-                mutation.apply(mutationContext);
-                context.getStack().decrement(1);
-                ((ServerWorld) context.getWorld()).spawnParticles(
-                        ParticleTypes.HAPPY_VILLAGER,
-                        context.getBlockPos().getX() + 0.5,
-                        context.getBlockPos().getY() + 0.5,
-                        context.getBlockPos().getZ() + 0.5,
-                        8,
-                        0.3,
-                        0.5,
-                        0.3,
-                        0.1
-                );
-            }
-        });
+        Mutation.MutationContext mutationContext = new Mutation.MutationContext(
+                context.getWorld(),
+                pos
+        );
+
+        boolean applied = mutation.apply(mutationContext);
+
+        if (!applied) {
+            return ActionResult.PASS;
+        }
+
+        context.getStack().decrement(1);
+
+        ServerWorld serverWorld = (ServerWorld) context.getWorld();
+
+        serverWorld.spawnParticles(
+                ParticleTypes.HAPPY_VILLAGER,
+                pos.getX() + 0.5,
+                pos.getY() + 0.5,
+                pos.getZ() + 0.5,
+                8,
+                0.3,
+                0.5,
+                0.3,
+                0.1
+        );
 
         return ActionResult.SUCCESS;
     }
