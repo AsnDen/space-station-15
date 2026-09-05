@@ -18,16 +18,14 @@ import java.util.Optional;
 
 public class MutatorItem extends Item {
 
-    private final boolean ignoreNegative;
+    private boolean ignoreNegative;
 
     public MutatorItem(Settings settings) {
         super(settings);
         this.ignoreNegative = false;
     }
-
-    public MutatorItem(Settings settings, boolean ignoreNegative) {
-        super(settings);
-        this.ignoreNegative = ignoreNegative;
+    public void ignoreNegative() {
+        this.ignoreNegative = true;
     }
 
     @Override
