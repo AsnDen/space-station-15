@@ -9,6 +9,7 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.random.Random;
 import org.technocracy.spacestation.mutation.Mutation;
 import org.technocracy.spacestation.mutation.MutationRegistry;
 
@@ -37,7 +38,8 @@ public class MutatorItem extends Item {
             return ActionResult.PASS;
         }
 
-        Mutation mutation = chooseMutation(recipe.get().mutations());
+        Random random = context.getWorld().random;
+        Mutation mutation = chooseMutation(recipe.get().mutations(), random);
 
         if (mutation == null) {
             return ActionResult.PASS;
@@ -73,7 +75,7 @@ public class MutatorItem extends Item {
         return ActionResult.SUCCESS;
     }
 
-    private Mutation chooseMutation(List<MutationRegistry.MutationEntry> mutations) {
+    private Mutation chooseMutation(List<MutationRegistry.MutationEntry> mutations, Random random) {
         double totalWeight = 0;
 
         for (MutationRegistry.MutationEntry entry : mutations) {
@@ -87,7 +89,7 @@ public class MutatorItem extends Item {
         }
 
         // roll in [0, totalWeight)
-        double roll = Math.random() * totalWeight;
+        double roll = random.nextDouble() * totalWeight;
 
         for (MutationRegistry.MutationEntry entry : mutations) {
             if (entry.weight() <= 0) {
