@@ -13,6 +13,7 @@ import net.minecraft.resource.ResourceType;
 import net.minecraft.util.Identifier;
 import org.technocracy.spacestation.SpaceStation;
 import org.technocracy.spacestation.mutation.mutations.MutationGrow;
+import org.technocracy.spacestation.mutation.mutations.MutationNothing;
 import org.technocracy.spacestation.mutation.mutations.MutationTransform;
 
 import java.io.InputStreamReader;
@@ -56,6 +57,8 @@ public class MutationRegistry {
         MUTATIONS.clear();
 
         MutationGrow generalMutationGrow = new MutationGrow();
+        MutationNothing generalMutationNothing = new MutationNothing();
+
 
         manager.findResources(
                 "mutations",
@@ -89,6 +92,8 @@ public class MutationRegistry {
 
                     if (mutationType.equals("harvest")) {
                         mutations.add(new MutationEntry(generalMutationGrow, chance));
+                    } else if (mutationType.equals("nothing")) {
+                        mutations.add(new MutationEntry(generalMutationNothing, chance));
                     } else if (mutationType.equals("transform")) {
                         List<MutationTransform.WeightedBlock> variants = parseTransformVariants(mutation);
                         mutations.add(new MutationEntry(new MutationTransform(variants), chance));

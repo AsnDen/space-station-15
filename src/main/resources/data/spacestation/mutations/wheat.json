@@ -2,6 +2,10 @@
   "target": "minecraft:wheat",
   "mutations": [
     {
+      "type": "nothing",
+      "weight": 1
+    },
+    {
       "type": "transform",
       "weight": 1,
       "blocks": [
