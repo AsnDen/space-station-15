@@ -3,10 +3,9 @@ package org.technocracy.spacestation.item;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemUsageContext;
-import net.minecraft.particle.ParticleTypes;
 import net.minecraft.registry.Registries;
-import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Identifier;
@@ -20,16 +19,27 @@ import java.util.Optional;
 
 public class MutatorItem extends Item {
 
-    private boolean ignoreNegative;
+    private final double negativeMultiplier;
+    private final SoundEvent mutationSound;
+
+    public MutatorItem(Settings settings, double negativeMultiplier, SoundEvent mutationSound) {
+        super(settings);
+        this.negativeMultiplier = negativeMultiplier;
+        this.mutationSound = mutationSound;
+    }
+
+    public MutatorItem(Settings settings, SoundEvent mutationSound) {
+        this(settings, 1.0, mutationSound);
+    }
+
+    public MutatorItem(Settings settings, double negativeMultiplier) {
+        this(settings, negativeMultiplier, SoundEvents.ITEM_BONE_MEAL_USE);
+    }
 
     public MutatorItem(Settings settings) {
-        super(settings);
-        this.ignoreNegative = false;
+        this(settings, 1.0, SoundEvents.ITEM_BONE_MEAL_USE);
     }
 
-    public void ignoreNegative() {
-        this.ignoreNegative = true;
-    }
 
     @Override
     public ActionResult useOnBlock(ItemUsageContext context) {
@@ -72,7 +82,7 @@ public class MutatorItem extends Item {
         context.getWorld().playSound(
                 null,
                 pos,
-                SoundEvents.ITEM_BONE_MEAL_USE,
+                this.mutationSound,
                 SoundCategory.BLOCKS,
                 1.0F,
                 1.0F
@@ -85,12 +95,14 @@ public class MutatorItem extends Item {
         double totalWeight = 0;
 
         for (MutationRegistry.MutationEntry entry : mutations) {
-            if (this.ignoreNegative && entry.isNegative()) {
-                continue;
+            double weight = entry.weight();
+
+            if (entry.isNegative()) {
+                weight *= this.negativeMultiplier;
             }
 
             if (entry.weight() > 0) {
-                totalWeight += entry.weight();
+                totalWeight += weight;
             }
         }
 
@@ -102,15 +114,17 @@ public class MutatorItem extends Item {
         double roll = random.nextDouble() * totalWeight;
 
         for (MutationRegistry.MutationEntry entry : mutations) {
-            if (this.ignoreNegative && entry.isNegative()) {
+            double weight = entry.weight();
+
+            if (entry.isNegative()) {
+                weight *= this.negativeMultiplier;
+            }
+
+            if (weight <= 0) {
                 continue;
             }
 
-            if (entry.weight() <= 0) {
-                continue;
-            }
-
-            roll -= entry.weight();
+            roll -= weight;
 
             if (roll < 0) {
                 return entry.mutation();
