@@ -80,4 +80,8 @@ public class MutationTransform extends Mutation {
         setBlockState(selected, context.world(), context.pos());
         return true;
     }
+
+    public List<WeightedBlock> getBlocks() {
+        return blocks;
+    }
 }
