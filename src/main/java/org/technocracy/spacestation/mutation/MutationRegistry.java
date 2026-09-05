@@ -12,6 +12,7 @@ import net.minecraft.resource.ResourceManager;
 import net.minecraft.resource.ResourceType;
 import net.minecraft.util.Identifier;
 import org.technocracy.spacestation.SpaceStation;
+import org.technocracy.spacestation.mutation.mutations.MutationDeath;
 import org.technocracy.spacestation.mutation.mutations.MutationGrow;
 import org.technocracy.spacestation.mutation.mutations.MutationNothing;
 import org.technocracy.spacestation.mutation.mutations.MutationTransform;
@@ -98,6 +99,15 @@ public class MutationRegistry {
                     switch (mutationType) {
                         case "harvest" -> mutations.add(new MutationEntry(generalMutationGrow, chance, isNegative));
                         case "nothing" -> mutations.add(new MutationEntry(generalMutationNothing, chance, isNegative));
+                        case "death" -> {
+                            Identifier blockId = Identifier.of(
+                                    mutation.get("block").getAsString()
+                            );
+
+                            BlockState state = getBlockStateById(blockId);
+                            mutations.add(new MutationEntry(new MutationDeath(state), chance, isNegative));
+                        }
+
                         case "transform" -> {
                             List<MutationTransform.WeightedBlock> variants = parseTransformVariants(mutation);
                             mutations.add(new MutationEntry(new MutationTransform(variants), chance, isNegative));
