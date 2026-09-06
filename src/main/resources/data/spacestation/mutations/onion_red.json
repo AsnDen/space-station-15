@@ -1,0 +1,27 @@
+{
+  "target": "spacestation:onion_red_crop",
+  "mutations": [
+    {
+      "type": "nothing",
+      "weight": 7,
+      "is_negative": true
+    },
+    {
+      "type": "death",
+      "weight": 4,
+      "is_negative": true,
+      "block": "minecraft:dead_bush"
+    },
+    {
+      "type": "harvest",
+      "weight": 3
+    },
+    {
+      "type": "transform",
+      "weight": 1,
+      "blocks": [
+        { "block": "spacestation:onion_crop", "weight": 1 }
+      ]
+    }
+  ]
+}
