@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "minecraft:flint"
+  },
+  "result": {
+    "id": "spacestation:flint_purified"
+  },
+  "experience": 0.10,
+  "cookingtime": 500
+}
