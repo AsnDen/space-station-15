@@ -55,19 +55,33 @@ public class MutatorItem extends Item {
             return ActionResult.PASS;
         }
 
+        Mutation.MutationContext mutationContext = new Mutation.MutationContext(
+                context.getWorld(),
+                pos
+        );
+
+        List<MutationRegistry.MutationEntry> applicableMutations = recipe.get()
+                .mutations()
+                .stream()
+                .filter(entry -> entry.mutation().canApply(mutationContext))
+                .toList();
+
+        if (applicableMutations.isEmpty()) {
+            return ActionResult.PASS;
+        }
+
         Random random = context.getWorld().random;
-        MutationRegistry.MutationEntry entry = chooseMutation(recipe.get().mutations(), random);
+
+        MutationRegistry.MutationEntry entry = chooseMutation(
+                applicableMutations,
+                random
+        );
 
         if (entry == null) {
             return ActionResult.PASS;
         }
 
         Mutation mutation = entry.mutation();
-
-        Mutation.MutationContext mutationContext = new Mutation.MutationContext(
-                context.getWorld(),
-                pos
-        );
 
         boolean applied = mutation.apply(mutationContext);
 

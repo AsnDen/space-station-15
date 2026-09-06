@@ -11,4 +11,8 @@ public abstract class Mutation {
 
     public abstract void spawnParticles(MutationContext context);
 
+    public boolean canApply(MutationContext context) {
+        return true;
+    }
+
 }

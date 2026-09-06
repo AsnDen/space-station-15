@@ -10,6 +10,22 @@ import org.technocracy.spacestation.mutation.Mutation;
 public class MutationGrow extends Mutation {
 
     @Override
+    public boolean canApply(MutationContext context) {
+        if (!(context.world() instanceof ServerWorld serverWorld)) {
+            return false;
+        }
+
+        BlockPos pos = context.pos();
+        BlockState state = serverWorld.getBlockState(pos);
+
+        if (!(state.getBlock() instanceof Fertilizable fertilizable)) {
+            return false;
+        }
+
+        return fertilizable.isFertilizable(serverWorld, pos, state);
+    }
+
+    @Override
     public boolean apply(MutationContext context) {
         if (!(context.world() instanceof ServerWorld serverWorld)) {
             return false;
