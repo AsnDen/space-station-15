@@ -1,5 +1,5 @@
 {
-  "target": "spacestation:rices_crop",
+  "target": "spacestation:rice_crop",
   "mutations": [
     {
       "type": "nothing",
