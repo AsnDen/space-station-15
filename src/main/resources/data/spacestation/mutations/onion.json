@@ -3,22 +3,22 @@
   "mutations": [
     {
       "type": "nothing",
-      "weight": 20,
+      "weight": 7,
       "is_negative": true
     },
     {
       "type": "death",
-      "weight": 20,
+      "weight": 4,
       "is_negative": true,
       "block": "minecraft:dead_bush"
     },
     {
       "type": "harvest",
-      "weight": 8
+      "weight": 3
     },
     {
       "type": "transform",
-      "weight": 2,
+      "weight": 1,
       "blocks": [
         { "block": "spacestation:onion_red_crop", "weight": 2 },
         { "block": "spacestation:bloonion_crop", "weight": 1 }
