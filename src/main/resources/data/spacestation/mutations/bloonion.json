@@ -1,0 +1,20 @@
+{
+  "target": "spacestation:bloonion_crop",
+  "mutations": [
+    {
+      "type": "nothing",
+      "weight": 7,
+      "is_negative": true
+    },
+    {
+      "type": "death",
+      "weight": 4,
+      "is_negative": true,
+      "block": "minecraft:dead_bush"
+    },
+    {
+      "type": "harvest",
+      "weight": 4
+    }
+  ]
+}
