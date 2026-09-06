@@ -93,9 +93,11 @@ public class MutationRegistry {
                         throw new IllegalArgumentException("Mutation chance must be positive: " + mutationType);
                     }
 
+                    // =================== РЕГИСТРАЦИЯ МУТАЦИЙ ===================
+
                     switch (mutationType) {
                         case "grow" -> mutations.add(new MutationEntry(generalMutationGrow, chance, false, mutationType));
-                        case "nothing" -> mutations.add(new MutationEntry(generalMutationNothing, chance, true, mutationType));
+                        case "nothing" -> mutations.add(new MutationEntry(generalMutationNothing, chance, false, mutationType));
                         case "death" -> {
                             Identifier blockId = Identifier.of(
                                     mutation.get("block").getAsString()
