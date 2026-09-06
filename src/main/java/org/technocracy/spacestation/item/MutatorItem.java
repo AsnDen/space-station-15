@@ -22,24 +22,17 @@ public class MutatorItem extends Item {
     private final double negativeMultiplier;
     private final SoundEvent mutationSound;
 
-    public MutatorItem(Settings settings, double negativeMultiplier, SoundEvent mutationSound) {
-        super(settings);
-        this.negativeMultiplier = negativeMultiplier;
-        this.mutationSound = mutationSound;
-    }
-
-    public MutatorItem(Settings settings, SoundEvent mutationSound) {
-        this(settings, 1.0, mutationSound);
-    }
-
-    public MutatorItem(Settings settings, double negativeMultiplier) {
-        this(settings, negativeMultiplier, SoundEvents.ITEM_BONE_MEAL_USE);
-    }
-
     public MutatorItem(Settings settings) {
-        this(settings, 1.0, SoundEvents.ITEM_BONE_MEAL_USE);
-    }
+        super(settings);
 
+        if (settings instanceof MutatorSettings mutatorSettings) {
+            this.negativeMultiplier = mutatorSettings.negativeMultiplier;
+            this.mutationSound = mutatorSettings.mutationSound;
+        } else {
+            this.negativeMultiplier = 1.0;
+            this.mutationSound = SoundEvents.ITEM_BONE_MEAL_USE;
+        }
+    }
 
     @Override
     public ActionResult useOnBlock(ItemUsageContext context) {
@@ -110,7 +103,6 @@ public class MutatorItem extends Item {
             return null;
         }
 
-        // roll in [0, totalWeight)
         double roll = random.nextDouble() * totalWeight;
 
         for (MutationRegistry.MutationEntry entry : mutations) {
@@ -134,4 +126,18 @@ public class MutatorItem extends Item {
         return null;
     }
 
+    public static class MutatorSettings extends Item.Settings {
+        private double negativeMultiplier = 1.0;
+        private SoundEvent mutationSound = SoundEvents.ITEM_BONE_MEAL_USE;
+
+        public MutatorSettings negativeMultiplier(double negativeMultiplier) {
+            this.negativeMultiplier = negativeMultiplier;
+            return this;
+        }
+
+        public MutatorSettings mutationSound(SoundEvent mutationSound) {
+            this.mutationSound = mutationSound;
+            return this;
+        }
+    }
 }
