@@ -89,29 +89,25 @@ public class MutationRegistry {
 
                     double chance = mutation.get("weight").getAsDouble();
 
-                    // false by default
-                    boolean isNegative = mutation.has("is_negative")
-                            && mutation.get("is_negative").getAsBoolean();
-
                     if (chance <= 0) {
                         throw new IllegalArgumentException("Mutation chance must be positive: " + mutationType);
                     }
 
                     switch (mutationType) {
-                        case "harvest" -> mutations.add(new MutationEntry(generalMutationGrow, chance, isNegative, mutationType));
-                        case "nothing" -> mutations.add(new MutationEntry(generalMutationNothing, chance, isNegative, mutationType));
+                        case "harvest" -> mutations.add(new MutationEntry(generalMutationGrow, chance, false, mutationType));
+                        case "nothing" -> mutations.add(new MutationEntry(generalMutationNothing, chance, true, mutationType));
                         case "death" -> {
                             Identifier blockId = Identifier.of(
                                     mutation.get("block").getAsString()
                             );
 
                             BlockState state = getBlockStateById(blockId);
-                            mutations.add(new MutationEntry(new MutationDeath(state), chance, isNegative, mutationType));
+                            mutations.add(new MutationEntry(new MutationDeath(state), chance, true, mutationType));
                         }
 
                         case "transform" -> {
                             List<MutationTransform.WeightedBlock> variants = parseTransformVariants(mutation);
-                            mutations.add(new MutationEntry(new MutationTransform(variants), chance, isNegative, mutationType));
+                            mutations.add(new MutationEntry(new MutationTransform(variants), chance, false, mutationType));
                         }
                         default -> throw new IllegalArgumentException("Unknown mutation type: " + mutationType);
                     }
