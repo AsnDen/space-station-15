@@ -19,7 +19,7 @@ public class ModBlockEntities {
                 Registries.BLOCK_ENTITY_TYPE,
                 Identifier.of(SpaceStation.MOD_ID, "chem_master"),
                 BlockEntityType.Builder.create(ChemMasterBlockEntity::new,
-                        ModBlocks.CHEM_MASTER_BLOCK).build()
+                        ModBlocks.CHEM_MASTER).build()
         );
         SUBLIMATOR = Registry.register(
             Registries.BLOCK_ENTITY_TYPE,

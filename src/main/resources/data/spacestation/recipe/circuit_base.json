@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "GFG",
+    "PPP",
+    "CCC"
+  ],
+  "key": {
+    "P": { "item": "spacestation:plastic" },
+    "C": { "item": "spacestation:cable_lv" },
+    "F": { "item": "spacestation:flint_purified" },
+    "G": { "item": "minecraft:gold_ingot" }
+  },
+  "result": {
+    "id": "spacestation:circuit_base",
+    "count": 1
+  }
+}

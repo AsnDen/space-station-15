@@ -26,16 +26,16 @@ public class ChemReactor {
     private static ChemData tryReact(ChemData data) {
         for (ChemRegistry.ReactionRecipe recipe : ChemRegistry.getReactions()) {
 
-            // Проверяем минимальный объём
+            // Минимальный объём
             double totalReagents = recipe.reagents().values().stream()
                     .mapToDouble(Double::doubleValue).sum();
             if (totalReagents < recipe.minVolume()) continue;
 
-            // Проверяем сколько раз можно провести реакцию
+            // Сколько раз можно провести реакцию
             double times = getReactionTimes(data, recipe);
             if (times < 0.01) continue;
 
-            // Проводим реакцию
+            // Реакция
             Map<String, Double> updated = new HashMap<>(data.chemicals());
 
             // Убираем реагенты
@@ -64,7 +64,7 @@ public class ChemReactor {
         return data;
     }
 
-    // Считаем сколько раз можно провести реакцию исходя из доступных реагентов
+    // Сколько раз можно провести реакцию исходя из доступных реагентов
     private static double getReactionTimes(ChemData data, ChemRegistry.ReactionRecipe recipe) {
         double minTimes = Double.MAX_VALUE;
 

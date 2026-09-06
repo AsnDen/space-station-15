@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SRS",
+    "RPR",
+    "SRS"
+  ],
+  "key": {
+    "R": { "item": "spacestation:rod" },
+    "S": { "item": "spacestation:steel" },
+    "P": { "item": "spacestation:plasteel" }
+  },
+  "result": {
+    "id": "spacestation:machine_frame",
+    "count": 1
+  }
+}

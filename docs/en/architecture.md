@@ -26,7 +26,7 @@ The mod id is `spacestation`. Always build identifiers with `Identifier.of(Space
 11. Registers loot modifiers.
 12. Registers packets and the C2S chemistry transfer receiver.
 
-This order matters. For example, chemical containers need `ModComponents.CHEM_DATA` before `ChemItems` are initialized, and the Chem Master block entity depends on `ModBlocks.CHEM_MASTER_BLOCK`.
+This order matters. For example, chemical containers need `ModComponents.CHEM_DATA` before `ChemItems` are initialized, and the Chem Master block entity depends on `ModBlocks.CHEM_MASTER`.
 
 ## Package Map
 

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "spacestation:rubber_raw"
+  },
+  "result": {
+    "id": "spacestation:rubber"
+  },
+  "experience": 0.10,
+  "cookingtime": 100
+}

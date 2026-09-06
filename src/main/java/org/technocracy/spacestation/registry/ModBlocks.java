@@ -39,8 +39,26 @@ public final class ModBlocks {
             true
     );
 
+    public static final Block PLASMA_BLOCK = register(
+            "plasma_block",
+            Block::new,
+            AbstractBlock.Settings.create()
+                    .strength(1.5f)
+                    .requiresTool(),
+            true
+    );
+
     public static final Block PLASMA_ORE_BLOCK = register(
             "plasma_ore_block",
+            Block::new,
+            AbstractBlock.Settings.create()
+                    .strength(1.5f)
+                    .requiresTool(),
+            true
+    );
+
+    public static final Block BANANIUM_BLOCK = register(
+            "bananium_block",
             Block::new,
             AbstractBlock.Settings.create()
                     .strength(1.5f)
@@ -86,6 +104,72 @@ public final class ModBlocks {
             true
     );
 
+    public static final Block MACHINE_FRAME = register(
+            "machine_frame",
+            AssemblyBlock::new,
+            AbstractBlock.Settings.create()
+                    .strength(6.0f, 60.0f)
+                    .requiresTool()
+                    .sounds(BlockSoundGroup.CHAIN)
+                    .nonOpaque(),
+            true
+    );
+
+    public static final Block MACHINE_FRAME_STAGE1 = register(
+            "machine_frame_stage1",
+            AssemblyBlock::new,
+            AbstractBlock.Settings.create()
+                    .strength(6.0f, 60.0f)
+                    .requiresTool()
+                    .sounds(BlockSoundGroup.CHAIN)
+                    .nonOpaque(),
+            true
+    );
+
+    public static final Block MACHINE_FRAME_STAGE2 = register(
+            "machine_frame_stage2",
+            AssemblyBlock::new,
+            AbstractBlock.Settings.create()
+                    .strength(6.0f, 60.0f)
+                    .requiresTool()
+                    .sounds(BlockSoundGroup.CHAIN)
+                    .nonOpaque(),
+            true
+    );
+
+    public static final Block MACHINE_FRAME_STAGE3 = register(
+            "machine_frame_stage3",
+            AssemblyBlock::new,
+            AbstractBlock.Settings.create()
+                    .strength(6.0f, 60.0f)
+                    .requiresTool()
+                    .sounds(BlockSoundGroup.CHAIN)
+                    .nonOpaque(),
+            true
+    );
+
+    public static final Block MACHINE_FRAME_STAGE4 = register(
+            "machine_frame_stage4",
+            AssemblyBlock::new,
+            AbstractBlock.Settings.create()
+                    .strength(6.0f, 60.0f)
+                    .requiresTool()
+                    .sounds(BlockSoundGroup.CHAIN)
+                    .nonOpaque(),
+            true
+    );
+
+    public static final Block MACHINE_FRAME_ASSEMBLED = register(
+            "machine_frame_assembled",
+            AssemblyBlock::new,
+            AbstractBlock.Settings.create()
+                    .strength(6.0f, 60.0f)
+                    .requiresTool()
+                    .sounds(BlockSoundGroup.CHAIN)
+                    .nonOpaque(),
+            true
+    );
+
     public static final Block STEEL_TILE = register(
             "steel_tile",
             Block::new,
@@ -113,6 +197,16 @@ public final class ModBlocks {
             true
     );
 
+    public static final Block URANIUM_BLOCK = register(
+            "uranium_block",
+            Block::new,
+            AbstractBlock.Settings.create()
+                    .strength(3.0f)
+                    .requiresTool()
+                    .sounds(BlockSoundGroup.STONE),
+            true
+    );
+
     public static final Block URANIUM_ORE_BLOCK = register(
             "uranium_ore_block",
             Block::new,
@@ -123,8 +217,8 @@ public final class ModBlocks {
             true
     );
 
-    public static final Block CHEM_MASTER_BLOCK = register(
-            "chem_master_block",
+    public static final Block CHEM_MASTER = register(
+            "chem_master",
             ChemMasterBlock::new,
             AbstractBlock.Settings.create()
                     .strength(5.0f, 30.0f)
@@ -144,19 +238,6 @@ public final class ModBlocks {
     private ModBlocks() {}
 
     public static void register() {
-
-        // ============ КАК ДОБАВЛЯТЬ КАСТОМНУЮ СБОРКУ/РАЗБОРКУ ============
-
-        // Несколько инструментов для разбора:
-        // AssemblyBlock.registerUpgrade(<НАЗВАНИЕ_БЛОКА_С_КОТОРЫМ_ВЗАИМОДЕЙСТВУЕМ>, ModItems.<НАЗВАНИЕ_ИНГРИДИЕНТА>, <НАЗВАНИЕ_БЛОКА_КОТОРЫЙ_ПОЛУЧИМ>, <ВРЕМЯ_РАЗБОРА>, ModItems.<ПЕРВЫЙ_ПРЕДМЕТ_ДЛЯ_РАЗБОРА>, ModItems.<ВТОРОЙ, ТРЕТИЙ, ..._ПРЕДМЕТ_ДЛЯ_РАЗБОРА>);
-        // FUTURE: AssemblyBlock.registerUpgrade(<БЛОК ЦЕЛЬ>, <БЛОК ПОЛУЧЕНИЕ>, <ЦЕНА(предмет - количество, инструмент - трата заряда)>, <ВРЕМЯ СБОРКИ>, <ТРАТА ТОПЛИВА>, <ВРЕМЯ РАЗБОРКИ>, ToolIngredient.of(<ЧЕМ СОБИРАЕМ>), ToolIngredient.of(<ЧЕМ РАЗБИРАЕМ>));
-
-        // Без разбора вообще:
-        // AssemblyBlock.registerUpgrade(НАЗВАНИЕ_БЛОКА_С_КОТОРЫМ_ВЗАИМОДЕЙСТВУЕМ, ModItems.<НАЗВАНИЕ_ИНГРИДИЕНТА>, <НАЗВАНИЕ_БЛОКА_КОТОРЫЙ_ПОЛУЧИМ>, <ВРЕМЯ_РАЗБОРА>);
-        // FUTURE: AssemblyBlock.registerUpgrade(<БЛОК ЦЕЛЬ>, <БЛОК ПОЛУЧЕНИЕ>, <ЦЕНА СБОРКИ>, <ВРЕМЯ СБОРКИ>, ToolIngredient.of(<ЧЕМ СОБИРАЕМ>));
-
-        // ============ КОНЕЦ ============
-
         PlantBlocks.register();
     }
 

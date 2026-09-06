@@ -1,16 +1,19 @@
 {
   "replace": false,
   "values": [
+    "spacestation:bananium_block",
+    "spacestation:bananium_ore_block",
+    "spacestation:chem_master",
+    "spacestation:plasma_block",
+    "spacestation:plasma_ore_block",
     "spacestation:steel_tile",
-    "spacestation:telecrystal_block",
-    "spacestation:telecrystal_crystal_block",
-    "spacestation:wall_girder",
-    "spacestation:wall_girder_reinforced",
     "spacestation:steel_wall",
     "spacestation:steel_wall_reinforced",
+    "spacestation:telecrystal_block",
+    "spacestation:telecrystal_crystal_block",
+    "spacestation:uranium_block",
     "spacestation:uranium_ore_block",
-    "spacestation:bananium_ore_block",
-    "spacestation:plasma_ore_block",
-    "spacestation:chem_master_block"
+    "spacestation:wall_girder",
+    "spacestation:wall_girder_reinforced"
   ]
 }

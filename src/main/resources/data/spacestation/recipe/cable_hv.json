@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "RRR",
+    "RCR",
+    "RRR"
+  ],
+  "key": {
+    "R": { "item": "spacestation:rubber" },
+    "C": { "item": "minecraft:copper_ingot" }
+  },
+  "result": {
+    "id": "spacestation:cable_hv",
+    "count": 1
+  }
+}
