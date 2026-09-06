@@ -33,10 +33,7 @@ public final class ChemItems {
     public static final Item SALT = register("salt");
     public static final Item UNSTABLE_MUTAGEN_POWDER = Registry.register(
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "unstable_mutagen_powder"),
-            new MutatorItem(new MutatorItem.MutatorSettings()
-                    .negativeMultiplier(0)
-                    .mutationSound(SoundEvents.ITEM_BONE_MEAL_USE)
-            )
+            new MutatorItem(new MutatorItem.MutatorSettings())
     );
 
     private static Item register(String name) {
