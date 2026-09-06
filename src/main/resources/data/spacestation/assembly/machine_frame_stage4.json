@@ -1,0 +1,14 @@
+{
+  "source": "spacestation:machine_frame_stage3",
+  "result": "spacestation:machine_frame_stage4",
+  "cost": 8,
+  "assembly_time": 0.4,
+  "disassembly_time": 1.2,
+  "assembly_tool": {
+    "items": ["spacestation:cable_lv"]
+  },
+  "disassembly_tool": {
+    "items": ["spacestation:omnitool"],
+    "qualities": ["SCREWING"]
+  }
+}

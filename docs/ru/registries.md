@@ -43,7 +43,7 @@
 
 ## Block Entities и Screens
 
-`ModBlockEntities.CHEM_MASTER` связывает `ChemMasterBlockEntity` с `ModBlocks.CHEM_MASTER_BLOCK`.
+`ModBlockEntities.CHEM_MASTER` связывает `ChemMasterBlockEntity` с `ModBlocks.CHEM_MASTER`.
 
 `ModScreenHandlers.CHEM_MASTER` - это `ExtendedScreenHandlerType` с `BlockPos.PACKET_CODEC`, чтобы клиент открывал экран для правильного энтити.
 

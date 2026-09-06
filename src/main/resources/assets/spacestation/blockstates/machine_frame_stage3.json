@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "spacestation:block/machines/machine_frame/stage3"
+    }
+  }
+}

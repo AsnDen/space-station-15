@@ -6,7 +6,7 @@
 
 - Ore/resource blocks: `uranium_ore_block`, `plasma_ore_block`, `bananium_ore_block`, `telecrystal_block`, `telecrystal_crystal_block`.
 - Construction blocks: `wall_girder`, `wall_girder_reinforced`, `steel_wall`, `steel_wall_reinforced`, `steel_tile`.
-- Machine blocks: `chem_master_block`.
+- Machine blocks: `chem_master`.
 - Plants: `PlantBlocks`
 
 ## Adding A Basic Block

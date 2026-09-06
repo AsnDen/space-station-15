@@ -159,7 +159,7 @@ public class JeiPlugin implements IModPlugin {
 
     @Override
     public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
-        registration.addRecipeCatalyst(new ItemStack(ModBlocks.CHEM_MASTER_BLOCK), GRINDING, REACTIONS);
+        registration.addRecipeCatalyst(new ItemStack(ModBlocks.CHEM_MASTER), GRINDING, REACTIONS);
         registration.addRecipeCatalyst(new ItemStack(ModBlocks.SUBLIMATOR), SUBLIMATION);
         registration.addRecipeCatalyst(new ItemStack(ModBlocks.STEEL_WALL), ASSEMBLY, DISASSEMBLY_GENERIC);
         registration.addRecipeCatalyst(new ItemStack(ToolItems.SCREWDRIVER), DISASSEMBLY_SCREWING);

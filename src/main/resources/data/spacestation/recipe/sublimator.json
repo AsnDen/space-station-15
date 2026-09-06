@@ -9,7 +9,7 @@
     "I": { "item": "minecraft:iron_ingot" },
     "R": { "item": "spacestation:rod" },
     "C": { "item": "minecraft:copper_ingot" },
-    "M": { "item": "spacestation:chem_master_block" },
+    "M": { "item": "spacestation:chem_master" },
     "S": { "item": "spacestation:steel" }
   },
   "result": {

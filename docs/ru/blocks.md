@@ -6,7 +6,7 @@
 
 - Ресурсные и рудные блоки: `uranium_ore_block`, `plasma_ore_block`, `bananium_ore_block`, `telecrystal_block`, `telecrystal_crystal_block`.
 - Строительные блоки: `wall_girder`, `wall_girder_reinforced`, `steel_wall`, `steel_wall_reinforced`, `steel_tile`.
-- Машины: `chem_master_block`.
+- Машины: `chem_master`.
 - Растения: `PlantBlocks`
 
 ## Как добавить обычный блок

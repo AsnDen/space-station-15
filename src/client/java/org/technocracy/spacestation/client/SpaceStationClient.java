@@ -27,7 +27,7 @@ public class SpaceStationClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
 
-        ModScreenHandlers.register(); // добавь это первым!
+        ModScreenHandlers.register();
         HandledScreens.register(ModScreenHandlers.CHEM_MASTER, ChemMasterScreen::new);
         HandledScreens.register(ModScreenHandlers.SUBLIMATOR, SublimatorScreen::new);
         ColorProviderRegistry.ITEM.register((stack, tintIndex) -> {
@@ -38,7 +38,14 @@ public class SpaceStationClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.SUSPICIOUS_GRASS, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.WALL_GIRDER, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.WALL_GIRDER_REINFORCED, RenderLayer.getCutout());
-        // Crops
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.MACHINE_FRAME, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.MACHINE_FRAME_STAGE1, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.MACHINE_FRAME_STAGE2, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.MACHINE_FRAME_STAGE3, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.MACHINE_FRAME_STAGE4, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.MACHINE_FRAME_ASSEMBLED, RenderLayer.getCutout());
+
+        // ================ CROPS ================
         BlockRenderLayerMap.INSTANCE.putBlock(PlantBlocks.ALOE_CROP, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(PlantBlocks.AMBROSIA_CROP, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(PlantBlocks.AMBROSIA_OLYMPIC_CROP, RenderLayer.getCutout());

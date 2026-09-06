@@ -3,7 +3,7 @@
   "values": [
     "spacestation:bananium_block",
     "spacestation:bananium_ore_block",
-    "spacestation:chem_master_block",
+    "spacestation:chem_master",
     "spacestation:plasma_block",
     "spacestation:plasma_ore_block",
     "spacestation:steel_tile",

@@ -104,6 +104,72 @@ public final class ModBlocks {
             true
     );
 
+    public static final Block MACHINE_FRAME = register(
+            "machine_frame",
+            AssemblyBlock::new,
+            AbstractBlock.Settings.create()
+                    .strength(6.0f, 60.0f)
+                    .requiresTool()
+                    .sounds(BlockSoundGroup.CHAIN)
+                    .nonOpaque(),
+            true
+    );
+
+    public static final Block MACHINE_FRAME_STAGE1 = register(
+            "machine_frame_stage1",
+            AssemblyBlock::new,
+            AbstractBlock.Settings.create()
+                    .strength(6.0f, 60.0f)
+                    .requiresTool()
+                    .sounds(BlockSoundGroup.CHAIN)
+                    .nonOpaque(),
+            true
+    );
+
+    public static final Block MACHINE_FRAME_STAGE2 = register(
+            "machine_frame_stage2",
+            AssemblyBlock::new,
+            AbstractBlock.Settings.create()
+                    .strength(6.0f, 60.0f)
+                    .requiresTool()
+                    .sounds(BlockSoundGroup.CHAIN)
+                    .nonOpaque(),
+            true
+    );
+
+    public static final Block MACHINE_FRAME_STAGE3 = register(
+            "machine_frame_stage3",
+            AssemblyBlock::new,
+            AbstractBlock.Settings.create()
+                    .strength(6.0f, 60.0f)
+                    .requiresTool()
+                    .sounds(BlockSoundGroup.CHAIN)
+                    .nonOpaque(),
+            true
+    );
+
+    public static final Block MACHINE_FRAME_STAGE4 = register(
+            "machine_frame_stage4",
+            AssemblyBlock::new,
+            AbstractBlock.Settings.create()
+                    .strength(6.0f, 60.0f)
+                    .requiresTool()
+                    .sounds(BlockSoundGroup.CHAIN)
+                    .nonOpaque(),
+            true
+    );
+
+    public static final Block MACHINE_FRAME_ASSEMBLED = register(
+            "machine_frame_assembled",
+            AssemblyBlock::new,
+            AbstractBlock.Settings.create()
+                    .strength(6.0f, 60.0f)
+                    .requiresTool()
+                    .sounds(BlockSoundGroup.CHAIN)
+                    .nonOpaque(),
+            true
+    );
+
     public static final Block STEEL_TILE = register(
             "steel_tile",
             Block::new,
@@ -151,8 +217,8 @@ public final class ModBlocks {
             true
     );
 
-    public static final Block CHEM_MASTER_BLOCK = register(
-            "chem_master_block",
+    public static final Block CHEM_MASTER = register(
+            "chem_master",
             ChemMasterBlock::new,
             AbstractBlock.Settings.create()
                     .strength(5.0f, 30.0f)
