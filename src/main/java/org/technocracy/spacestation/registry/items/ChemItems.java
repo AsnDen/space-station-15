@@ -3,6 +3,8 @@ package org.technocracy.spacestation.registry.items;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.sound.SoundEvent;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
 import org.technocracy.spacestation.SpaceStation;
 import org.technocracy.spacestation.chemistry.ChemContainer;
@@ -33,6 +35,7 @@ public final class ChemItems {
             Registries.ITEM, Identifier.of(SpaceStation.MOD_ID, "unstable_mutagen_powder"),
             new MutatorItem(new MutatorItem.MutatorSettings()
                     .negativeMultiplier(0)
+                    .mutationSound(SoundEvents.ITEM_BONE_MEAL_USE)
             )
     );
 
