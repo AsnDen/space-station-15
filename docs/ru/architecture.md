@@ -26,7 +26,7 @@ Mod id: `spacestation`. Для своих идентификаторов исп�
 11. Регистрирует изменения лута.
 12. Регистрирует пакеты и C2S receiver переноса химикатов.
 
-Порядок важен. Например, химические контейнеры требуют `ModComponents.CHEM_DATA` до инициализации `ChemItems`, а Chem Master block entity зависит от `ModBlocks.CHEM_MASTER_BLOCK`.
+Порядок важен. Например, химические контейнеры требуют `ModComponents.CHEM_DATA` до инициализации `ChemItems`, а Chem Master block entity зависит от `ModBlocks.CHEM_MASTER`.
 
 ## Карта пакетов
 

@@ -18,7 +18,7 @@ public class ChemMasterJeiCategory implements IRecipeCategory<ChemMasterJeiRecip
     private final String titleKey;
 
     public ChemMasterJeiCategory(IGuiHelper guiHelper, RecipeType<ChemMasterJeiRecipe> type, String titleKey) {
-        this.icon = guiHelper.createDrawableItemStack(new ItemStack(ModBlocks.CHEM_MASTER_BLOCK));
+        this.icon = guiHelper.createDrawableItemStack(new ItemStack(ModBlocks.CHEM_MASTER));
         this.type = type;
         this.titleKey = titleKey;
     }

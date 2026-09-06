@@ -1,0 +1,14 @@
+{
+  "source": "spacestation:machine_frame_stage4",
+  "result": "spacestation:machine_frame_assembled",
+  "cost": 6,
+  "assembly_time": 0.4,
+  "disassembly_time": 1.2,
+  "assembly_tool": {
+    "items": ["spacestation:plastic"]
+  },
+  "disassembly_tool": {
+    "items": ["spacestation:omnitool"],
+    "qualities": ["SCREWING"]
+  }
+}

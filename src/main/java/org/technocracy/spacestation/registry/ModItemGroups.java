@@ -204,7 +204,7 @@ public final class ModItemGroups {
                         // ======== BLOCKS ========
                         entries.add(ModBlocks.BANANIUM_BLOCK.asItem());
                         entries.add(ModBlocks.BANANIUM_ORE_BLOCK.asItem());
-                        entries.add(ModBlocks.CHEM_MASTER_BLOCK.asItem());
+                        entries.add(ModBlocks.CHEM_MASTER.asItem());
                         entries.add(ModBlocks.PLASMA_BLOCK.asItem());
                         entries.add(ModBlocks.PLASMA_ORE_BLOCK.asItem());
                         entries.add(ModBlocks.STEEL_TILE.asItem());
@@ -216,6 +216,8 @@ public final class ModItemGroups {
                         entries.add(ModBlocks.TELECRYSTAL_CRYSTAL_BLOCK.asItem());
                         entries.add(ModBlocks.URANIUM_BLOCK.asItem());
                         entries.add(ModBlocks.URANIUM_ORE_BLOCK.asItem());
+                        entries.add(ModBlocks.MACHINE_FRAME.asItem());
+                        entries.add(ModBlocks.MACHINE_FRAME_ASSEMBLED.asItem());
                         entries.add(ModBlocks.WALL_GIRDER.asItem());
                         entries.add(ModBlocks.WALL_GIRDER_REINFORCED.asItem());
 

@@ -43,7 +43,7 @@ Most registration starts from `SpaceStation.onInitialize()`:
 
 ## Block Entities And Screens
 
-`ModBlockEntities.CHEM_MASTER` binds `ChemMasterBlockEntity` to `ModBlocks.CHEM_MASTER_BLOCK`.
+`ModBlockEntities.CHEM_MASTER` binds `ChemMasterBlockEntity` to `ModBlocks.CHEM_MASTER`.
 
 `ModScreenHandlers.CHEM_MASTER` is an `ExtendedScreenHandlerType` using `BlockPos.PACKET_CODEC` so the client can open a screen for the correct block entity.
 
