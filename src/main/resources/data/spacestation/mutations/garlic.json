@@ -11,7 +11,7 @@
       "block": "minecraft:dead_bush"
     },
     {
-      "type": "harvest",
+      "type": "grow",
       "weight": 4
     }
   ]

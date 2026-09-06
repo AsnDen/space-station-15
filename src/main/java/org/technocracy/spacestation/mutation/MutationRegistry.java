@@ -94,7 +94,7 @@ public class MutationRegistry {
                     }
 
                     switch (mutationType) {
-                        case "harvest" -> mutations.add(new MutationEntry(generalMutationGrow, chance, false, mutationType));
+                        case "grow" -> mutations.add(new MutationEntry(generalMutationGrow, chance, false, mutationType));
                         case "nothing" -> mutations.add(new MutationEntry(generalMutationNothing, chance, true, mutationType));
                         case "death" -> {
                             Identifier blockId = Identifier.of(
